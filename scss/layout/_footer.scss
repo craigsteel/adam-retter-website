@@ -1,0 +1,111 @@
+.footer {
+    @include background((
+    'gradient': (to bottom,  ( #001638, #009de100)),
+    'image': 'footer@1x.webp',
+    'bg-position': top
+  ));
+
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    (min-width: 125em) {
+    @include background((
+      'gradient': (to bottom, ( #001638, #009de100)),
+      'image': 'footer@2x.webp',
+      'bg-position': top
+    ));
+    margin: 0 auto;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: bottom;
+  }
+
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 5%;
+    padding-top: 2%;
+  }
+
+  &__menu,
+  &__contact {
+    margin-right: 2em;
+
+    li {
+      @include font-size(16px, 16px, 1px);
+      list-style-type: none;
+      padding: 1em 0.5em 1em 0;
+      text-transform: uppercase;
+
+      @media screen and (min-width: $md) {
+        @include font-size(12px, 12px, 1px);
+        padding: 1em 0 0;
+      }
+    }
+  }
+
+  &__heading {
+    @include font-size(23px, 30px, 2px);
+    text-transform: uppercase;
+    margin-top: 1em;
+
+    @media screen and (min-width: $md) {
+      @include font-size(14px, 28px, 2px);
+      margin-top: 0;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  &__logos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    &--ev,
+    &--fusion,
+    &--wc,
+    &--ghost {
+      width: 7em;
+      margin: -1em .5em;
+    }
+  }
+
+  &__social {
+    padding: 1em 0;
+
+    a {
+      font-size: 30px;
+
+      @media screen and (min-width: $md) {
+        font-size: 18px;
+      }
+    }
+
+    ul {
+      display: flex;
+    }
+
+    li {
+      margin-right: 2em;
+    }
+  }
+
+  &__bottom {
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 20px;
+    background-color: rgba($color-black, 0.4);
+
+    &--copyright {
+      text-align: center;
+      @include font-size(10px, 14px, 2px);
+      padding-bottom: 2%;
+    }
+  }
+}

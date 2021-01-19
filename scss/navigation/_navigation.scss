@@ -1,0 +1,67 @@
+.navigation {
+  display: none;
+
+  @media screen and (min-width: $md) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 2em;
+  }
+
+  @media screen and (max-width: $lg) {
+    margin-top: 0;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    margin-bottom: 1em;
+  }
+
+  a {
+    color: $color-white;
+    padding: 0 0.5em;
+    @include font-size(12px, 12px, 1px);
+
+    &:hover {
+      color: $color-green;
+    }
+  }
+
+  &__icons {
+    margin-left: 0;
+  }
+
+  &__social-icon {
+    height: 2em;
+    width: 2em;
+    fill: $color-white;
+    margin-top: -0.3em;
+    transition: all 0.2s;
+
+    &:hover {
+      fill: $color-green;
+    }
+  }
+  /* Small Devices, Tablets */
+  @media screen and (min-width: $sm) {
+    li a {
+      padding: 25px 8px;
+      letter-spacing: 1px;
+    }
+
+    /* Large Devices, Wide Screens */
+    @media screen and (max-width: $lg) {
+      padding: 25px 15px;
+      letter-spacing: 1px;
+    }
+
+    /* Medium Devices, Desktops */
+    @media screen and (min-width: $md) {
+      padding: 25px 10px;
+      letter-spacing: 1px;
+    }
+  }
+}

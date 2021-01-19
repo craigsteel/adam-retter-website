@@ -1,0 +1,67 @@
+.presentations {
+  @include background-block;
+
+  @media screen and (min-width: $md) {
+    @include background((
+      'gradient': (to left, (#009de100, #001638)),
+      'image': 'home-pres.webp',
+      'bg-position': right
+    ));
+    background-size: cover;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2em 0;
+    margin: 2em;
+  }
+
+  &__cards {
+    margin: 0 auto;
+    width: 100%;
+
+    @media screen and (min-width: $md) {
+      margin: 0 0 1em 3em;
+    }
+  }
+
+  &__card {
+    width: 317px;
+    height: 317px;
+    margin: 1.2em auto;
+
+    @media screen and (min-width: $md) {
+      width: 317px;
+      height: 317px;
+      margin: 1.2em;
+    }
+  }
+
+  .card {
+    &__link {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      position: absolute;
+      bottom: 1em;
+
+      &--more {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        width: 11em;
+      }
+
+      &--slides,
+      &--pdf {
+        display: none;
+
+        @media screen and (min-width: $md) {
+          display: flex;
+          flex-wrap: wrap;
+          align-content: flex-end;
+          flex-direction: column;
+          width: 8em;
+        }
+      }
+    }
+  }
+}

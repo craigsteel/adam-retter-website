@@ -1,0 +1,70 @@
+.button {
+  display: flex;
+  width: 100%;
+  margin: 1em auto 3em;
+
+  &__btn {
+    @include font-size(20px, 17px, 1px);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: sfmonomedium, sans-serif;
+    color: $color-magenta;
+    padding: 18px;
+
+    &:link,
+    &:visited {
+      border: 1px solid $color-magenta;
+      border-radius: 0;
+      transition: all 0.3s;
+      margin: 0 auto;
+      background-color: transparent;
+      width: fit-content;
+
+      @media screen and (min-width: $md) {
+        @include font-size(14px, 16px, 1px);
+      }
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba($color-black, 0.2);
+      background: $color-magenta;
+      color: $color-white;
+
+      &::after {
+        transform: scaleX(1.5) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 10px rgba($color-black, 0.2);
+      color: $color-white;
+    }
+
+    &--magenta {
+      color: $color-magenta;
+
+      &::after {
+        background-color: $color-magenta;
+        color: $color-white;
+      }
+    }
+
+    &::after {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      border-radius: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.4s;
+      color: $color-white;
+    }
+  }
+}
+

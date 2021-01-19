@@ -1,0 +1,126 @@
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  margin: 2em auto;
+  text-align: center;
+
+  @media screen and (min-width: $md) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3em auto 0;
+  }
+
+  p {
+    @include font-size(12px, 20px, 1px);
+    text-align: center;
+  }
+}
+
+.skill-block {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2em;
+  padding-top: 1em;
+
+  @media screen and (min-width: $md) {
+    margin: 0 auto 1em;
+  }
+
+  &__bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 146px;
+    height: 146px;
+    background-color: $color-dark-blue;
+    margin: 0.6em;
+    box-shadow: 0 0 5rem rgba($color-black, 1);
+    filter: contrast(100%);
+    transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+
+    &:hover {
+      filter: contrast(90%);
+    }
+    @media screen and (min-width: $md) {
+      width: 120px;
+      height: 120px;
+      margin: 0.6em;
+      }
+  }
+
+  &__java {
+    // padding: 13%;
+    width: 6em;
+  }
+
+  &__c {
+    width: 5em;
+    padding-left: .3em;
+  }
+
+  &__scala {
+    // padding: 27%;
+    width: 5em;
+  }
+
+  &__rust {
+    // padding: 12%;
+    width: 7em;
+  }
+
+  &__typescript {
+    // padding: 8%;
+    width: inherit;
+  }
+
+  &__fusiondb {
+    // padding: 14%;
+    width: 6em;
+  }
+
+  &__rocksdb {
+    // padding: 20%;
+    width: 6em;
+  }
+
+  &__existdb {
+    // padding: 10%;
+    width: inherit;
+  }
+
+  &__xml {
+    // padding: 21%;
+    width: 4em;
+  }
+
+  &__rdf {
+    // padding: 7%;
+    width: inherit;
+  }
+
+  &__xquery {
+    // padding: 2%;
+    width: inherit;
+  }
+
+  &__xslt {
+    // padding: 0%;
+    width: inherit;
+  }
+
+  &__sparql {
+    // padding: 7%;
+    width: inherit;
+  }
+
+  &__schema {
+    // padding: 1%;
+    width: inherit;
+  }
+
+  &__relax {
+    // padding: 7%;
+    width: inherit;
+  }
+}

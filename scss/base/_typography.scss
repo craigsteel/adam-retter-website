@@ -1,0 +1,110 @@
+p {
+  @include font-size(16px, 20px, 1px);
+  font-family: sfmonomedium, Arial, Helvetica, sans-serif;
+  margin-bottom: 20px;
+}
+
+a {
+  color: $color-green;
+  font-family: sfmonolight, Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all .4s;
+
+  &:hover {
+    transition: all 0.2s;
+    color: $color-blue;
+  }
+}
+
+h1 {
+  @include text-shadow (-1px, 1px, 3px, rgba($color-black, 1), 0, 0, 30px, rgba($color-magenta, 1), -2px, -2px, 20px, rgba($color-magenta, .7), 2px, 2px, 15px, rgba($color-magenta, .4));
+  @include font-size(35px, 40px, 2px);
+  color: $color-magenta;
+  font-family: lunasolregular, Arial, Helvetica, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h2 {
+  @include text-shadow (-1px, 1px, 3px, rgba($color-black, 1), 0, 0, 30px, rgba($color-magenta, 1), -2px, -2px, 20px, rgba($color-magenta, .7), 2px, 2px, 15px, rgba($color-magenta, .4));
+  @include font-size(33px, 40px, 2px);
+  color: $color-magenta;
+  font-family: lunasolregular, Arial, Helvetica, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+
+  // /* Large Devices, Wide Screens */
+  // @media only screen and (max-width: 1200px) {
+  //   margin: 1em 1em;
+  // }
+
+  // /* Small Devices, Tablets */
+  // @media only screen and (max-width: 992px) {
+  //   margin: 1em 1em;
+  // }
+
+  // /* Extra Small Devices, Phones */
+  // @media only screen and (max-width: 480px) {
+  //   margin: 1em 1em;
+  //   line-height: 1.4em;
+  // }
+}
+
+h3 {
+  @include font-size(19px, 25px, 1px);
+  font-family: sfmonolight, Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: $color-green;
+  width: 100%;
+
+  @media screen and (min-width: $sm) {
+    @include font-size(16px, 20px, 1px);
+    margin: 1em;
+  }
+}
+
+h4 {
+  @include font-size(18px, 22px, 1px);
+  text-align: left;
+  color: $color-text;
+  font-family: sfmonolight, Arial, Helvetica, sans-serif;
+  margin-top: 1em;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $sm) {
+    @include font-size(13px, 20px, 1px);
+  }
+}
+
+h5 {
+  @include font-size(18px, 20px, 1px);
+  text-transform: uppercase;
+  font-family: sfmonolight, Arial, Helvetica, sans-serif;
+  padding: 1em 0;
+  letter-spacing: 2px;
+
+  @media screen and (min-width: $sm) {
+    @include font-size(13px, 20px, 1px);
+  }
+}
+
+/* Headings and intros */
+
+// .skills,
+// .source,
+// .presentations,
+// .book,
+// .blog {
+//   &__title {
+//     padding-top: 0.5em;
+//     width: 100%;
+//   }
+
+  // &__intro {
+  //   padding-top: 1em;
+  //   width: 100%;
+

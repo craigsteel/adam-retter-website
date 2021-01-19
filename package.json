@@ -1,0 +1,47 @@
+{
+  "name": "adam-retter-website",
+  "version": "1.0.0",
+  "description": "Adam Retter - Software Developer and Consultant, Java, Scala, C++ and XQuery. Core contributor to eXist-db. Contributor to FaceBook's RocksDB. Digital Archive (UK National Archives).",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"node app.js\" \"npm run watch-css\" ",
+    "start-server": "node app.js",
+    "build-css": "node-sass --include-path scss scss/style.scss public/stylesheets/style.css --output-style compressed",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\" "
+  },
+  "author": "Maximilian Schwarzmüller",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "gulp": "^4.0.2",
+    "gulp-data": "^1.3.1",
+    "gulp-ejs": "^5.1.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-ext-replace": "^0.3.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-mocha": "^7.0.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-svg-sprite": "^1.5.0",
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.7",
+    "supertest": "^6.0.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "http-errors": "~1.6.3",
+    "imagemin-jpeg-recompress": "^7.0.0",
+    "imagemin-pngquant": "^9.0.1",
+    "imagemin-webp": "^6.0.0",
+    "morgan": "~1.9.1",
+    "node-sass": "^5.0.0"
+  }
+}

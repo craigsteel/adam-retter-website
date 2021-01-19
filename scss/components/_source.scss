@@ -1,0 +1,25 @@
+.source {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 2%;
+
+  @media screen and (min-width: $md) {
+    margin: 0 10%;
+  }
+
+  &__card {
+    height: auto;
+    width: auto;
+    text-align: left;
+
+    @media screen and (min-width: $md) {
+      height: 280px;
+      width: 330px;
+    }
+  }
+
+  &__text {
+    @include font-size(17px, 25px, 1px);
+  }
+}
+

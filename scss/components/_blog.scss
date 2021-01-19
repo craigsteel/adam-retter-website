@@ -1,0 +1,27 @@
+.blog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 3em 0 1em;
+
+  @media screen and (min-width: $md) {
+    margin: 3em 0;
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-top: 20px;
+    margin: 0;
+
+    @media screen and (min-width: $md) {
+      margin: 0 5%;
+    }
+  }
+
+  &__card {
+    background-color: $color-blog-blue;
+    padding: 0;
+  }
+}

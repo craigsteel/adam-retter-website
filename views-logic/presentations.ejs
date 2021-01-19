@@ -1,0 +1,76 @@
+<%- include('includes/head.ejs') %>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <header class="header neon">
+        <%- include('includes/navigation.ejs') %>
+        <div class="header__content">
+          <div class="header__name">
+            ADAM RETTER
+          </div>
+            <h1 class="presentations__title">
+              Presentations
+          </h1>
+            <h3 class="presentations__intro">
+              < Presentations I’ve given at Conferences and Events>
+            </h3>
+        </div>
+    </header>
+
+    <main>
+      <section class="presentations">
+            <% if (prods.length> 0) { %>
+              <ul class="presentations__cards cards">
+                <% for (let presentation of prods) { %>
+                  <div class="presentations__card card">
+                    <div class="card__content">
+
+                      <div class="card__title">
+                        <%= presentation.title %>
+                      </div>
+
+                      <div class="card__text">
+                        <p>
+                        @ XML Summer School 2019,
+                        <br>
+                        Oxford
+                        <br>
+                        19th September 2019
+
+                        </p>
+                      </div>
+
+                      <div class="card__link">
+                        <a class="card__link--pdf" href="#" alt="link to downloadable pdf">
+                          <img loading="auto" src="images/svgs/sprite.svg#pdf-file-icon" alt="pdf file"></img>
+                          PDF >
+                        </a>
+                        <a class="card__link--slides" href="#" alt="link to slides">
+                          <img loading="auto" src="images/svgs/sprite.svg#slides-icon" alt="pdf file"></img>
+                          Slides >
+                        </a>
+                      </div>
+                    </div>
+
+                  </div>
+                <% } %>
+              </ul>
+
+            <% } else { %>
+              <h2>No Presentations Found!</h2>
+            <% } %>
+
+              <div class="button">
+                <a class="button__btn button__btn--magenta" href="#" alt="link to contact"> GET IN CONTACT ></a>
+              </div>
+
+      </section>
+        <%- include('includes/book.ejs') %>
+        <%- include('includes/blog.ejs') %>
+    </main>
+
+  </div>
+
+<%- include('includes/end.ejs') %>

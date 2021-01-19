@@ -1,0 +1,41 @@
+/*
+*  Colors
+**/
+
+$color-primary: #293046;
+$color-green: #02dc1a;
+$color-white: #ffffff;
+$color-dark-grey: #363636;
+$color-black: #000000;
+$color-light: #f6f6f6;
+$color-text: #4c565e;
+$color-blue: #84fbff;
+$color-light-blue: #122549;
+$color-light-red: #c4686c;
+$color-red: #941b24;
+$color-dark-blue: #001638;
+$color-dark-blue-2: #1b2336;
+$color-blog-blue: #0d1e3e;
+$gray-darker: #444444;
+$gray-dark: #696969;
+$gray: #999999;
+$gray-light: #cccccc;
+$gray-lighter: #ececec;
+$gray-lightest: lighten($gray-lighter, 4%);
+$color-magenta: #b10580;
+
+
+/*
+*  Media Queries
+**/
+
+$xs: 400px;
+$sm: 600px;
+$md: 800px;
+$mdl: 950px;
+$lg: 1190px;
+$xl: 1440px;
+$xxl: 1700px;
+
+$breakpoints: ('xs': $xs, 'sm': $sm, 'md': $md, 'mdl': $mdl,'lg': $lg, 'xl': $xl);
+

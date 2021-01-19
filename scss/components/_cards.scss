@@ -1,0 +1,153 @@
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-top: 20px;
+  // margin: 0 6%;
+
+  &__item {
+    display: flex;
+    padding: 1.2rem;
+    text-align: center;
+
+    @media(min-width: 40rem) {
+      width: 50%;
+    }
+
+    @media(min-width: 56rem) {
+      width: 33.3333%;
+    }
+  }
+}
+
+.card {
+  position: relative;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 25px 26px rgba($color-black, 0.4);
+  padding: 1.3em 1em;
+  display: flex;
+  flex-direction: column;
+
+  &__image--extreme {
+    background-image: url('../images/webp/photo-1521673252667-e05da380b252.webp');
+  }
+
+  &__image--archival {
+    background-image: url('../images/webp/photo-1550221927-f7e52256370b.webp');
+  }
+
+  &__image--catalogue {
+    background-image: url('../images/webp/photo-1516496636080-14fb876e029d.webp');
+  }
+
+  &__content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    padding-bottom: 2em;
+
+    @media screen and (min-width: $md) {
+      padding-bottom: 0;
+    }
+  }
+
+  &__content-blog {
+    padding: 1em 1em 2em;
+    text-align: left;
+  }
+
+  &__category {
+    @include font-size(8px, 26px, 0);
+    color: $color-white;
+    letter-spacing: 2px;
+    margin-bottom: 0.25rem;
+  }
+
+  &__title {
+    @include font-size(22px, 30px, 1px);
+    font-family: sfmonobold;
+    color: $color-white;
+    padding-bottom: 0.5em;
+
+    @media screen and (min-width: $md) {
+      @include font-size(18px, 26px, 1px);
+    }
+  }
+
+  &__text {
+    @include font-size(16px, 25px, 0);
+    color: $color-white;
+    padding-bottom: 0;
+
+    @media screen and (min-width: $md) {
+      @include font-size(12px, 20px, 1px);
+      padding-bottom: 0;
+    }
+  }
+
+  &__link {
+    @include font-size(15px, 20px, 2px);
+    display: flex;
+    justify-content: flex-start;
+    color: $color-white;
+    position: absolute;
+    bottom: 1em;
+
+    a {
+      display: flex;
+      align-items: center;
+    }
+
+    @media screen and (min-width: $md) {
+      @include font-size(10px, 20px, 2px);
+      bottom: 2em;
+    }
+  }
+
+  &__icon {
+    height: 3em;
+    width: 3em;
+    fill: $color-green;
+    transition: all 0.2s;
+
+    &:hover {
+      transition: all 0.2s;
+      color: $color-blue;
+    }
+  }
+
+  &__image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    // filter: contrast(50%);
+    // //filter: saturate(180%);
+    overflow: hidden;
+    position: relative;
+    transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 56.25%; // 16:9 aspect ratio
+    }
+
+    &:hover {
+      filter: contrast(100%);
+    }
+  }
+
+  @media(min-width: 40rem) {
+    &::before {
+      padding-top: 66.6%; // 3:2 aspect ratio
+    }
+  }
+}

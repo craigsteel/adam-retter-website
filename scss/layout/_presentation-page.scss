@@ -1,0 +1,13 @@
+.presentations.presentation-page {
+  @include background-block;
+
+  @media screen and (min-width: $md) {
+    @include background((
+      'gradient': (to left, (#009de100, #001638)),
+      'image': '',
+      'bg-position': right
+    ));
+    margin: 0 4em;
+  }
+}
+

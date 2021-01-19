@@ -1,0 +1,188 @@
+// =============================================================================
+// String Replace
+// =============================================================================
+
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1)+$replace+str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+  $extmods: (eot: '?', svg: '#'+ str-replace($name, ' ', '_'));
+
+  $formats: (otf: 'opentype', ttf: 'truetype');
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + '.' + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+@mixin font-size($size, $line: $size * 1.5, $space: 0) {
+  font-size: $size;
+  line-height: $line;
+  letter-spacing: $space;
+}
+
+@mixin text-shadow($x1: 2px, $y1: 2px, $blur1: 5px, $color1: null, $x2: null, $y2: null, $blur2: null, $color2: null,
+                    $x3: null, $y3: null, $blur3: null, $color3: null, $x4: null, $y4: null, $blur4: null, $color4: null) {
+  @if ($x2) {
+    text-shadow: $x1 $y1 $blur1 $color1, $x2 $y2 $blur2 $color2;
+  }
+
+  @if ($x3) {
+    text-shadow: $x1 $y1 $blur1 $color1, $x2 $y2 $blur2 $color2, $x3 $y3 $blur3 $color3;
+  }
+
+  @if ($x4) {
+    text-shadow: $x1 $y1 $blur1 $color1, $x2 $y2 $blur2 $color2, $x3 $y3 $blur3 $color3, $x4 $y4 $blur4 $color4;
+  }
+
+  @else {
+    text-shadow: $x1 $y1 $blur1 $color1;
+  }
+}
+
+@mixin stroke($width, $color) {
+  $width: $width + 0;
+  $shadow: 0 0 0 transparent;
+  $i: 0;
+  $w: 1;
+
+  @while ($i < $width) {
+    $i: $i + 1;
+    $j: 0;
+    $w: $w + 2;
+
+    @for $r from 1 through $w {
+      @for $c from 1 through $w {
+        $x: $c - ceil($w / 2);
+        $y: $r - ceil($w / 2);
+
+        $shadow: #{$shadow},
+          #{$x}px #{$y}px 0 $color;
+      }
+    }
+  }
+
+  text-shadow: $shadow;
+}
+
+/* GRADIENT LISTS
+============================================= */
+
+$list3: $color-dark-blue 0%,  $color-dark-blue 100%;
+
+@mixin gradient($direction, $list3) {
+  background: -webkit-linear-gradient($direction, $list3);
+  background: -moz-linear-gradient($direction, $list3);
+  background: -o-linear-gradient($direction, $list3);
+  background: linear-gradient($direction, $list3);
+}
+
+
+$path--rel: '../images/webp/';
+
+@mixin background($custom: ()) {
+
+  $options: map-merge((
+    'gradient': null,
+    'image': null,
+    'bg-repeat': no-repeat,
+    'bg-position': 0 0,
+    'bg-color': transparent
+  ), $custom);
+
+  // we have passed both gradient and image
+  @if map-get($options, 'gradient') and map-get($options, 'image') {
+    background:
+      linear-gradient(map-get($options, 'gradient')),
+      url('#{$path--rel}/#{map-get($options, 'image')}')
+      map-get($options, 'bg-repeat')
+      map-get($options, 'bg-position')
+      map-get($options, 'bg-color');
+  }
+
+  // we have passed just gradient
+  @else if map-get($options, 'gradient') {
+    background: linear-gradient(map-get($options, 'gradient'));
+  }
+
+  // we have passed just image
+  @else if map-get($options, 'image') {
+    background:
+      url('#{$path--rel}/#{map-get($options, 'image')}')
+      map-get($options, 'bg-repeat')
+      map-get($options, 'bg-position')
+      map-get($options, 'bg-color');
+  }
+  margin: 0 auto;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: top;
+}
+
+// USAGE Gradient
+
+.foo {
+  @include background((
+    'gradient': (#001638, #001638)
+  ));
+  // OUTPUT: background: linear-gradient(#009fe1, #3acec2);
+}
+
+// Image
+.bar {
+  @include background((
+    'image': 'bg.jpg'
+  ));
+  // OUTPUT: background: url("../bg.jpg") no-repeat 0 0 transparent;
+}
+
+// Both
+.fizz {
+  @include background((
+    'gradient': (#001638,#001638),
+    'image': 'bg.jpg',
+    'bg-position': center bottom
+  ));
+}
+
+/* OLD GRADIENT
+============================================= */
+// background-image: linear-gradient(to left,
+// rgba($color-dark-blue, 0.2),
+// rgba($color-dark-blue, 1)),
+//   url('../images/webp/home-pres.webp');
+
+
+@mixin background-block {
+  background-image: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-repeat: no-repeat;
+  margin: 1em auto;
+  box-shadow: 0 0 5rem rgba($color-black, .3);
+  padding: 1em 0;
+}
+

@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  font-family: 'sfmonolight', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: $color-dark-blue;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  color: $color-white;
+  background-color: $color-dark-blue;
+  margin: 0;
+}
+
+.wrapper {
+  margin: 0 auto;
+
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width : 480px) {
+    padding: 0 0.5rem;
+  }
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+

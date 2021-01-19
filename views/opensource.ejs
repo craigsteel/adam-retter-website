@@ -1,0 +1,126 @@
+<%- include('includes/head.ejs') %>
+  </head>
+
+  <body>
+    <div class="wrapper">
+
+      <header class="header neon">
+
+        <%- include('includes/navigation.ejs') %>
+
+          <div class="header__content">
+            <div class="header__name">
+              ADAM RETTER
+            </div>
+
+            <div class="header__title">
+              <h1>Software Developer and Consultant</h1>
+            </div>
+
+            <div class="header__intro">
+              <p>
+                Software developer and Consultant, for Java, Scala, C++ and XQuery.</br>
+                Core contributor to eXist-db for the last 13 years.</br>
+                Contributor to FaceBook's RocksDB. Digital Archive (UK National Archives).
+              </p>
+            </div>
+
+            <div class="header__my-space">
+              <h2>Any spare time is split between</h2>
+              <p>RocksDB > An Open Source Embedded Key/Value database; I contribute mainly to the Java API.</br>
+                EXQuery > Launched at XML Prague 2009. Apart from RESTXQ, I am focusing my resources on EXPath
+                at the moment, once that reaches a suitable stage, I will continue with EXQuery.</br>
+                eXist > An Open Source Native XML Database project; I am one of the core developers.</br>
+                W3C XML Query Working Group; I am an invited expert.</br>
+              </p>
+              <div class="button">
+                <a class="button__btn button__btn--magenta" href="#" alt="link to contact"> GET IN CONTACT ></a>
+              </div>
+
+            </div>
+
+      </header>
+
+      <main>
+
+        <section class="source">
+
+          <h1 class="source__title">
+            Open Source
+          </h1>
+          <h3 class="source__intro">
+            < Open Source Repositories >
+          </h3>
+
+          <ul class="cards">
+            <li class="cards__item">
+              <div class="source__card card">
+                <div class="card__content">
+                  <div class="card__title">eXist</div>
+                  <p class="card__text">eXist-db is a high-performance open source native XML database —a NoSQL document
+                    database and application platform built
+                    entirely around XML technologies...
+                  </p>
+                  <p>Java</p>
+                </div>
+                <div class="card__link">
+                  <a href="#" alt="link to Open Source Page">
+                    <svg class="card__icon">
+                      <use href="images/svgs/sprite.svg#github-icon"></use>
+                    </svg> | Read More>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="cards__item">
+              <div class="source__card card">
+                <div class="card__content">
+                  <div class="card__title">JNI Construction Benchmark</div>
+                  <p class="card__text">Providing the code for a small benchmark to compare the costs of JNI object
+                    creation, and then present the results...
+                  </p>
+                  <p>Java</p>
+                </div>
+                <div class="card__link">
+                  <a href="#" alt="link to Open Source Page">
+                    <svg class="card__icon">
+                      <use href="images/svgs/sprite.svg#github-icon"></use>
+                    </svg> | Read More>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="cards__item">
+              <div class="source__card card">
+                <div class="card__content">
+                  <div class="card__title">BlogXQ </div>
+                  <p class="card__text">A simple Blog application written in XQuery 1.0 and XSLT 2.0
+                    This currently powers the blog on adamretter.org.uk...
+                  </p>
+                  <p>JavaScript</p>
+                </div>
+                <div class="card__link">
+                  <a href="#" alt="link to Open Source Page">
+                    <svg class="card__icon">
+                      <use href="images/svgs/sprite.svg#github-icon"></use>
+                    </svg> | Read More>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <div class="button">
+            <a class="button__btn button__btn--magenta" href="/" alt="Back to Home Page"> BACK TO HOME ></a>
+          </div>
+
+        </section>
+
+        <%- include('includes/book.ejs') %>
+
+        <%- include('includes/blog.ejs') %>
+      </main>
+
+    </div>
+
+    <%- include('includes/end.ejs') %>

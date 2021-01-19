@@ -1,0 +1,90 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  color: $color-light-blue;
+  transition: all 0.3s ease-out;
+
+  @media screen and (min-width: $md) {
+    display: none;
+  }
+
+  &__Items {
+    opacity: 0;
+    transform: scale(1.2);
+    transition: all 1s ease;
+    z-index: -10;
+    position: relative;
+  }
+
+  &__ToggleShow {
+    background-color: $color-white;
+    padding: 2em 0;
+    opacity: 1;
+    z-index: 20;
+    transform: scale(1);
+  }
+
+  &__Link-toggle {
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__Link {
+    padding: 1em 2em;
+    transition: all 3s ease-out;
+
+    a {
+      @include font-size(30px, 30px, 2px);
+      text-transform: uppercase;
+      color: $color-light-blue;
+      transition: all 1s ease;
+
+      &:hover {
+        color: $color-blue;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__burger {
+    z-index: 30;
+    width: 50px;
+    height: 36px;
+    color: $color-light-blue;
+    right: 35px;
+    top: 35px;
+    position: absolute;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 5px;
+      background-color: $color-white;
+    }
+
+    &__middle {
+      position: absolute;
+      top: 15px;
+      left: 0;
+      width: 50px;
+      height: 5px;
+      background-color: $color-white;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 5px;
+      background-color: $color-white;
+    }
+  }
+}
