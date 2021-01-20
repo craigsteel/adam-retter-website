@@ -1,6 +1,6 @@
 .header {
   @include background((
-    'gradient': (to bottom, (#009de100, #001638)),
+    'gradient': (to bottom, (#61a7c600, #001638)),
     'image': 'home-banner@1x.webp',
     'bg-position': top
   ));
@@ -9,11 +9,12 @@
     (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
     (min-width: 125em) {
     @include background((
-      'gradient': (to bottom, (#009de100, #001638)),
+      'gradient': (to bottom, (#61a7c600, #001638)),
       'image': 'home-banner@2x.webp',
       'bg-position': center
     ));
   }
+
 
   &__software {
     @include background((

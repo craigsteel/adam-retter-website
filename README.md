@@ -8,9 +8,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Requirements
 
-* NodeJS
 * NPM
 * Express.js
+* NodeJS
 * Gulp.js
 * ejs (templating language)
 
@@ -25,23 +25,33 @@ cd adam-retter-app
 npm install
 ```
 
-### Building
+### Running
 
-If you want to build a distribution for uploading to the webserver you can run:
+```bash
+npm start
+```
+
+* Starts live server
+* Compile scss to compress css and move to public folder/stylesheets/style.css.
+* Watch for changes
 
 ```bash
 gulp
 ```
 
-The `public/` folder will contain the generated website
+* Compress images and move to public folder/images/webp.
+* Move fonts to public folder
+* Create svg sprite in public folder/images/svgs.
 
-### Running
+### Building
 
-If you want to run a copy of the website locally with support for a live-editing-update loop, run:
+If you want to build a distribution for uploading to the webserver you can run:
 
 ```bash
-gulp watch
+npm run build
 ```
+
+The `public/` folder will contain the generated website
 
 ## Authors
 
