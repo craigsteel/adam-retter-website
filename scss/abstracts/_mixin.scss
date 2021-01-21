@@ -42,8 +42,11 @@
   letter-spacing: $space;
 }
 
-@mixin text-shadow($x1: 2px, $y1: 2px, $blur1: 5px, $color1: null, $x2: null, $y2: null, $blur2: null, $color2: null,
-                    $x3: null, $y3: null, $blur3: null, $color3: null, $x4: null, $y4: null, $blur4: null, $color4: null) {
+@mixin text-shadow(
+  $x1: null, $y1: null, $blur1: null, $color1: null,
+  $x2: null, $y2: null, $blur2: null, $color2: null,
+  $x3: null, $y3: null, $blur3: null, $color3: null,
+  $x4: null, $y4: null, $blur4: null, $color4: null) {
   @if ($x2) {
     text-shadow: $x1 $y1 $blur1 $color1, $x2 $y2 $blur2 $color2;
   }
