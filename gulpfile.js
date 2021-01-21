@@ -69,8 +69,8 @@ function generateSVG(cb) {
 }
 
 //Images
-const IMAGES_PATH = './images/png-jpg/*.{png,jpeg,jpg,gif}';
-const IMAGES_DIST_PATH = 'public/images/webp';
+const IMAGES_PATH = './images/png-jpg/*.{png,jpeg,jpg,gif,webp}';
+const IMAGES_DIST_PATH = 'public/images';
 
 function generateWEBP(cb) {
   return src(IMAGES_PATH)
@@ -84,7 +84,6 @@ function generateWEBP(cb) {
         imageminWebp({quality: 75})
       ]
     ))
-    .pipe(extReplace('.webp'))
     .pipe(dest(IMAGES_DIST_PATH))
     .on('end', function() {
       cb();

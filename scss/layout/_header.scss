@@ -1,4 +1,9 @@
 .header {
+  // position: relative;
+  // background-image: url(../images/home-banner@1x.jpg);
+  // background-size: cover;
+  // background-position: top;
+
   @include background((
     'gradient': (to bottom, (#61a7c600, #001638)),
     'image': 'home-banner@1x.webp',

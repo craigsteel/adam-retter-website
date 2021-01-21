@@ -92,7 +92,7 @@ img {
   }
 
   &__link {
-    @include font-size(15px, 20px, 2px);
+    @include font-size(14px, 20px, 0);
     display: flex;
     justify-content: flex-start;
     color: $color-white;
