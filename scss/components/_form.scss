@@ -6,7 +6,7 @@
 }
 
 .main-area {
-  margin-bottom: 2em;
+  margin: 2em auto;
 
   &__form {
     background-color: $color-dark-blue;
@@ -25,6 +25,7 @@
     }
   }
 
+  .content-form,
   .top-form,
   .middle-form,
   .bottom-form {
