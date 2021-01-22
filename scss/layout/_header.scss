@@ -110,7 +110,7 @@
 
   &__name-mobile {
     display: block;
-    margin: -2em auto 2em;
+    margin: -2em auto 0;
 
     @media screen and (min-width: $md) {
       display: none;
@@ -120,17 +120,18 @@
   &__title {
     align-items: center;
     width: 100%;
-    margin: -2em 0;
+    // margin: -4em 0;
 
     @media screen and (min-width: $md) {
       margin: 1em auto 0;
     }
 
     h1 {
-      @include font-size(36px, 37px, 4px);
+      @include font-size(36px, 38px, 1px);
       margin: 0.5em 0;
       text-shadow: none;
       color: $color-white;
+      padding-bottom: .5em;
 
       @media screen and (min-width: $md) {
         @include font-size(29px, 30px, 4px);
@@ -139,10 +140,10 @@
   }
 
   &__intro {
-    margin: 2% 5% 7%;
+    margin: 0 1em;
 
     @media screen and (min-width: $md) {
-      margin: 2% 0% 1%;
+      margin: 0 1em;
     }
 
     p {
