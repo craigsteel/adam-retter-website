@@ -31,6 +31,10 @@ body {
   @media only screen and (max-width : 480px) {
     padding: 0 0.5rem;
   }
+
+  &__error {
+    margin-bottom: 2em;
+  }
 }
 
 main {
