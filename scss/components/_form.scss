@@ -140,6 +140,7 @@
     @include font-size(14px, 10px, 1px);
     transition: all 0.4s;
     border: 1px solid #b10580;
+    cursor: pointer;
     // font-family: sfmonomedium, Arial, Helvetica, sans-serif;
 
     &--submit {

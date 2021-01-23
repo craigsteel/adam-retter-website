@@ -49,19 +49,19 @@
   @media screen and (min-width: $sm) {
     li a {
       padding: 25px 8px;
-      letter-spacing: 1px;
+      letter-spacing: 0;
     }
 
     /* Large Devices, Wide Screens */
     @media screen and (max-width: $lg) {
       padding: 25px 15px;
-      letter-spacing: 1px;
+      letter-spacing: 0;
     }
 
     /* Medium Devices, Desktops */
     @media screen and (min-width: $md) {
       padding: 25px 10px;
-      letter-spacing: 1px;
+      letter-spacing: 0;
     }
   }
 }
