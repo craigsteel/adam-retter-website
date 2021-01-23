@@ -51,7 +51,7 @@
   .card {
     &__text {
       p {
-        @include font-size(14px, 24px, 1px);
+        @include font-size(13px, 23px, 1px);
 
         @media screen and (min-width: $md) {
           @include font-size(13px, 21px, 1px);
@@ -59,18 +59,18 @@
       }
     }
 
-    &__link {
-      &--software {
-        display: flex;
-        flex-wrap: wrap;
-        align-content: flex-end;
-        flex-direction: column;
-        width: 4em;
+    &__link-software {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-end;
+      flex-direction: column;
+      width: 4em;
+      padding-bottom: 1em;
 
-        @media screen and (min-width: $md) {
-          width: 5em;
-          margin: 0 -1em 1em;
-        }
+      @media screen and (min-width: $md) {
+        width: 5em;
+        margin: 0 -0.5em 1em;
+        padding: 0;
       }
     }
   }

@@ -42,22 +42,18 @@
 
                     <div class="card__text">
                       <p>
-                        @ XML Summer School 2019,
-                        <br>
-                        Oxford
-                        <br>
-                        19th September 2019
+                        <%= presentation.description %>
                       </p>
                     </div>
 
                     <div class="card__link">
-                      <a class="card__link-pdf" href="#" alt="link to downloadable pdf">
-                        <img loading="auto" src="../images/svgs/sprite.svg#pdf-file-icon" alt="pdf file"></img>
+                      <a class="card__link-pdf" href="<%= presentation.pdfLink %>" alt="link to downloadable pdf">
+                        <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.pdfIcon %>" alt="pdf file"></img>
                           PDF >
                       </a>
 
-                      <a class="card__link-slides" href="#" alt="link to slides">
-                        <img loading="auto" src="../images/svgs/sprite.svg#slides-icon" alt="pdf file"></img>
+                      <a class="card__link-slides" href="<%= presentation.slidesLink %>" alt="link to slides">
+                        <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.slidesIcon %>" alt="slides file"></img>
                           Slides >
                       </a>
                     </div>
