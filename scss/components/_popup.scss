@@ -17,13 +17,36 @@
 }
 
 .popup {
-  margin: 70px auto;
-  padding: 20px;
+  margin: 90px auto;
+  padding: 10px;
   background-color: rgba(0, 33, 68, 0.89);
   border-radius: 1px;
-  width: 30%;
+  width: 80%;
   position: relative;
-  transition: all 5s ease-in-out;
+  transition: all 2s ease-in-out;
+  letter-spacing: 0;
+
+  @media screen and (min-width: $md) {
+    margin: 80px auto;
+    padding: 20px;
+    width: 30%;
+  }
+
+  p {
+    @include font-size(15px, 24px, 0);
+
+    @media screen and (min-width: $md) {
+      @include font-size(13px, 22px, 1px);
+    }
+  }
+
+  &__icon {
+    width: 9em;
+
+    @media screen and (min-width: $md) {
+      width: 12em;
+    }
+  }
 
   h2 {
     margin-top: 0;
