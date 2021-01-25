@@ -21,7 +21,7 @@ From your Terminal, run:
 ```bash
 git clone https://github.com/craigsteel/adam-retter-website.git
 
-cd adam-retter-app
+cd adam-retter-website
 npm install
 ```
 
