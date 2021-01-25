@@ -24,8 +24,12 @@
   &__content {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 5%;
+    margin-left: 10%;
     padding-top: 2%;
+
+    @media screen and (min-width: $md) {
+      margin-left: 5%;
+    }
   }
 
   &__menu,
@@ -39,8 +43,20 @@
       text-transform: uppercase;
 
       @media screen and (min-width: $md) {
-        @include font-size(12px, 12px, 1px);
+        @include font-size(12px, 12px, 0);
         padding: 1em 0 0;
+      }
+    }
+  }
+
+  &__contact {
+    margin-right: 2em;
+
+    li {
+      @include font-size(15px, 10px, 0);
+
+      @media screen and (min-width: $md) {
+        @include font-size(12px, 12px, 0);
       }
     }
   }
