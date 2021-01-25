@@ -21,6 +21,15 @@
     @media screen and (min-width: $md) {
       margin: 0 0 1em 3em;
     }
+
+    &--center {
+      justify-content: center;
+      margin: 0 auto;
+
+      @media screen and (min-width: $md) {
+        margin: 0 auto;
+      }
+    }
   }
 
   &__card {
