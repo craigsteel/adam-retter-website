@@ -1,6 +1,5 @@
 <%- include('../includes/head.ejs') %>
-    <!-- <link rel="stylesheet" href="/css/forms.css">
-    <link rel="stylesheet" href="/css/content.css"> -->
+
 </head>
 
 <body>
@@ -9,61 +8,70 @@
     <div class="header__title">
       <h1>Add Content</h1>
     </div>
-    <main>
-      <section class="main-area">
-        <div class="header__title">
-          <h3>Presentations</h3>
-        </div>
-          <div class="main-area__form">
 
-            <form class="content-form" action="/admin/add-content" method="POST">
-              <div class="form-control">
-                <label for="title">Title</label>
-                <input type="text" name="title" id="title">
-              </div>
+      <main>
 
-              <div class="form-control">
-                <label for="description">Description</label>
-                <textarea name="description" id="description" rows="5"></textarea>
-              </div>
+        <section class="main-area">
 
-              <div class="form-control">
-                <label for="slidesIcon">Icon</label>
-                <label class="form-control__example">(slide-icon, pdf-icon or youtube-icon)</label>
-                <input type="text" name="slidesIcon" id="slidesIcon">
-              </div>
-
-              <div class="form-control">
-                <label for="slidesLink">Add full Link</label>
-                <input type="text" name="slidesLink" id="slidesLink">
-              </div>
-
-              <div class="form-control">
-                <label for="slidesIcon">Icon</label>
-                <label class="form-control__example">(slide-icon, pdf-icon or youtube-icon)</label>
-                <input type="text" name="slidesIcon" id="slidesIcon">
-              </div>
-
-              <div class="form-control">
-                <label for="slidesLink">Add full Link</label>
-                <input type="text" name="slidesLink" id="slidesLink">
-              </div>
-
-              <div class="form-control">
-                <label for="slidesIcon">Icon</label>
-                <label class="form-control__example">(slide-icon, pdf-icon or youtube-icon)</label>
-                <input type="text" name="slidesIcon" id="slidesIcon">
-              </div>
-
-              <div class="form-control">
-                <label for="slidesLink">Add full Link</label>
-                <input type="text" name="slidesLink" id="slidesLink">
-              </div>
-
-              <button class="button__btn button__btn--submit" type="submit">Add Content</button>
-            </form>
+          <div class="header__title">
+            <h3>Presentations</h3>
           </div>
 
-      </section>
-    </main>
+            <div class="main-area__form">
+
+              <form class="content-form" action="/admin/add-content" method="POST">
+
+                <div class="form-control">
+                  <label for="title">Title</label>
+                  <input type="text" name="title" id="title">
+                </div>
+
+                <div class="form-control">
+                  <label for="description">Description</label>
+                  <textarea name="description" id="description" rows="5"></textarea>
+                </div>
+
+                <div class="form-control">
+                  <label for="slidesIcon">Icon</label>
+                  <label class="form-control__example">(slide-icon, pdf-icon or youtube-icon)</label>
+                  <input type="text" name="slidesIcon" id="slidesIcon">
+                </div>
+
+                <div class="form-control">
+                  <label for="slidesLink">Add full Link</label>
+                  <input type="text" name="slidesLink" id="slidesLink">
+                </div>
+
+                <div class="form-control">
+                  <label for="slidesIcon">Icon</label>
+                  <label class="form-control__example">(slide-icon, pdf-icon or youtube-icon)</label>
+                  <input type="text" name="slidesIcon" id="slidesIcon">
+                </div>
+
+                <div class="form-control">
+                  <label for="slidesLink">Add full Link</label>
+                  <input type="text" name="slidesLink" id="slidesLink">
+                </div>
+
+                <div class="form-control">
+                  <label for="slidesIcon">Icon</label>
+                  <label class="form-control__example">(slide-icon, pdf-icon or youtube-icon)</label>
+                  <input type="text" name="slidesIcon" id="slidesIcon">
+                </div>
+
+                <div class="form-control">
+                  <label for="slidesLink">Add full Link</label>
+                  <input type="text" name="slidesLink" id="slidesLink">
+                </div>
+
+                <button class="button__btn button__btn--submit" type="submit">Add Content</button>
+
+              </form>
+
+            </div>
+
+        </section>
+
+      </main>
+
 <%- include('../includes/end.ejs') %>
