@@ -1,7 +1,6 @@
-@import 'normalize';
-@import 'abstracts/variables';
-@import 'abstracts/mixin';
-
+@import 'base/normalize';
+@import 'base/variables';
+@import 'base/mixin';
 @import 'base/base';
 @import 'base/typography';
 
@@ -22,3 +21,4 @@
 @import 'layout/header';
 @import 'layout/footer';
 @import 'layout/presentation-page';
+
