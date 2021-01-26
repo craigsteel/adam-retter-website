@@ -47,20 +47,23 @@
                     </div>
 
                     <div class="card__link">
-                      <a class="card__link-pdf" href="<%= presentation.pdfLink %>" alt="link to downloadable pdf">
-                        <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.pdfIcon %>"
-                          alt="pdf file"></img>
-                        PDF >
+                      <a class="card__link-pdf" href="<%= presentation.firstLink %>" alt="link to page">
+                        <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.firstIcon %>"
+                          alt="icon image"></img>
                       </a>
 
-                      <a class="card__link-slides" href="<%= presentation.slidesLink %>" alt="link to slides">
-                        <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.slidesIcon %>"
-                          alt="slides file"></img>
-                        Slides >
+                      <a class="card__link-slides" href="<%= presentation.secondLink %>" alt="link to page">
+                        <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.secondIcon %>" alt="icon image"></img>
                       </a>
                     </div>
 
+                    <a class="card__link-slides" href="<%= presentation.thirdLink %>" alt="link to page">
+                      <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.thirdIcon %>"
+                        alt="icon image"></img>
+                    </a>
                   </div>
+
+                </div>
                 </div>
                 <% } %>
             </ul>

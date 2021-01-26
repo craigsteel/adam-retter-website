@@ -23,17 +23,21 @@ exports.getAddPresentation = (req, res, next) => {
 exports.postAddPresentation = (req, res, next) => {
   const title = req.body.title;
   const description = req.body.description;
-  const pdfIcon = req.body.pdfIcon;
-  const pdfLink = req.body.pdfLink;
-  const slidesIcon = req.body.slidesIcon;
-  const slidesLink = req.body.slidesLink;
+  const firstIcon = req.body.firstIcon;
+  const firstLink = req.body.firstLink;
+  const secondIcon = req.body.secondIcon;
+  const secondLink = req.body.secondLink;
+  const thirdIcon = req.body.thirdIcon;
+  const thirdLink = req.body.thirdLink;
   const presentation = new Presentation(
     title,
     description,
-    pdfIcon,
-    pdfLink,
-    slidesIcon,
-    slidesLink
+    firstIcon,
+    firstLink,
+    secondIcon,
+    secondLink,
+    thirdIcon,
+    thirdLink
   );
   presentation.save();
   res.redirect('/presentations');
