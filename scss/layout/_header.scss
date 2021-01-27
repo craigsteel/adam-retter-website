@@ -42,7 +42,7 @@
   &__presentation {
     @include background((
       'gradient': (to bottom, (#009de100, #001638)),
-      'image': 'presentations-banner@1x.webp',
+      'image': 'Adam-pres-banner@1x.jpg',
       'bg-position': top,
     ));
 
@@ -51,7 +51,7 @@
       (min-width: 125em) {
       @include background((
         'gradient': (to bottom, (#000a0e3f, #001638)),
-        'image': 'presentations-banner@2x.webp',
+        'image': 'Adam-pres-banner@2x.jpg',
         'bg-position': center
       ));
     }
@@ -60,7 +60,7 @@
   &__open {
     @include background((
       'gradient': (to bottom, (#02202d89, #001638)),
-      'image': 'open-source-banner@1x.webp',
+      'image': 'Adam-open-banner@x1.jpg',
       'bg-position': top,
     ));
 
@@ -69,7 +69,7 @@
       (min-width: 125em) {
       @include background((
         'gradient': (to bottom, (#02202d89, #001638)),
-        'image': 'open-source-banner@2x.webp',
+        'image': 'Adam-open-banner@2x.jpg',
         'bg-position': center
       ));
     }
