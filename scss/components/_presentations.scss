@@ -14,6 +14,14 @@
     margin: 2em;
   }
 
+  &__intro {
+    margin-bottom: 0;
+
+    @media screen and (min-width: $md) {
+      margin-bottom: 3em;
+    }
+  }
+
   &__cards {
     margin: 0 auto;
     width: 100%;
