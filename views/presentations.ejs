@@ -4,34 +4,33 @@
   <body>
     <div class="wrapper">
 
-          <header class="header">
+    <header class="header header__presentation">
 
-            <%- include('includes/navigation.ejs') %>
+        <%- include('includes/navigation.ejs') %>
 
-            <div class="header__content">
-              <div class="header__name-online">
-                <img loading="auto" src="../images/Adam-Home-oneline-v1.png" alt="Java logo"></img>
-              </div>
+        <div class="header__content">
+          <div class="header__name-online">
+            <img loading="auto" src="../images/Adam-Home-oneline-v1.png" alt="Java logo"></img>
+          </div>
 
-              <div class="header__name-mobile">
-                <img loading="auto" src="../images/Adam-Home-mobile-v1.png" alt="Java logo"></img>
-              </div>
+          <div class="header__name-mobile">
+            <img loading="auto" src="../images/Adam-Home-mobile-v1.png" alt="Java logo"></img>
+          </div>
 
-              <h1 class="presentations__title">
-                Presentations
-              </h1>
-
-              <h3 class="presentations__intro">
-                < Presentations I’ve given at Conferences and Events >
-              </h3>
-
-            </header>
+          <h1 class="presentations__title">
+            Presentations
+          </h1>
+          <h3 class="presentations__intro">
+            < Presentations I’ve given at Conferences and Events>
+          </h3>
+        </div>
+    </header>
 
       <main>
 
-        <section class="presentations">
+        <section class="presentations presentation-page">
           <% if (prods.length> 0) { %>
-            <ul class="presentations__cards cards">
+            <ul class="presentations__cards presentations__cards--center cards">
               <% for (let presentation of prods) { %>
                 <div class="presentations__card card">
                   <div class="card__content">
@@ -62,7 +61,7 @@
 
                 </div>
                 </div>
-                <% } %>
+              <% } %>
             </ul>
 
             <% } else { %>

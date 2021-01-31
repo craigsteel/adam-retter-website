@@ -1,0 +1,88 @@
+<%- include('includes/head.ejs') %>
+  </head>
+
+  <body>
+    <div class="wrapper">
+
+      <header class="header">
+
+        <%- include('includes/navigation.ejs') %>
+
+          <div class="header__content">
+            <div class="header__name-online">
+              <img loading="auto" src="../images/Adam-Home-oneline-v1.png" alt="Java logo"></img>
+            </div>
+
+            <div class="header__name-mobile">
+              <img loading="auto" src="../images/Adam-Home-mobile-v1.png" alt="Java logo"></img>
+            </div>
+
+            <h1 class="presentations__title">
+              Admin Presentations
+            </h1>
+
+            <h3 class="presentations__intro">
+              < Presentations I’ve given at Conferences and Events>
+            </h3>
+
+      </header>
+
+      <main>
+
+        <section class="presentations">
+          <% if (prods.length> 0) { %>
+            <ul class="presentations__cards cards">
+              <% for (let presentation of prods) { %>
+                <div class="presentations__card card">
+                  <div class="card__content">
+                    <div class="card__title">
+                      <%= presentation.title %>
+                    </div>
+
+                    <div class="card__text">
+                      <p>
+                        <%= presentation.description %>
+                      </p>
+                    </div>
+
+                    <div class="card__link">
+                      <a class="card__link-pdf" href="<%= presentation.firstLink %>" alt="link to page">
+                        <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.firstIcon %>"
+                          alt="icon image"></img>
+                      </a>
+
+                      <a class="card__link-slides" href="<%= presentation.secondLink %>" alt="link to page">
+                        <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.secondIcon %>"
+                          alt="icon image"></img>
+                      </a>
+                    </div>
+
+                    <a class="card__link-slides" href="<%= presentation.thirdLink %>" alt="link to page">
+                      <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.thirdIcon %>"
+                        alt="icon image"></img>
+                    </a>
+                  </div>
+                </div>
+    </div>
+    <% } %>
+      </ul>
+
+      <% } else { %>
+        <h2>No Presentations Found!</h2>
+        <% } %>
+
+          <div class="button">
+            <a class="button__btn button__btn--magenta" href="#" alt="link to contact"> GET IN CONTACT ></a>
+          </div>
+
+          </section>
+
+          <%- include('includes/book.ejs') %>
+
+            <%- include('includes/blog.ejs') %>
+
+              </main>
+
+              </div>
+
+              <%- include('includes/end.ejs') %>
