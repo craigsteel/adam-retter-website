@@ -12,7 +12,7 @@ app.set('views', 'views');
 
 
 const adminRoutes = require('./routes/admin');
-const indexRoutes = require('./routes');
+const indexRoutes = require('./routes/index');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -23,3 +23,4 @@ app.use(indexRoutes);
 app.use(errorController.get404);
 
 app.listen(3000);
+

@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"node app.js\" \"npm run watch-css\" ",
-    "start-server": "node app.js",
     "watch-css": "nodemon -e scss -x \"npm run build-css\" ",
     "build-css": "node-sass --include-path scss scss/style.scss public/stylesheets/style.css --output-style compressed"
   },

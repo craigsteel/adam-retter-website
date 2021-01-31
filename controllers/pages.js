@@ -1,3 +1,6 @@
+const Presentation = require('../models/presentation');
+
+
 exports.getOpensource = (req, res, next) => {
   res.render('opensource', {
     pageTitle: 'Adam Retter Open Source',
@@ -31,8 +34,6 @@ exports.get404 = (req, res, next) => {
     pageTitle: 'Page Not Found'
   });
 };
-
-const Presentation = require('../models/presentation');
 
 exports.getPresentations = (req, res, next) => {
   Presentation.fetchAll(presentations => {

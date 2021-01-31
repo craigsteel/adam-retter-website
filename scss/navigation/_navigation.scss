@@ -25,7 +25,9 @@
     padding: 0 0.5em;
     @include font-size(12px, 12px, 1px);
 
-    &:hover {
+    &:hover,
+    &:active,
+    &.active {
       color: $color-green;
     }
   }
