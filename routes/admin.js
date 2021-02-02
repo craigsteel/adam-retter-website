@@ -12,6 +12,6 @@ router.get('/all-content', adminController.getAllcontent);
 
 router.post('/add-content', adminController.postAddPresentation);
 
-router.get('/edit-presentation', adminController.getEditPresentation);
+router.get('/edit-content/:presId', adminController.getEditPresentation);
 
 module.exports = router;

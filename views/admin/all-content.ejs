@@ -72,7 +72,7 @@
                         <form action="/admin/delete-presentation" method="POST">
                           <button class="button__btn button__btn--magenta" type='submit' alt="Delete presentation"> Delete ></button>
                         </form>
-                        <a class="button__btn button__btn--magenta" href="/admin/edit-presentation" alt="Delete presentation"> Edit ></a>
+                        <a class="button__btn button__btn--magenta" href="/admin/edit-content/<%= presentation.id %>?edit=true" alt="Edit presentation"> Edit ></a>
                       </div>
                     </div>
                   <% } %>
