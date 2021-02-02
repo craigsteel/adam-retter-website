@@ -4,7 +4,7 @@
   margin: 1em 1em;
 
   &__btn {
-    @include font-size(20px, 17px, 1px);
+    @include font-size(20px, 10px, 1px);
     text-transform: uppercase;
     text-decoration: none;
     font-family: sfmonomedium, sans-serif;
@@ -22,7 +22,7 @@
       width: fit-content;
 
       @media screen and (min-width: $md) {
-        @include font-size(14px, 16px, 1px);
+        @include font-size(14px, 11px, 1px);
       }
     }
 

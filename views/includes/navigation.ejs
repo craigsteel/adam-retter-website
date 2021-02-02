@@ -33,9 +33,6 @@
 
       <nav class="navigation">
         <ul>
-          <li><a href="/admin/add-content" alt="link to Admin add content">add Content</a></li>
-          <li><a href="/admin/all-content" alt="link to Admin add content">All Content</a></li>
-
           <li><a class="<%= path === '/' ? 'active' : '' %>" href="/" alt="link to Adam Retter Home page">Home</a></li>
           <li><a class="<%= path === '/presentations' ? 'active' : '' %>" href="/presentations" alt="link to Adam Retter Presentations">Presentations</a></li>
           <li><a class="<%= path === '/opensource' ? 'active' : '' %>" href="/opensource" alt="link to Adam Retter Open Source">Open source</a></li>
@@ -76,5 +73,11 @@
                 </a>
               </li>
             </ul>
+            <div class="admin__menu">
+              <ul>
+                <li><a href="/admin/add-content" alt="link to Admin add content">add Content</a></li>
+                <li><a href="/admin/all-content" alt="link to Admin add content">All Content</a></li>
+              </ul>
+            </div>
 
       </nav>

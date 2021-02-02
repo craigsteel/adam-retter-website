@@ -1,4 +1,11 @@
 .admin {
+  &__menu {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+
   &__title {
     @include font-size(20px, 27px, 2px);
     font-family: sfmonomedium, Arial, Helvetica, sans-serif;
@@ -20,7 +27,7 @@
     transition: all 0.3s;
 
     &:hover {
-      box-shadow: 0 10px 20px rgba($color-black, 0.5);
+      box-shadow: 0 0 20px 10px rgba($color-black, 0.5);
       background: $color-dark-blue;
       color: $color-white;
     }
