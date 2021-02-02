@@ -1,7 +1,7 @@
 .button {
   display: flex;
   width: 100%;
-  margin: 1em auto 3em;
+  margin: 1em 1em;
 
   &__btn {
     @include font-size(20px, 17px, 1px);
@@ -10,6 +10,7 @@
     font-family: sfmonomedium, sans-serif;
     color: $color-magenta;
     padding: 18px;
+    background-color: transparent;
 
     &:link,
     &:visited {

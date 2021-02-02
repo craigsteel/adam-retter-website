@@ -1,0 +1,29 @@
+.admin {
+  &__title {
+    @include font-size(20px, 27px, 2px);
+    font-family: sfmonomedium, Arial, Helvetica, sans-serif;
+    color: $color-green;
+    margin: 0 auto;
+    padding: 0;
+
+    @media screen and (min-width: $md) {
+      margin: 1em 3.5em 0;
+    }
+  }
+
+  &__edit {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(177, 5, 128, 0.4);
+    margin: 2em 1em 2em 0;
+    background-color: $color-dark-blue;
+    transition: all 0.3s;
+
+    &:hover {
+      box-shadow: 0 10px 20px rgba($color-black, 0.5);
+      background: $color-dark-blue;
+      color: $color-white;
+    }
+  }
+}
+

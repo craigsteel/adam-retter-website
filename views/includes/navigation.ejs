@@ -22,7 +22,8 @@
           <a href="/publications" alt="link to Adam Retter publications">Publications</a>
         </div>
         <div class="navbar__Link">
-          <a href="https://blog.adamretter.org.uk/author/adamretter/" alt="link to Adam Retter Blog">blog</a>
+          <a href="https://blog.adamretter.org.uk/author/adamretter/" alt="link to Adam Retter Blog" target="_blank"
+                  rel="noopener noreferrer">blog</a>
         </div>
         <div class="navbar__Link">
           <a href="/contact">Contact</a>
@@ -33,15 +34,15 @@
       <nav class="navigation">
         <ul>
           <li><a href="/admin/add-content" alt="link to Admin add content">add Content</a></li>
-          <li><a href="/admin/presentations" alt="link to Admin add content">Content</a></li>
+          <li><a href="/admin/all-content" alt="link to Admin add content">All Content</a></li>
 
-          <li><a class="active" href="/" alt="link to Adam Retter Home page">Home</a></li>
-          <li><a href="/presentations" alt="link to Adam Retter Presentations">Presentations</a></li>
-          <li><a href="/opensource" alt="link to Adam Retter Open Source">Open source</a></li>
-          <li><a href="/software" alt="link to Adam retter Purchased Software">Software</a></li>
-          <li><a href="/publications" alt="link to Adam Retter publications">Publications</a></li>
-          <li><a href="https://blog.adamretter.org.uk/author/adamretter/" alt="link to Adam Retter Blog">Blog</a></li>
-          <li><a href="/contact" alt="link to Adam Retter publications">Contact</a></li>
+          <li><a class="<%= path === '/' ? 'active' : '' %>" href="/" alt="link to Adam Retter Home page">Home</a></li>
+          <li><a class="<%= path === '/presentations' ? 'active' : '' %>" href="/presentations" alt="link to Adam Retter Presentations">Presentations</a></li>
+          <li><a class="<%= path === '/opensource' ? 'active' : '' %>" href="/opensource" alt="link to Adam Retter Open Source">Open source</a></li>
+          <li><a class="<%= path === '/software' ? 'active' : '' %>" href="/software" alt="link to Adam retter Purchased Software">Software</a></li>
+          <li><a class="<%= path === '/publications' ? 'active' : '' %>" href="/publications" alt="link to Adam Retter publications">Publications</a></li>
+          <li><a class="<%= path === 'https://blog.adamretter.org.uk/author/adamretter/' ? 'active' : '' %>" href="https://blog.adamretter.org.uk/author/adamretter/" alt="link to Adam Retter Blog" target="_blank" rel="noopener noreferrer">Blog</a></li>
+          <li><a class="<%= path === '/contact' ? 'active' : '' %>" href="/contact" alt="link to Adam Retter publications">Contact</a></li>
         </ul>
 
           <ul class="navigation__phone">

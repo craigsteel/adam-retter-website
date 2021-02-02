@@ -1,5 +1,11 @@
 const Presentation = require('../models/presentation');
 
+exports.getHome = (req, res, next) => {
+  res.render('home', {
+    pageTitle: 'Adam Retter Home',
+    path: '/'
+  });
+};
 
 exports.getOpensource = (req, res, next) => {
   res.render('opensource', {
@@ -10,7 +16,7 @@ exports.getOpensource = (req, res, next) => {
 
 exports.getContact = (req, res, next) => {
   res.render('contact', {
-    pageTitle: 'Adam Retter Contacts',
+    pageTitle: 'Adam Retter Contact',
     path: '/contact',
   });
 };

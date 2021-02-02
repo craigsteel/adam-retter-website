@@ -2,21 +2,8 @@ const Presentation = require('../models/presentation');
 
 exports.getAddPresentation = (req, res, next) => {
   res.render('admin/add-content', {
-    pageTitle: 'Add presentation',
-    path: '/admin/add-content',
-    formsCSS: true,
-    contentCSS: true,
-    activeAddPresentation: true
-  });
-};
-
-exports.getAddPresentations = (req, res, next) => {
-  res.render('admin/presentations', {
-    pageTitle: 'Presentations',
-    path: '/admin/presentations',
-    formsCSS: true,
-    contentCSS: true,
-    activeAddPresentation: true
+    pageTitle: 'Add Content',
+    path: '/admin/add-content'
   });
 };
 
@@ -40,5 +27,22 @@ exports.postAddPresentation = (req, res, next) => {
     thirdLink
   );
   presentation.save();
-  res.redirect('admin/presentations');
+  res.redirect('/presentations');
+};
+
+exports.getAllcontent = (req, res, next) => {
+  Presentation.fetchAll(presentations => {
+    res.render('admin/all-content', {
+      prods: presentations,
+      pageTitle: 'Admin All Content',
+      path: '/admin/all-content',
+    });
+  });
+};
+
+exports.getEditPresentation = (req, res, next) => {
+  res.render('admin/edit-presentation', {
+    pageTitle: 'Edit Presentation',
+    path: '/admin/edit-presentation'
+  });
 };

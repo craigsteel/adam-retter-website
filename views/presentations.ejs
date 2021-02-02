@@ -1,85 +1,86 @@
 <%- include('includes/head.ejs') %>
   </head>
 
-  <body>
-    <div class="wrapper">
+    <body>
+      <div class="wrapper">
 
-    <header class="header header__presentation">
+      <header class="header header__presentation">
 
-        <%- include('includes/navigation.ejs') %>
+          <%- include('includes/navigation.ejs') %>
 
-        <div class="header__content">
-          <div class="header__name-online">
-            <img loading="auto" src="../images/Adam-Home-oneline-v1.png" alt="Java logo"></img>
+          <div class="header__content">
+            <div class="header__name-online">
+              <img loading="auto" src="../images/Adam-Home-oneline-v1.png" alt="Java logo"></img>
+            </div>
+
+            <div class="header__name-mobile">
+              <img loading="auto" src="../images/Adam-Home-mobile-v1.png" alt="Java logo"></img>
+            </div>
+
+            <h1 class="presentations__title">
+              Presentations
+            </h1>
+            <h3 class="presentations__intro">
+              < Presentations I’ve given at Conferences and Events>
+            </h3>
           </div>
+      </header>
 
-          <div class="header__name-mobile">
-            <img loading="auto" src="../images/Adam-Home-mobile-v1.png" alt="Java logo"></img>
-          </div>
+        <main>
 
-          <h1 class="presentations__title">
-            Presentations
-          </h1>
-          <h3 class="presentations__intro">
-            < Presentations I’ve given at Conferences and Events>
-          </h3>
-        </div>
-    </header>
+          <section class="presentations presentation-page">
+            <% if (prods.length> 0) { %>
+              <ul class="presentations__cards presentations__cards--center cards">
+                <% for (let presentation of prods) { %>
+                  <div class="presentations__card card">
+                    <div class="card__content">
 
-      <main>
+                      <div class="card__title">
+                        <%= presentation.title %>
+                      </div>
 
-        <section class="presentations presentation-page">
-          <% if (prods.length> 0) { %>
-            <ul class="presentations__cards presentations__cards--center cards">
-              <% for (let presentation of prods) { %>
-                <div class="presentations__card card">
-                  <div class="card__content">
+                      <div class="card__text">
+                        <p>
+                          <%= presentation.description %>
+                        </p>
+                      </div>
 
-                    <div class="card__title">
-                      <%= presentation.title %>
+                      <div class="card__link">
+                        <a class="card__link-pdf" href="<%= presentation.firstLink %>" alt="link to page">
+                          <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.firstIcon %>" alt="icon image"></img>
+                        </a>
+
+                        <a class="card__link-slides" href="<%= presentation.secondLink %>" alt="link to page">
+                          <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.secondIcon %>" alt="icon image"></img>
+                        </a>
+
+                      <a class="card__link-slides" href="<%= presentation.thirdLink %>" alt="link to page">
+                        <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.thirdIcon %>" alt="icon image"></img>
+                      </a>
                     </div>
 
-                    <div class="card__text">
-                      <p>
-                        <%= presentation.description %>
-                      </p>
-                    </div>
+                  </div>
+                  </div>
+                <% } %>
+              </ul>
 
-                    <div class="card__link">
-                      <a class="card__link-pdf" href="<%= presentation.firstLink %>" alt="link to page">
-                        <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.firstIcon %>" alt="icon image"></img>
-                      </a>
+              <% } else { %>
+                <h2>No Presentations Found!</h2>
+                <% } %>
 
-                      <a class="card__link-slides" href="<%= presentation.secondLink %>" alt="link to page">
-                        <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.secondIcon %>" alt="icon image"></img>
-                      </a>
-
-                    <a class="card__link-slides" href="<%= presentation.thirdLink %>" alt="link to page">
-                      <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.thirdIcon %>" alt="icon image"></img>
-                    </a>
+                  <div class="button">
+                    <a class="button__btn button__btn--magenta"
+                    href="/contact" alt="link to contact"> GET IN CONTACT ></a>
                   </div>
 
-                </div>
-                </div>
-              <% } %>
-            </ul>
+          </section>
 
-            <% } else { %>
-              <h2>No Presentations Found!</h2>
-              <% } %>
+            <%- include('includes/book.ejs') %>
 
-                <div class="button">
-                  <a class="button__btn button__btn--magenta" href="#" alt="link to contact"> GET IN CONTACT ></a>
-                </div>
+            <%- include('includes/blog.ejs') %>
 
-        </section>
+        </main>
 
-          <%- include('includes/book.ejs') %>
-
-          <%- include('includes/blog.ejs') %>
-
-      </main>
-
-    </div>
+      </div>
 
 <%- include('includes/end.ejs') %>

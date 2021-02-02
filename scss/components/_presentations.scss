@@ -70,6 +70,12 @@
       }
     }
 
+    &__text {
+      p {
+        @include font-size(12px, 18px, 1px);
+      }
+    }
+
     &__link-more {
       display: flex;
       flex-wrap: wrap;

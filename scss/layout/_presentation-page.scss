@@ -1,13 +1,19 @@
-.presentations.presentation-page {
-  @include background-block;
+.presentation {
+  &__page {
+    @include background-block;
 
-  @media screen and (min-width: $md) {
-    @include background((
-      'gradient': (to left, (#009de100, #001638)),
-      'image': '',
-      'bg-position': right
-    ));
-    margin: 0 4em;
+    @media screen and (min-width: $md) {
+      @include background((
+        'gradient': (to left, (#009de100, #001638)),
+        'image': '',
+        'bg-position': right
+      ));
+      margin: 0 4em;
+    }
+  }
+
+  &__admin {
+    margin: 1em auto 2em;
+    padding: 1em 3em;
   }
 }
-

@@ -6,12 +6,8 @@ const pagesController = require('../controllers/pages');
 
 const router = express.Router();
 
-router.get('/', (reg, res, next) => {
-  res.render('index', {
-    pageTitle: 'Adam Retter',
-  });
-});
 
+router.get('/', pagesController.getHome);
 router.get('/presentations', pagesController.getPresentations);
 router.get('/opensource', pagesController.getOpensource);
 router.get('/publications', pagesController.getPublications);
