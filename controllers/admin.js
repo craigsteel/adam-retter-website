@@ -9,7 +9,6 @@ exports.getAddPresentation = (req, res, next) => {
 };
 
 exports.postAddPresentation = (req, res, next) => {
-  const presId = reg.body.presID;
   const title = req.body.title;
   const description = req.body.description;
   const firstIcon = req.body.firstIcon;
@@ -19,7 +18,7 @@ exports.postAddPresentation = (req, res, next) => {
   const thirdIcon = req.body.thirdIcon;
   const thirdLink = req.body.thirdLink;
   const presentation = new Presentation(
-    presId,
+    null,
     title,
     description,
     firstIcon,
@@ -33,23 +32,13 @@ exports.postAddPresentation = (req, res, next) => {
   res.redirect('/presentations');
 };
 
-exports.getAllcontent = (req, res, next) => {
-  Presentation.fetchAll(presentations => {
-    res.render('admin/all-content', {
-      prods: presentations,
-      pageTitle: 'Admin All Content',
-      path: '/admin/all-content',
-    });
-  });
-};
-
 exports.getEditPresentation = (req, res, next) => {
   const editMode = req.query.edit;
   if (!editMode) {
     return res.redirect('/');
   }
-  const presId = req.param.presentId;
-  Presentation.findById,(presId, presentation => {
+  const contentId = req.param.presentId;
+  Presentation.findById,(contentId, presentation => {
     if(!presentation) {
       return res.redirect('/');
     }
@@ -58,6 +47,41 @@ exports.getEditPresentation = (req, res, next) => {
       path: '/admin/edit-content',
       editing: editMode,
       presentation: presentation
+    });
+  });
+};
+
+exports.postEditPresentation = (req, res, next) => {
+  const contentId = req.body.contentId;
+  const updateTitle = req.body.title;
+  const updateDescription = req.body.description;
+  const updateFirstIcon = req.body.firstIcon;
+  const updateFirstLink = req.body.firstLink;
+  const updateSecondIcon = req.body.secondIcon;
+  const updateSecondLink = req.body.secondLink;
+  const updateThirdIcon = req.body.thirdIcon;
+  const updateThirdLink = req.body.thirdLink;
+  const updatePresentation = new Presentation(
+    contentId,
+    updateTitle,
+    updateDescription,
+    updateFirstIcon,
+    updateFirstLink,
+    updateSecondIcon,
+    updateSecondLink,
+    updateThirdIcon,
+    updateThirdLink
+  );
+  updatePresentation.save();
+  res.redirect('/presentations');
+};
+
+exports.getAllcontent = (req, res, next) => {
+  Presentation.fetchAll(presentations => {
+    res.render('admin/all-content', {
+      prods: presentations,
+      pageTitle: 'Admin All Content',
+      path: '/admin/all-content',
     });
   });
 };
