@@ -85,3 +85,9 @@ exports.getAllcontent = (req, res, next) => {
     });
   });
 };
+
+exports.postDeletePresentation = (req, res, next) => {
+  const presId = req.body.presentationId;
+  Presentation.deleteById(presId);
+  res.redirect('/admin/all-content');
+};

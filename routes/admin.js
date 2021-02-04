@@ -16,6 +16,6 @@ router.get('/edit-content/:presentationId', adminController.getEditPresentation)
 
 router.post('/edit-content', adminController.postEditPresentation);
 
-// router.post('/delete-content');
+router.post('/delete-content', adminController.postDeletePresentation);
 
 module.exports = router;

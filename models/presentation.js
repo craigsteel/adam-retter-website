@@ -51,6 +51,15 @@ module.exports = class Presentation {
     });
   }
 
+  static deleteById(id) {
+    getPresentationsFromFile(presentations => {
+      const updatedPresentations = presentations.filter(prod => prod.id !== id);
+      fs.writeFile(p, JSON.stringify(updatedPresentations), err => {
+
+      });
+    });
+  }
+
   static fetchAll(cb) {
     getPresentationsFromFile(cb);
   }
