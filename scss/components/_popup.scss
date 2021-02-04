@@ -27,9 +27,15 @@
   letter-spacing: 0;
   box-shadow: 0 0 40px 20px rgba($color-black, 0.4);
 
+
   @media screen and (min-width: $md) {
     padding: 30px 50px;
-    width: 30%;
+    width: 60%;
+  }
+
+  @media screen and (min-width: $mdl) {
+    padding: 30px 50px;
+    width: 40%;
   }
 
   p {
