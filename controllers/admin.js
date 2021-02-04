@@ -29,7 +29,7 @@ exports.postAddPresentation = (req, res, next) => {
     thirdLink
   );
   presentation.save();
-  res.redirect('/presentations');
+  res.redirect('/admin/all-content');
 };
 
 exports.getEditPresentation = (req, res, next) => {
@@ -37,8 +37,8 @@ exports.getEditPresentation = (req, res, next) => {
   if (!editMode) {
     return res.redirect('/');
   }
-  const contentId = req.param.presentId;
-  Presentation.findById,(contentId, presentation => {
+  const presId = req.params.presentationId;
+  Presentation.findById(presId, presentation => {
     if(!presentation) {
       return res.redirect('/');
     }
@@ -52,28 +52,28 @@ exports.getEditPresentation = (req, res, next) => {
 };
 
 exports.postEditPresentation = (req, res, next) => {
-  const contentId = req.body.contentId;
-  const updateTitle = req.body.title;
-  const updateDescription = req.body.description;
-  const updateFirstIcon = req.body.firstIcon;
-  const updateFirstLink = req.body.firstLink;
-  const updateSecondIcon = req.body.secondIcon;
-  const updateSecondLink = req.body.secondLink;
-  const updateThirdIcon = req.body.thirdIcon;
-  const updateThirdLink = req.body.thirdLink;
-  const updatePresentation = new Presentation(
-    contentId,
-    updateTitle,
-    updateDescription,
-    updateFirstIcon,
-    updateFirstLink,
-    updateSecondIcon,
-    updateSecondLink,
-    updateThirdIcon,
-    updateThirdLink
+  const presId = req.body.presentationId;
+  const updatedTitle = req.body.title;
+  const updatedDescription = req.body.description;
+  const updatedFirstIcon = req.body.firstIcon;
+  const updatedFirstLink = req.body.firstLink;
+  const updatedSecondIcon = req.body.secondIcon;
+  const updatedSecondLink = req.body.secondLink;
+  const updatedThirdIcon = req.body.thirdIcon;
+  const updatedThirdLink = req.body.thirdLink;
+  const updatedPresentation = new Presentation(
+    presId,
+    updatedTitle,
+    updatedDescription,
+    updatedFirstIcon,
+    updatedFirstLink,
+    updatedSecondIcon,
+    updatedSecondLink,
+    updatedThirdIcon,
+    updatedThirdLink
   );
-  updatePresentation.save();
-  res.redirect('/presentations');
+  updatedPresentation.save();
+  res.redirect('/admin/all-content');
 };
 
 exports.getAllcontent = (req, res, next) => {

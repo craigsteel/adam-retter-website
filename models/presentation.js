@@ -33,12 +33,12 @@ module.exports = class Presentation {
   save() {
     getPresentationsFromFile(presentations => {
       if (this.id) {
-        const existingContentIndex = presentations.findIndex(
-          content=> content.Id === this.id
+        const existingPresentationIndex = presentations.findIndex(
+          prod=> prod.Id === this.id
         );
-        const updatedContent = [...presentations];
-        updatedContent[existingContentIndex] = this;
-        fs.writeFile(p, JSON.stringify(updatedContent), err => {
+        const updatedPresentations = [...presentations];
+        updatedPresentations[existingPresentationIndex] = this;
+        fs.writeFile(p, JSON.stringify(updatedPresentations), err => {
           console.log(err);
         });
       } else {
@@ -55,7 +55,7 @@ module.exports = class Presentation {
     getPresentationsFromFile(cb);
   }
 
-  static fetchById(id, cb) {
+  static findById(id, cb) {
     getPresentationsFromFile(presentations => {
       const presentation = presentations.find(p => p.id === id);
       cb(presentation);

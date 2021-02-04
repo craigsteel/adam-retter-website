@@ -8,10 +8,14 @@ const router = express.Router();
 
 router.get('/add-content', adminController.getAddPresentation);
 
-router.get('/all-content', adminController.getAllcontent);
-
 router.post('/add-content', adminController.postAddPresentation);
 
-router.get('/edit-content/:contentId', adminController.getEditPresentation);
+router.get('/all-content', adminController.getAllcontent);
+
+router.get('/edit-content/:presentationId', adminController.getEditPresentation);
+
+router.post('/edit-content', adminController.postEditPresentation);
+
+// router.post('/delete-content');
 
 module.exports = router;

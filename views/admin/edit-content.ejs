@@ -27,7 +27,7 @@
 
             <div class="form-control">
               <label for="description">Description</label>
-              <textarea name="description" id="description" rows="5"><% if (editing) { %><%= presentation.description %><% } %>"></textarea>
+              <textarea name="description" id="description" rows="5"><% if (editing) { %><%= presentation.description %><% } %></textarea>
             </div>
 
             <div class="form-control">
@@ -64,11 +64,10 @@
             </div>
 
             <% if (editing) { %>
-              <input type="hidden" value="<%= content.Id %>" name="contentId">
-              <% } %>
+              <input type="hidden" value="<%= presentation.id %>" name="presentationId">
+            <% } %>
 
             <button class="button__btn button__btn--submit" type="submit"><% if (editing) { %>Update Presentation<% } else { %>Add Presentation<% } %></button>
-
           </form>
         </div>
 
