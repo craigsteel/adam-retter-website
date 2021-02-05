@@ -13,11 +13,14 @@ exports.postAddPresentation = (req, res, next) => {
   const description = req.body.description;
   const firstIcon = req.body.firstIcon;
   const firstLink = req.body.firstLink;
+  const firstLinkText = req.body.firstLinkText;
   const secondIcon = req.body.secondIcon;
   const secondLink = req.body.secondLink;
+  const secondLinkText = req.body.secondLinkText;
   const thirdIcon = req.body.thirdIcon;
   const thirdLink = req.body.thirdLink;
-  const presentation = new Presentation(null, title, description, firstIcon, firstLink, secondIcon, secondLink, thirdIcon, thirdLink);
+  const thirdLinkText = req.body.firstLinkText;
+  const presentation = new Presentation(null, title, description, firstIcon, firstLink, firstLinkText, secondIcon, secondLink, secondLinkText, thirdIcon, thirdLink, thirdLinkText);
   presentation.save();
   res.redirect('/admin/all-content');
 };
@@ -47,20 +50,26 @@ exports.postEditPresentation = (req, res, next) => {
   const updatedDescription = req.body.description;
   const updatedFirstIcon = req.body.firstIcon;
   const updatedFirstLink = req.body.firstLink;
+  const updatedFirstLinkText = req.body.firstLinkText;
   const updatedSecondIcon = req.body.secondIcon;
   const updatedSecondLink = req.body.secondLink;
-  const updatedThirdIcon = req.body.thirdIcon;
+  const updatedSecondLinkText = req.body.secondLinkText;
+  const updatedThirdIcon = req.body.secondIcon;
   const updatedThirdLink = req.body.thirdLink;
+  const updatedThirdLinkText = req.body.firstLinkText;
   const updatedPresentation = new Presentation(
     presId,
     updatedTitle,
     updatedDescription,
     updatedFirstIcon,
     updatedFirstLink,
+    updatedFirstLinkText,
     updatedSecondIcon,
     updatedSecondLink,
+    updatedSecondLinkText,
     updatedThirdIcon,
-    updatedThirdLink
+    updatedThirdLink,
+    updatedThirdLinkText
   );
   updatedPresentation.save();
   res.redirect('/admin/all-content');

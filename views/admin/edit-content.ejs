@@ -42,6 +42,11 @@
             </div>
 
             <div class="form-control">
+              <label for="firstLink">Add a description for link</label>
+              <input type="text" name="firstLinkText" id="firstLinkText" value="<% if (editing) { %><%= presentation.firstLinkText %><% } %>">
+            </div>
+
+            <div class="form-control">
               <label for="secondIcon">Icon</label>
               <label class="form-control__example">(slide-icon, pdf-file-icon or youtube-icon)</label>
               <input type="text" name="secondIcon" id="secondIcon" value="<% if (editing) { %><%= presentation.secondIcon %><% } %>">
@@ -53,6 +58,11 @@
             </div>
 
             <div class="form-control">
+              <label for="firstLink">Add a description for link</label>
+              <input type="text" name="secondLinkText" id="secondLinkText" value="<% if (editing) { %><%= presentation.secondLinkText %><% } %>">
+            </div>
+
+            <div class="form-control">
               <label for="thirdIcon">Icon</label>
               <label class="form-control__example">(slide-icon, pdf-file-icon or youtube-icon)</label>
               <input type="text" name="thirdIcon" id="thirdIcon" value="<% if (editing) { %><%= presentation.thirdIcon %><% } %>">
@@ -61,6 +71,11 @@
             <div class="form-control">
               <label for="thirdLink">Add full Link</label>
               <input type="text" name="thirdLink" id="thirdLink" value="<% if (editing) { %><%= presentation.thirdLink %><% } %>">
+            </div>
+
+            <div class="form-control">
+              <label for="firstLink">Add a description for link</label>
+              <input type="text" name="thirdLinkText" id="thirdLinkText" value="<% if (editing) { %><%= presentation.thirdLinkText %><% } %>">
             </div>
 
             <% if (editing) { %>

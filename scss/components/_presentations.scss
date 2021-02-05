@@ -91,9 +91,9 @@
       @media screen and (min-width: $md) {
         display: flex;
         flex-wrap: wrap;
-        align-content: flex-end;
+        align-content: space-evenly;
         flex-direction: column;
-        width: 7em;
+        width: 8.5em;
       }
 
       img {

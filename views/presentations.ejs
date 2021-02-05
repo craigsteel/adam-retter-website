@@ -10,11 +10,11 @@
 
           <div class="header__content">
             <div class="header__name-online">
-              <img loading="auto" src="images/Adam-Home-oneline-v1-thick.png" alt="Java logo"></img>
+              <img loading="auto" src="../images/Adam-Home-oneline-v1-thick.png" alt="Java logo"></img>
             </div>
 
             <div class="header__name-mobile header__home-name-mobile">
-              <img loading="auto" src="images/Adam-Home-mobile-v1-thick.png" alt="Java logo"></img>
+              <img loading="auto" src="../images/Adam-Home-mobile-v1-thick.png" alt="Java logo"></img>
             </div>
 
             <h1 class="presentations__title">
@@ -48,14 +48,17 @@
                       <div class="card__link">
                         <a class="card__link-pdf" href="<%= presentation.firstLink %>" alt="link to page">
                           <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.firstIcon %>" alt="icon image"></img>
+                            <%= presentation.firstLinkText %>
                         </a>
 
                         <a class="card__link-slides" href="<%= presentation.secondLink %>" alt="link to page">
                           <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.secondIcon %>" alt="icon image"></img>
+                            <%= presentation.secondLinkText %>
                         </a>
 
                       <a class="card__link-slides" href="<%= presentation.thirdLink %>" alt="link to page">
                         <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.thirdIcon %>" alt="icon image"></img>
+                          <%= presentation.thirdLinkText %>
                       </a>
                     </div>
 

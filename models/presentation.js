@@ -18,16 +18,19 @@ const getPresentationsFromFile = cb => {
 };
 
 module.exports = class Presentation {
- constructor(id, title, description, firstIcon, firstLink, secondIcon, secondLink, thirdIcon, thirdLink) {
+ constructor(id, title, description, firstIcon, firstLink, firstLinkText, secondIcon, secondLink, secondLinkText, thirdIcon, thirdLink, thirdLinkText) {
     this.id = id;
     this.title = title;
     this.description = description;
     this.firstIcon = firstIcon;
     this.firstLink = firstLink;
+    this.firstLinkText = firstLinkText;
     this.secondIcon = secondIcon;
     this.secondLink = secondLink;
+    this.secondLinkText = secondLinkText;
     this.thirdIcon = thirdIcon;
     this.thirdLink = thirdLink;
+    this.thirdLinkText = thirdLinkText;
   }
 
   save() {
