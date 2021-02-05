@@ -6,9 +6,10 @@
   text-align: center;
 
   @media screen and (min-width: $md) {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
-    margin: 3em auto 2em;
+    margin: -2em auto 2em;
   }
 
   p {

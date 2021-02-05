@@ -5,7 +5,7 @@
   // background-position: top;
 
   @include background((
-    'gradient': (to bottom, (#61a7c600, #001638)),
+    'gradient': (to bottom, (rgba(0, 22, 56, 0), rgba(0, 22, 56, 0.7))),
     'image': 'Adam-Home-banner-@x1.jpg',
     'bg-position': top
   ));
@@ -14,7 +14,7 @@
     (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
     (min-width: 125em) {
     @include background((
-      'gradient': (to bottom, (#00223009, #0016380f)),
+      'gradient': (to bottom, (rgba(0, 22, 56, 0), rgba(0, 22, 56, 0.7))),
       'image': 'Adam-Home-banner-@x2.jpg',
       'bg-position': center
     ));
@@ -158,7 +158,7 @@
 
     @media screen and (min-width: $md) {
       padding: 2em 2em;
-      margin: 0 5em;
+      margin: 0 5em 5em;
     }
 
     h2 {
