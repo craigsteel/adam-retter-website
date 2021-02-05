@@ -34,7 +34,7 @@ module.exports = class Presentation {
     getPresentationsFromFile(presentations => {
       if (this.id) {
         const existingPresentationIndex = presentations.findIndex(
-          prod=> prod.Id === this.id
+          pres => pres.Id === this.id
         );
         const updatedPresentations = [...presentations];
         updatedPresentations[existingPresentationIndex] = this;
@@ -53,9 +53,9 @@ module.exports = class Presentation {
 
   static deleteById(id) {
     getPresentationsFromFile(presentations => {
-      const updatedPresentations = presentations.filter(prod => prod.id !== id);
+      const updatedPresentations = presentations.filter(pres => pres.id !== id);
       fs.writeFile(p, JSON.stringify(updatedPresentations), err => {
-
+        console.log(err);
       });
     });
   }

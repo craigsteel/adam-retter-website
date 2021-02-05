@@ -17,17 +17,7 @@ exports.postAddPresentation = (req, res, next) => {
   const secondLink = req.body.secondLink;
   const thirdIcon = req.body.thirdIcon;
   const thirdLink = req.body.thirdLink;
-  const presentation = new Presentation(
-    null,
-    title,
-    description,
-    firstIcon,
-    firstLink,
-    secondIcon,
-    secondLink,
-    thirdIcon,
-    thirdLink
-  );
+  const presentation = new Presentation(null, title, description, firstIcon, firstLink, secondIcon, secondLink, thirdIcon, thirdLink);
   presentation.save();
   res.redirect('/admin/all-content');
 };
@@ -76,7 +66,7 @@ exports.postEditPresentation = (req, res, next) => {
   res.redirect('/admin/all-content');
 };
 
-exports.getAllcontent = (req, res, next) => {
+exports.getAllPresentations = (req, res, next) => {
   Presentation.fetchAll(presentations => {
     res.render('admin/all-content', {
       prods: presentations,
