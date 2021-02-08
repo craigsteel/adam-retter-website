@@ -28,43 +28,43 @@
 
       <main>
 
-        <section class="presentations presentation__page presentation__admin">
+      <section class="presentations presentation__page presentation__admin">
           <div class="admin__title">
             All Presentations >
           </div>
 
-              <% if (prods.length> 0) { %>
+              <% if (conts.length> 0) { %>
 
                 <ul class="presentations__cards presentations__cards--center cards">
-                  <% for (let presentation of prods) { %>
+                  <% for (let content of conts) { %>
                     <div class="admin__edit">
                       <div class="presentations__card card">
                         <div class="card__content">
 
                           <div class="card__title">
-                            <%= presentation.title %>
+                            <%= content.title %>
                           </div>
 
                           <div class="card__text">
                             <p>
-                              <%= presentation.description %>
+                              <%= content.description %>
                             </p>
                           </div>
 
                           <div class="card__link">
-                            <a class="card__link-pdf" href="<%= presentation.firstLink %>" alt="link to page">
-                              <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.firstIcon %>" alt="icon image"></img>
-                              <%= presentation.firstLinkText %>
+                            <a class="card__link-pdf" href="<%= content.firstLink %>" alt="link to page">
+                              <img loading="auto" src="../images/svgs/sprite.svg#<%= content.firstIcon %>" alt="icon image"></img>
+                              <%= content.firstLinkText %>
                             </a>
 
-                            <a class="card__link-slides" href="<%= presentation.secondLink %>" alt="link to page">
-                              <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.secondIcon %>" alt="icon image"></img>
-                              <%= presentation.secondLinkText %>
+                            <a class="card__link-slides" href="<%= content.secondLink %>" alt="link to page">
+                              <img loading="auto" src="../images/svgs/sprite.svg#<%= content.secondIcon %>" alt="icon image"></img>
+                              <%= content.secondLinkText %>
                             </a>
 
-                            <a class="card__link-slides" href="<%= presentation.thirdLink %>" alt="link to page">
-                              <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.thirdIcon %>" alt="icon image"></img>
-                              <%= presentation.thirdLinkText %>
+                            <a class="card__link-slides" href="<%= content.thirdLink %>" alt="link to page">
+                              <img loading="auto" src="../images/svgs/sprite.svg#<%= content.thirdIcon %>" alt="icon image"></img>
+                              <%= content.thirdLinkText %>
                             </a>
                           </div>
 
@@ -73,11 +73,11 @@
 
                       <div class="button button__admin">
                         <form action="/admin/delete-content" method="POST">
-                          <input type="hidden" value="<%= presentation.id %>" name="presentationId">
+                          <input type="hidden" value="<%= content.id %>" name="contentId">
                           <button class="button__btn button__btn--magenta" type='submit'> Delete ></button>
                         </form>
 
-                        <a href="/admin/edit-content/<%= presentation.id %>?edit=true" class="button__btn button__btn--magenta"> Edit ></a>
+                        <a href="/admin/edit-content/<%= content.id %>?edit=true" class="button__btn button__btn--magenta"> Edit ></a>
 
                       </div>
                     </div>
@@ -92,7 +92,65 @@
                   <a class="button__btn button__btn--magenta" href="/presentations" alt="link to Presentations Page" target="_blank" rel="noopener noreferrer"> Presentations Page ></a>
                 </div>
 
-        </section>
+      </section>
+
+      <section class="presentations presentation__page presentation__admin">
+        <div class="admin__title">
+          All Open Source Repositories >
+        </div>
+
+        <% if (conts.length> 0) { %>
+
+          <ul class="presentations__cards presentations__cards--center cards">
+            <% for (let content of conts) { %>
+              <div class="admin__edit">
+                <div class="presentations__card card">
+                  <div class="card__content">
+
+                    <div class="card__title">
+                      <%= content.sourceTitle %>
+                    </div>
+
+                    <div class="card__text">
+                      <p>
+                        <%= content.sourceDescription %>
+                      </p>
+                    </div>
+
+                    <div class="card__link">
+                      <a class="card__link-github" href="<%= content.gitHubLink %>" alt="link to page">
+                        <img loading="auto" src="../images/svgs/sprite.svg#<%= content.gitHubIcon %>" alt="icon image"></img>
+                        <%= content.gitHubLinkText %>
+                      </a>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="button button__admin">
+                  <form action="/admin/delete-content" method="POST">
+                    <input type="hidden" value="<%= content.id %>" name="contentId">
+                    <button class="button__btn button__btn--magenta" type='submit'> Delete ></button>
+                  </form>
+
+                  <a href="/admin/edit-content/<%= content.id %>?edit=true" class="button__btn button__btn--magenta"> Edit
+                    ></a>
+
+                </div>
+              </div>
+              <% } %>
+          </ul>
+
+          <% } else { %>
+            <h2>No Presentations Found!</h2>
+            <% } %>
+
+              <div class="button">
+                <a class="button__btn button__btn--magenta" href="/opensource" alt="link to Presentations Page"
+                  target="_blank" rel="noopener noreferrer"> Open Source Page ></a>
+              </div>
+
+      </section>
 
       </main>
 

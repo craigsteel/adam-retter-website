@@ -1,4 +1,4 @@
-const Presentation = require('../models/presentation');
+const Content = require('../models/content');
 
 exports.getHome = (req, res, next) => {
   res.render('home', {
@@ -42,9 +42,9 @@ exports.get404 = (req, res, next) => {
 };
 
 exports.getPresentations = (req, res, next) => {
-  Presentation.fetchAll(presentations => {
+  Content.fetchAll(contents => {
     res.render('presentations', {
-      prods: presentations,
+      conts: contents,
       pageTitle: 'Adam Retter Presentations',
       path: '/presentations',
     });

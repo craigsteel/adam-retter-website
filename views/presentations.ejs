@@ -29,36 +29,36 @@
         <main>
 
           <section class="presentations presentation-page">
-            <% if (prods.length> 0) { %>
+            <% if (conts.length> 0) { %>
               <ul class="presentations__cards presentations__cards--center cards">
-                <% for (let presentation of prods) { %>
+                <% for (let content of conts) { %>
                   <div class="presentations__card card">
                     <div class="card__content">
 
                       <div class="card__title">
-                        <%= presentation.title %>
+                        <%= content.title %>
                       </div>
 
                       <div class="card__text">
                         <p>
-                          <%= presentation.description %>
+                          <%= content.description %>
                         </p>
                       </div>
 
                       <div class="card__link">
-                        <a class="card__link-pdf" href="<%= presentation.firstLink %>" alt="link to page">
-                          <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.firstIcon %>" alt="icon image"></img>
-                            <%= presentation.firstLinkText %>
+                        <a class="card__link-pdf" href="<%= content.firstLink %>" alt="link to page">
+                          <img loading="auto" src="../images/svgs/sprite.svg#<%= content.firstIcon %>" alt="icon image"></img>
+                            <%= content.firstLinkText %>
                         </a>
 
-                        <a class="card__link-slides" href="<%= presentation.secondLink %>" alt="link to page">
-                          <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.secondIcon %>" alt="icon image"></img>
-                            <%= presentation.secondLinkText %>
+                        <a class="card__link-slides" href="<%= content.secondLink %>" alt="link to page">
+                          <img loading="auto" src="../images/svgs/sprite.svg#<%= content.secondIcon %>" alt="icon image"></img>
+                            <%= content.secondLinkText %>
                         </a>
 
-                      <a class="card__link-slides" href="<%= presentation.thirdLink %>" alt="link to page">
-                        <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.thirdIcon %>" alt="icon image"></img>
-                          <%= presentation.thirdLinkText %>
+                      <a class="card__link-slides" href="<%= content.thirdLink %>" alt="link to page">
+                        <img loading="auto" src="../images/svgs/sprite.svg#<%= content.thirdIcon %>" alt="icon image"></img>
+                          <%= content.thirdLinkText %>
                       </a>
                     </div>
 

@@ -155,6 +155,7 @@
     margin: 0 1em;
     box-shadow: 0 0 5em rgba($color-black, 1);
     text-align: center;
+    border-radius: 5px;
 
     @media screen and (min-width: $md) {
       padding: 2em 2em;

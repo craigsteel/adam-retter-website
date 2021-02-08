@@ -6,16 +6,16 @@ const adminController = require('../controllers/admin');
 
 const router = express.Router();
 
-router.get('/add-content', adminController.getAddPresentation);
+router.get('/add-content', adminController.getAddContent);
 
-router.post('/add-content', adminController.postAddPresentation);
+router.get('/all-content', adminController.getAllContents);
 
-router.get('/edit-content/:presentationId', adminController.getEditPresentation);
+router.post('/add-content', adminController.postAddContent);
 
-router.post('/edit-content', adminController.postEditPresentation);
+router.get('/edit-content/:contentId', adminController.getEditContent);
 
-router.get('/all-content', adminController.getAllPresentations);
+router.post('/edit-content', adminController.postEditContent);
 
-router.post('/delete-content', adminController.postDeletePresentation);
+router.post('/delete-content', adminController.postDeleteContent);
 
 module.exports = router;
