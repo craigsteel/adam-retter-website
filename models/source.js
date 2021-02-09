@@ -24,7 +24,7 @@ module.exports = class Source {
     this.description = description;
     this.gitHubIcon = gitHubLink;
     this.gitHubIcon = gitHubIcon;
-    this.githubLinkText = githubLinkText;
+    this.gitHubLinkText = gitHubLinkText;
 
   }
 
@@ -34,6 +34,7 @@ module.exports = class Source {
         const existingSourceIndex = sources.findIndex(
           source => source.Id === this.id
         );
+        const updatedSources = [...sources];
         updatedSources[existingSourceIndex] = this;
         fs.writeFile(p, JSON.stringify(updatedSources), err => {
           console.log(err);
@@ -48,7 +49,7 @@ module.exports = class Source {
     });
   }
 
-  static deleteSourcesById(id) {
+  static deleteById(id) {
     getSourcesFromFile(sources => {
       const updatedSources = sources.filter(source => source.id !== id);
       fs.writeFile(p, JSON.stringify(updatedSources), err => {
@@ -61,8 +62,8 @@ module.exports = class Source {
     getSourcesFromFile(cb);
   }
 
-  static findSourceById(id, cb) {
-    getSourcesFromFile(contents => {
+  static findById(id, cb) {
+    getSourcesFromFile(sources => {
       const source = sources.find(p => p.id === id);
       cb(source);
     });

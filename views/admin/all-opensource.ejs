@@ -4,7 +4,7 @@
   <body>
     <div class="wrapper">
 
-      <header class="header header__presentation">
+        <header class="header">
 
         <%- include('../includes/navigation.ejs') %>
 
@@ -27,32 +27,31 @@
       </header>
 
       <main>
-
-      <section class="presentations presentation__page presentation__admin">
-        <div class="admin__title">
+       <div class="admin__title">
           All Open Source Repositories >
-        </div>
+      </div>
+
+        <section class="source">
 
         <% if (sources.length> 0) { %>
 
           <ul class="cards">
 
+          <% for (let source of sources) { %>
+            <li class="cards__item">
 
-
-              <li class="cards__item">
-            <% for (let source of sources) { %>
                 <div class="source__card card">
                   <div class="card__content">
-
                     <div class="card__title">
                       <%= source.title %>
                     </div>
-
+                      <p></p>
                     <p class="card__text">
                       <%= source.description %>
                     </p>
                     <p></p>
                   </div>
+
                   <div class="card__link">
                     <a href="<%= source.gitHubLink %>" alt="link to exist-db Repository" target="_blank"
                       rel="noopener noreferrer">
@@ -63,16 +62,24 @@
                     </a>
                   </div>
                 </div>
-                            <% } %>
-              </li>
+            </li>
+                      <div class="button button__admin">
+                        <form action="/admin/delete-source" method="POST">
+                          <input type="hidden" value="<%= source.id %>" name="sourceId">
+                          <button class="button__btn button__btn--magenta" type='submit'> Delete ></button>
+                        </form>
 
+                        <a href="/admin/edit-opensources/<%= source.id %>?edit=true" class="button__btn button__btn--magenta"> Edit
+                          ></a>
 
-
-          </ul>
+                      </div>
+                      </div>
+                      <% } %>
+                        </ul>
 
           <% } else { %>
             <H2>No Repositories Found!</H2>
-            <% } %>
+          <% } %>
 
               <div class="button">
                 <a class="button__btn button__btn--magenta" href="/opensource" alt="link to Presentations Page"

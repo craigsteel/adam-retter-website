@@ -54,7 +54,7 @@ module.exports = class Presentation {
     });
   }
 
-  static deletePresentationsById(id) {
+  static deleteById(id) {
     getPresentationsFromFile(presentations => {
       const updatedPresentations = presentations.filter(presentation => presentation.id !== id);
       fs.writeFile(p, JSON.stringify(updatedPresentations), err => {
@@ -67,7 +67,7 @@ module.exports = class Presentation {
     getPresentationsFromFile(cb);
   }
 
-  static findPresentationById(id, cb) {
+  static findById(id, cb) {
     getPresentationsFromFile(presentations => {
       const presentation = presentations.find(p => p.id === id);
       cb(presentation);

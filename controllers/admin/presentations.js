@@ -52,7 +52,7 @@ exports.getEditPresentation = (req, res, next) => {
       pageTitle: 'Edit Presentation',
       path: '/admin/edit-presentations',
       editing: editMode,
-      presentation: presentation
+      presentations: presentations
     });
   });
 };

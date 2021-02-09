@@ -43,16 +43,17 @@
   &__presentation {
     @include background((
       'gradient': (to bottom, (#009de100, #001638)),
-      'image': 'presentations-banner-b@1x.jpg',
+      'image': 'Adam-presentations-v2@1x.jpg',
       'bg-position': top,
     ));
+    min-height: 40em;
 
     @media (min-resolution: 192dpi) and (min-width: 37.5em),
       (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
       (min-width: 125em) {
       @include background((
         'gradient': (to bottom, (#000a0e00, #001638)),
-        'image': 'presentations-banner-b@2x.jpg',
+        'image': 'Adam-presentations-v2@2x.jpg',
         'bg-position': center
       ));
     }
