@@ -1,4 +1,5 @@
-const Content = require('../models/content');
+const Presentation = require('../models/presentations.min');
+const Sources = require('../models/presentations.min');
 
 exports.getHome = (req, res, next) => {
   res.render('home', {
@@ -8,9 +9,12 @@ exports.getHome = (req, res, next) => {
 };
 
 exports.getOpensource = (req, res, next) => {
-  res.render('opensource', {
-    pageTitle: 'Adam Retter Open Source',
-    path: '/opensource',
+  Sources.fetchAll(sources => {
+    res.render('opensource', {
+      sources: sources,
+      pageTitle: 'Adam Retter Open Source',
+      path: '/opensource',
+    });
   });
 };
 
@@ -42,12 +46,13 @@ exports.get404 = (req, res, next) => {
 };
 
 exports.getPresentations = (req, res, next) => {
-  Content.fetchAll(contents => {
+  Presentation.fetchAll(presentations => {
     res.render('presentations', {
-      conts: contents,
+      presentations: presentations,
       pageTitle: 'Adam Retter Presentations',
       path: '/presentations',
     });
   });
 };
+
 

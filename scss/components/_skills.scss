@@ -4,6 +4,7 @@
   align-content: flex-start;
   margin: 2em auto;
   text-align: center;
+  background-color: $color-dark-blue;
 
   @media screen and (min-width: $md) {
     position: relative;

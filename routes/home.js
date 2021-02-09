@@ -6,7 +6,6 @@ const pagesController = require('../controllers/pages');
 
 const router = express.Router();
 
-
 router.get('/', pagesController.getHome);
 router.get('/presentations', pagesController.getPresentations);
 router.get('/opensource', pagesController.getOpensource);

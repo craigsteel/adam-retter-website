@@ -2,20 +2,27 @@ const path = require('path');
 
 const express = require('express');
 
-const adminController = require('../controllers/admin');
+const presentationController = require('../controllers/admin/presentations');
+const sourceController = require('../controllers/admin/sources');
 
 const router = express.Router();
 
-router.get('/add-content', adminController.getAddContent);
+router.get('/add-presentations', presentationController.getAddPresentation);
+router.get('/add-opensource', sourceController.getAddSource);
 
-router.get('/all-content', adminController.getAllContents);
+router.get('/all-presentations', presentationController.getAllPresentations);
+router.get('/all-opensource', sourceController.getAllSources);
 
-router.post('/add-content', adminController.postAddContent);
+router.post('/add-presentations', presentationController.postAddPresentation);
+router.post('/add-opensource', sourceController.postAddSource);
 
-router.get('/edit-content/:contentId', adminController.getEditContent);
+router.get('/edit-presentations/:presentationId', presentationController.getEditPresentation);
+router.get('/edit-opensource/:sourceId', sourceController.getEditSource);
 
-router.post('/edit-content', adminController.postEditContent);
+router.post('/edit-presentations', presentationController.postEditPresentation);
+router.post('/edit-opensource', sourceController.postEditSource);
 
-router.post('/delete-content', adminController.postDeleteContent);
+router.post('/delete-presentations', presentationController.postDeletePresentation);
+router.post('/delete-opensource', sourceController.postDeleteSource);
 
 module.exports = router;

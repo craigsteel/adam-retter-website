@@ -1,0 +1,88 @@
+<%- include('../includes/head.ejs') %>
+  </head>
+
+  <body>
+    <div class="wrapper">
+
+      <header class="header header__presentation">
+
+        <%- include('../includes/navigation.ejs') %>
+
+          <div class="header__content">
+            <div class="header__name-online">
+              <img loading="auto" src="../images/Adam-Home-oneline-v1.png" alt="Java logo"></img>
+            </div>
+
+            <div class="header__name-mobile">
+              <img loading="auto" src="../images/Adam-Home-mobile-v1.png" alt="Java logo"></img>
+            </div>
+
+            <h1 class="presentations__title">
+              Admin Open Source Content
+            </h1>
+            <h3 class="presentations__intro">
+              < All Open Source can be changed here>
+            </h3>
+          </div>
+      </header>
+
+      <main>
+
+      <section class="presentations presentation__page presentation__admin">
+        <div class="admin__title">
+          All Open Source Repositories >
+        </div>
+
+        <% if (sources.length> 0) { %>
+
+          <ul class="cards">
+
+
+
+              <li class="cards__item">
+            <% for (let source of sources) { %>
+                <div class="source__card card">
+                  <div class="card__content">
+
+                    <div class="card__title">
+                      <%= source.title %>
+                    </div>
+
+                    <p class="card__text">
+                      <%= source.description %>
+                    </p>
+                    <p></p>
+                  </div>
+                  <div class="card__link">
+                    <a href="<%= source.gitHubLink %>" alt="link to exist-db Repository" target="_blank"
+                      rel="noopener noreferrer">
+                      <svg class="card__icon">
+                        <use href="../images/svgs/sprite.svg#<%= source.gitHubIcon %>"></use>
+                      </svg>
+                      <%= source.gitHubLinkText %>
+                    </a>
+                  </div>
+                </div>
+                            <% } %>
+              </li>
+
+
+
+          </ul>
+
+          <% } else { %>
+            <H2>No Repositories Found!</H2>
+            <% } %>
+
+              <div class="button">
+                <a class="button__btn button__btn--magenta" href="/opensource" alt="link to Presentations Page"
+                  target="_blank" rel="noopener noreferrer"> Open Source Page ></a>
+              </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+    <%- include('../includes/end.ejs') %>

@@ -1,0 +1,103 @@
+<%- include('../includes/head.ejs') %>
+  </head>
+
+  <body>
+    <div class="wrapper">
+
+      <header class="header header__presentation">
+
+        <%- include('../includes/navigation.ejs') %>
+
+          <div class="header__content">
+            <div class="header__name-online">
+              <img loading="auto" src="../images/Adam-Home-oneline-v1.png" alt="Java logo"></img>
+            </div>
+
+            <div class="header__name-mobile">
+              <img loading="auto" src="../images/Adam-Home-mobile-v1.png" alt="Java logo"></img>
+            </div>
+
+            <h1 class="presentations__title">
+              Admin Presentation Content
+            </h1>
+            <h3 class="presentations__intro">
+              < All Presentations Content can be changed here >
+            </h3>
+          </div>
+      </header>
+
+      <main>
+
+      <section class="presentations presentation__page presentation__admin">
+          <div class="admin__title">
+            All Presentations >
+          </div>
+
+              <% if (presentations.length> 0) { %>
+
+                <ul class="presentations__cards presentations__cards--center cards">
+                  <% for (let presentation of presentations) { %>
+                    <div class="admin__edit">
+                      <div class="presentations__card card">
+                        <div class="card__content">
+
+                          <div class="card__title">
+                            <%= presentation.title %>
+                          </div>
+
+                          <div class="card__text">
+                            <p>
+                              <%= presentation.description %>
+                            </p>
+                          </div>
+
+                          <div class="card__link">
+                            <a class="card__link-pdf" href="<%= presentation.firstLink %>" alt="link to page">
+                              <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.firstIcon %>" alt="icon image"></img>
+                              <%= presentation.firstLinkText %>
+                            </a>
+
+                            <a class="card__link-slides" href="<%= presentation.secondLink %>" alt="link to page">
+                              <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.secondIcon %>" alt="icon image"></img>
+                              <%= presentation.secondLinkText %>
+                            </a>
+
+                            <a class="card__link-slides" href="<%= presentation.thirdLink %>" alt="link to page">
+                              <img loading="auto" src="../images/svgs/sprite.svg#<%= presentation.thirdIcon %>" alt="icon image"></img>
+                              <%= presentation.thirdLinkText %>
+                            </a>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="button button__admin">
+                        <form action="/admin/delete-presentation" method="POST">
+                          <input type="hidden" value="<%= presentation.id %>" name="presentationId">
+                          <button class="button__btn button__btn--magenta" type='submit'> Delete ></button>
+                        </form>
+
+                        <a href="/admin/edit-presentations/<%= presentation.id %>?edit=true" class="button__btn button__btn--magenta"> Edit ></a>
+
+                      </div>
+                    </div>
+                  <% } %>
+                </ul>
+
+              <% } else { %>
+              <h2>No Presentations Found!</h2>
+              <% } %>
+
+                <div class="button">
+                  <a class="button__btn button__btn--magenta" href="/presentations" alt="link to Presentations Page" target="_blank" rel="noopener noreferrer"> Presentations Page ></a>
+                </div>
+
+      </section>
+
+
+
+      </main>
+
+    </div>
+
+    <%- include('../includes/end.ejs') %>
