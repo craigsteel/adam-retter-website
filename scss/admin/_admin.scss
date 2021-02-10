@@ -34,3 +34,28 @@
   }
 }
 
+.presentation {
+  &__admin {
+    @include background((
+      'gradient': (to left, (#009de100, #001638)),
+      'image': '',
+      'bg-position': right
+    ));
+    margin: 1em auto 2em;
+    padding: 1em 3em;
+
+    @media screen and (min-width: $md) {
+      margin: -12em 4em 2em;
+    }
+  }
+}
+
+.opensource {
+  &__admin {
+    @include background((
+      'gradient': (to left, (#009de100, #001638)),
+      'image': '',
+      'bg-position': right
+    ));
+  }
+}

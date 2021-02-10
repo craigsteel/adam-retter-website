@@ -21,48 +21,51 @@
               Admin Open Source Content
             </h1>
             <h3 class="presentations__intro">
-              < All Open Source can be changed here>
+              < All Open Source can be changed here >
             </h3>
           </div>
       </header>
 
       <main>
-       <div class="admin__title">
-          All Open Source Repositories >
-      </div>
 
-        <section class="source">
+      <section class="presentations presentation__page opensource__admin">
 
-        <% if (sources.length> 0) { %>
+        <div class="admin__title">
+          <!-- All Open Source Repositories > -->
+        </div>
 
-          <ul class="cards">
+          <% if (sources.length> 0) { %>
 
-          <% for (let source of sources) { %>
-            <li class="cards__item">
 
-                <div class="source__card card">
-                  <div class="card__content">
-                    <div class="card__title">
-                      <%= source.title %>
-                    </div>
-                      <p></p>
-                    <p class="card__text">
-                      <%= source.description %>
-                    </p>
-                    <p></p>
-                  </div>
+            <ul class="presentations__cards presentations__cards--center cards">
+              <% for (let source of sources) { %>
+                <div class="admin__edit">
+                  <div class="presentations__card card">
 
-                  <div class="card__link">
-                    <a href="<%= source.gitHubLink %>" alt="link to exist-db Repository" target="_blank"
-                      rel="noopener noreferrer">
-                      <svg class="card__icon">
-                        <use href="../images/svgs/sprite.svg#<%= source.gitHubIcon %>"></use>
-                      </svg>
-                      <%= source.gitHubLinkText %>
-                    </a>
+                    <div class="card__content">
+                      <div class="card__title">
+                        <%= source.title %>
+                      </div>
+
+                      <div class="card__text">
+                        <p>
+                          <%= source.description %>
+                        </p>
+                      </div>
+
+                      <div class="card__link">
+                        <a href="<%= source.gitHubLink %>" alt="link to exist-db Repository" target="_blank"
+                          rel="noopener noreferrer">
+                          <svg class="card__icon">
+                            <use href="../images/svgs/sprite.svg#<%= source.gitHubIcon %>"></use>
+                          </svg>
+                          <%= source.gitHubLinkText %>
+                        </a>
+                      </div>
+
                   </div>
                 </div>
-            </li>
+
                       <div class="button button__admin">
                         <form action="/admin/delete-source" method="POST">
                           <input type="hidden" value="<%= source.id %>" name="sourceId">
@@ -74,8 +77,8 @@
 
                       </div>
                       </div>
-                      <% } %>
-                        </ul>
+              <% } %>
+            </ul>
 
           <% } else { %>
             <H2>No Repositories Found!</H2>

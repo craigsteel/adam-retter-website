@@ -18,7 +18,7 @@ const getSourcesFromFile = cb => {
 };
 
 module.exports = class Source {
- constructor(id, title, description, gitHubLink, gitHubIcon, githubLinkText) {
+ constructor(id, title, description, gitHubLink, gitHubIcon, gitHubLinkText) {
     this.id = id;
     this.title = title;
     this.description = description;

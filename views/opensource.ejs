@@ -30,7 +30,49 @@
 
         <main>
 
-          <%- include('includes/source.ejs') %>
+        <section class="source source__home">
+
+        <% if (sources.length> 0) { %>
+
+          <ul class="cards">
+            <% for (let source of sources) { %>
+              <li class="cards__item">
+
+                <div class="source__card card">
+                  <div class="card__content">
+                    <div class="card__title">
+                      <%= source.title %>
+                    </div>
+                    <p class="card__text">
+                      <%= source.description %>
+                    </p>
+                    <p></p>
+                  </div>
+
+                  <div class="card__link">
+                    <a href="<%= source.gitHubLink %>" alt="link to exist-db Repository" target="_blank"
+                      rel="noopener noreferrer">
+                      <svg class="card__icon">
+                        <use href="images/svgs/sprite.svg#<%= source.gitHubIcon %>"></use>
+                      </svg>
+                      <%= source.gitHubLinkText %>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <% } %>
+          </ul>
+
+          <% } else { %>
+            <H2>No Repositories Found!</H2>
+            <% } %>
+
+              <div class="button center">
+                <a class="button__btn button__btn--magenta" href="https://github.com/adamretter" alt="GitHub Repository"
+                  target="_blank" rel="noopener noreferrer"> GITHUB REPOSITORY ></a>
+              </div>
+
+        </section>
 
           <%- include('includes/book.ejs') %>
 
