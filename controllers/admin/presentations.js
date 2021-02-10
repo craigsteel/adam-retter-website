@@ -1,4 +1,4 @@
-const Presentation = require('../../models/presentations.min');
+const Presentation = require('../../models/presentations');
 
 exports.getAddPresentation = (req, res, next) => {
   res.render('admin/edit-presentations', {

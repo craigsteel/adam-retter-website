@@ -1,5 +1,6 @@
 .presentation-page {
   @include background-block;
+  margin: 2em 1em;
 
   @media screen and (min-width: $md) {
     // @include background((
@@ -7,7 +8,7 @@
     //   'image': '',
     //   'bg-position': right
     // ));
-    margin: -13em 4em 2em;
+    margin: -15em 4em 2em;
   }
 
   &__admin {

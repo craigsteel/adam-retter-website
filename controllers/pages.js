@@ -1,5 +1,5 @@
-const Presentation = require('../models/presentations.min');
-const Sources = require('../models/presentations.min');
+const Presentation = require('../models/presentations');
+const Sources = require('../models/presentations');
 
 exports.getHome = (req, res, next) => {
   res.render('home', {

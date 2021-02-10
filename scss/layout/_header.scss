@@ -46,7 +46,7 @@
       'image': 'Adam-presentations-v2@1x.jpg',
       'bg-position': top,
     ));
-    min-height: 40em;
+    min-height: auto;
 
     @media (min-resolution: 192dpi) and (min-width: 37.5em),
       (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
@@ -56,24 +56,27 @@
         'image': 'Adam-presentations-v2@2x.jpg',
         'bg-position': center
       ));
+      min-height: 40em;
     }
   }
 
   &__open {
     @include background((
       'gradient': (to bottom, (#02202d89, #001638)),
-      'image': 'Adam-open-banner@x1.jpg',
+      'image': 'Adam-opensource-v2@1x.jpg',
       'bg-position': top,
     ));
+    min-height: auto;
 
     @media (min-resolution: 192dpi) and (min-width: 37.5em),
       (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
       (min-width: 125em) {
       @include background((
         'gradient': (to bottom, (#02202d89, #001638)),
-        'image': 'Adam-open-banner@2x.jpg',
-        'bg-position': center
+        'image': 'Adam-opensource-v2@2x.jpg',
+        'bg-position': bottom
       ));
+      min-height: 26em;
     }
   }
 
