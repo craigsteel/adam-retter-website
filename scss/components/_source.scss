@@ -7,6 +7,14 @@
     margin: -3em 6em;
   }
 
+  &__home {
+    margin: 0 1em;
+
+    @media screen and (min-width: $md) {
+      margin: 0;
+    }
+  }
+
   &__card {
     height: auto;
     width: auto;
