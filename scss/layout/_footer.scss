@@ -75,6 +75,10 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+
+    @media screen and (min-width: $md) {
+      margin: 0 3em;
+    }
   }
 
   &__logos {
@@ -87,7 +91,7 @@
     &--wc,
     &--ghost {
       width: 7em;
-      margin: -1em .5em;
+      margin: -1em 0.5em 0 0;
     }
   }
 

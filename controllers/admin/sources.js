@@ -75,7 +75,7 @@ exports.getAllSources = (req, res, next) => {
 };
 
 exports.postDeleteSource = (req, res, next) => {
-  const sourcesId = req.body.sourceId;
-  Source.deleteById(sourcesId);
+  const sourceId = req.body.sourceId;
+  Source.deleteById(sourceId);
   res.redirect('/admin/all-opensource');
 };
