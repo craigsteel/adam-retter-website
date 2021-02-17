@@ -4,6 +4,7 @@
   position: fixed;
   width: 100%;
   top: 0;
+  left: 0;
   color: $color-light-blue;
   z-index: 10;
   transition: all 0.3s ease-out;
@@ -13,19 +14,21 @@
   }
 
   &__Items {
-    opacity: 0;
     transform: scale(1.2);
     transition: all 1s ease;
     z-index: -10;
     position: relative;
+    display: none;
   }
 
   &__ToggleShow {
     background-color: $color-white;
-    padding: 2em 0;
-    opacity: 1;
+    padding: 5em 0 2em;
     z-index: 20;
     transform: scale(1);
+    transition: all 1s ease;
+    display: block;
+    margin: 0;
   }
 
   &__Link-toggle {
@@ -38,13 +41,13 @@
     transition: all 3s ease-out;
 
     a {
-      @include font-size(30px, 30px, 2px);
+      @include font-size(24px, 20px, 2px);
       text-transform: uppercase;
-      color: $color-light-blue;
+      color: $color-dark-blue;
       transition: all 1s ease;
 
       &:hover {
-        color: $color-blue;
+        color: $color-green;
         text-decoration: none;
       }
     }

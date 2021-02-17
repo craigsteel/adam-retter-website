@@ -32,7 +32,7 @@ module.exports = class Source {
     getSourcesFromFile(sources => {
       if (this.id) {
         const existingSourceIndex = sources.findIndex(
-          source => source.Id === this.id
+          sour => sour.Id === this.id
         );
         const updatedSources = [...sources];
         updatedSources[existingSourceIndex] = this;
@@ -51,7 +51,7 @@ module.exports = class Source {
 
   static deleteById(id) {
     getSourcesFromFile(sources => {
-      const updatedSources = sources.filter(source => source.id !== id);
+      const updatedSources = sources.filter(sour => sour.id !== id);
       fs.writeFile(p, JSON.stringify(updatedSources), err => {
         console.log(err);
       });

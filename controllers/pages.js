@@ -1,5 +1,5 @@
 const Presentation = require('../models/presentations');
-const Sources = require('../models/source');
+// const Sources = require('../models/source');
 
 exports.getHome = (req, res, next) => {
   res.render('home', {
@@ -36,19 +36,24 @@ exports.get404 = (req, res, next) => {
 };
 
 exports.getPresentations = (req, res, next) => {
-  Presentation.fetchAll(presentations => {
-    res.render('presentations', {
-      presentations: presentations,
-      pageTitle: 'Adam Retter Presentations',
-      path: '/presentations',
+  Presentation.find()
+    .then(presentations => {
+      console.log(presentations);
+      res.render('presentations', {
+        pres: presentations,
+        pageTitle: 'Adam Retter Presentations',
+        path: '/presentations',
+      });
+    })
+    .catch(err => {
+      console.log(err);
     });
-  });
 };
 
 exports.getOpensource = (req, res, next) => {
   Sources.fetchAll(sources => {
     res.render('opensource', {
-      sources: sources,
+      sours: sources,
       pageTitle: 'Adam Retter Open Source',
       path: '/opensource',
     });

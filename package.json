@@ -41,6 +41,8 @@
     "imagemin-jpeg-recompress": "^7.0.0",
     "imagemin-pngquant": "^9.0.1",
     "imagemin-webp": "^6.0.0",
+    "mongodb": "^3.6.4",
+    "mongoose": "^5.11.16",
     "morgan": "~1.9.1",
     "node-sass": "^5.0.0"
   }

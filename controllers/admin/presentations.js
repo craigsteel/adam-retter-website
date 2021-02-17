@@ -20,22 +20,30 @@ exports.postAddPresentation = (req, res, next) => {
   const thirdIcon = req.body.thirdIcon;
   const thirdLink = req.body.thirdLink;
   const thirdLinkText = req.body.firstLinkText;
-  const presentation = new Presentation(
-    null,
-    title,
-    description,
-    firstIcon,
-    firstLink,
-    firstLinkText,
-    secondIcon,
-    secondLink,
-    secondLinkText,
-    thirdIcon,
-    thirdLink,
-    thirdLinkText
-    );
-  presentation.save();
-  res.redirect('/admin/all-presentations');
+  const presentation = new Presentation({
+    title: title,
+    description: description,
+    firstIcon: firstIcon,
+    firstLink: firstLink,
+    firstLinkText: firstLinkText,
+    secondIcon: secondIcon,
+    secondLink: secondLink,
+    secondLinkText: secondLinkText,
+    thirdIcon: thirdIcon,
+    thirdLink: thirdLink,
+    thirdLinkText: thirdLinkText,
+    userId: req.user
+  });
+  presentation
+    .save()
+    .then(result => {
+      // console.log(result);
+      console.log('Created Presentation');
+      res.redirect('/admin/all-presentations');
+    })
+    .catch(err => {
+      console.log(err);
+    });
 };
 
 exports.getEditPresentation = (req, res, next) => {
@@ -43,10 +51,11 @@ exports.getEditPresentation = (req, res, next) => {
   if (!editMode) {
     return res.redirect('/');
   }
-  const presentationId = req.params.presentationId;
-  Presentation.findById(presentationId, presentation => {
-    if(!presentation) {
-      return res.redirect('/');
+  const presId = req.params.presentationId;
+  Presentation.findById(presId)
+    .then(presentation => {
+      if(!presentation) {
+        return res.redirect('/');
     }
     res.render('admin/edit-presentations', {
       pageTitle: 'Edit Presentation',
@@ -54,11 +63,12 @@ exports.getEditPresentation = (req, res, next) => {
       editing: editMode,
       presentation: presentation
     });
-  });
+  })
+  .catch(err => console.log(err));
 };
 
 exports.postEditPresentation = (req, res, next) => {
-  const presentationId = req.body.presentationId;
+  const presId = req.body.presentationId;
   const updatedTitle = req.body.title;
   const updatedDescription = req.body.description;
   const updatedFirstIcon = req.body.firstIcon;
@@ -70,36 +80,50 @@ exports.postEditPresentation = (req, res, next) => {
   const updatedThirdIcon = req.body.thirdIcon;
   const updatedThirdLink = req.body.thirdLink;
   const updatedThirdLinkText = req.body.thirdLinkText;
-  const updatedPresentation = new Presentation(
-    presentationId,
-    updatedTitle,
-    updatedDescription,
-    updatedFirstIcon,
-    updatedFirstLink,
-    updatedFirstLinkText,
-    updatedSecondIcon,
-    updatedSecondLink,
-    updatedSecondLinkText,
-    updatedThirdIcon,
-    updatedThirdLink,
-    updatedThirdLinkText
-  );
-  updatedPresentation.save();
-  res.redirect('/admin/all-presentations');
+
+  Presentation.findById(presId)
+  .then(presentation => {
+    presentation.title = updatedTitle;
+    presentation.description = updatedDescription;
+    presentation.firstIcon = updatedFirstIcon;
+    presentation.firstLink = updatedFirstLink;
+    presentation.firstLinkText =updatedFirstLinkText;
+    presentation.secondIcon = updatedSecondIcon;
+    presentation.secondLink = updatedSecondLink;
+    presentation.secondLinkText = updatedSecondLinkText;
+    presentation.thirdIcon = updatedThirdIcon;
+    presentation.thirdLink = updatedThirdLink;
+    presentation.thirdLinkText = updatedThirdLinkText;
+    return presentation.save();
+  })
+  .then(result => {
+    console.log('Updated Presentation');
+    res.redirect('/admin/all-presentations');
+  })
+  .catch(err => console.log(err));
 };
 
-exports.getAllPresentations = (req, res, next) => {
-  Presentation.fetchAll(presentations => {
+exports.getPresentations = (req, res, next) => {
+  Presentation.find()
+    // .select('title price -_id')
+    // .populate('userId', 'name')
+  .then(presentations => {
+    console.log(presentations);
     res.render('admin/all-presentations', {
-      presentations: presentations,
+      pres: presentations,
       pageTitle: 'Admin All presentations',
       path: '/admin/all-presentations',
     });
-  });
+  })
+  .catch(err => console.log(err));
 };
 
 exports.postDeletePresentation = (req, res, next) => {
-  const presentationId = req.body.presentationId;
-  Presentation.deleteById(presentationId);
-  res.redirect('/admin/all-presentations');
+  const presId = req.body.presentationId;
+  Presentation.deleteById(presId)
+    .then(() => {
+      console.log('DESTROYED PRESENTATION');
+      res.redirect('/admin/all-presentations');
+    })
+    .catch(err => console.log(err));
 };

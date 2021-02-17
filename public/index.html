@@ -38,7 +38,7 @@
 
           <header class="header">
 
-            <div class="navbar">
+            <!-- <div class="navbar">
               <div class="navbar__Link-toggle">
                 <div class="navbar__burger">
                   <div class="navbar__burger__middle"></div>
@@ -68,13 +68,26 @@
                   <a href="/contact.html">Contact</a>
                 </div>
               </nav>
-            </div>
+            </div> -->
+
+              <div class="navbar">
+                <input type="checkbox" id="overlay-input" />
+                <label for="overlay-input" id="overlay-button"><span></span></label>
+                <div id="overlay">
+                  <ul>
+                    <li><a href="/" alt="link to Adam Retter Home page">Home</a></li>
+                    <li><a href="/presentations.html" alt="link to Adam Retter Presentations">Presentations</a></li>
+                    <li><a href="/opensource.html" alt="link to Adam Retter Open Source">Open Source</a></li>
+                    <li><a href="/software.html" alt="link to Adam Retter Open Source">Software</a></li>
+                    <li><a href="/publications.html" alt="link to Adam Retter publications">Publications</a></li>
+                    <li><a href="https://blog.adamretter.org.uk/author/adamretter/" alt="link to Adam Retter Blog">blog</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
 
             <nav class="navigation">
               <ul>
-                <!-- <li><a href="/admin/add-content" alt="link to Admin add content">add Content</a></li>
-                <li><a href="/admin/content" alt="link to Admin add content">Content</a></li> -->
-
                 <li><a class="active" href="/" alt="link to Adam Retter Home page">Home</a></li>
                 <li><a href="/presentations.html" alt="link to Adam Retter Presentations">Presentations</a></li>
                 <li><a href="/opensource.html" alt="link to Adam Retter Open Source">Open source</a></li>
@@ -115,7 +128,7 @@
             </nav>
 
               <div class="header__content">
-                <div class="header__name-online">
+                <div class="header__name-desktop">
                   <img loading="auto" src="images/Adam-Home-oneline-v1-thick.png" alt="Java logo"></img>
                 </div>
 
@@ -788,9 +801,9 @@
 
                   <div class="book__cover">
                     <picture>
-                      <source srcset="images/webp/book-image@1x.webp 1x, images/webp/book-image@2x.webp 2x"
+                      <source srcset="images/book-image@1x.webp 1x, images/book-image@2x.webp 2x"
                         alt="eXist book cover image" media="(max-width: 720px)" target="_blank" rel="noopener noreferrer">
-                      <img srcset="images/webp/book-image@1x.webp 1x, images/webp/book-image@2x.webp 2x"
+                      <img srcset="images/book-image@1x.webp 1x, images/book-image@2x.webp 2x"
                         alt="eXist book cover image" target="_blank" rel="noopener noreferrer"></img>
                     </picture>
                   </div>
@@ -1009,7 +1022,7 @@
 
       </section>
 
-        <script src="javascripts/main.js" async></script>
+        <!-- <script src="javascripts/main.js" async></script> -->
 
       </body>
   </html>

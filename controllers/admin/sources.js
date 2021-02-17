@@ -31,8 +31,8 @@ exports.getEditSource = (req, res, next) => {
   if (!editMode) {
     return res.redirect('/');
   }
-  const sourceId = req.params.sourceId;
-  Source.findById(sourceId, source => {
+  const sourId = req.params.sourceId;
+  Source.findById(sourId, source => {
     if(!source) {
       return res.redirect('/');
     }
@@ -67,7 +67,7 @@ exports.postEditSource = (req, res, next) => {
 exports.getAllSources = (req, res, next) => {
   Source.fetchAll(sources => {
     res.render('admin/all-opensource', {
-      sources: sources,
+      sours: sources,
       pageTitle: 'Admin All Open Source Repositories',
       path: '/admin/all-opensource',
     });
@@ -75,7 +75,7 @@ exports.getAllSources = (req, res, next) => {
 };
 
 exports.postDeleteSource = (req, res, next) => {
-  const sourceId = req.body.sourceId;
-  Source.deleteById(sourceId);
+  const sourId = req.body.sourceId;
+  Source.deleteById(sourId);
   res.redirect('/admin/all-opensource');
 };
