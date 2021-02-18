@@ -1,71 +1,33 @@
-const fs = require('fs');
-const path = require('path');
+const mongoose = require('mongoose');
 
-const p = path.join(
-  path.dirname(process.mainModule.filename),
-  'data',
-  'source.json'
-);
+const Schema = mongoose.Schema;
 
-const getSourcesFromFile = cb => {
-  fs.readFile(p, (err, fileSources) => {
-    if (err) {
-      cb([]);
-    } else {
-      cb(JSON.parse(fileSources));
-    }
-  });
-};
-
-module.exports = class Source {
- constructor(id, title, description, gitHubLink, gitHubIcon, gitHubLinkText) {
-    this.id = id;
-    this.title = title;
-    this.description = description;
-    this.gitHubIcon = gitHubLink;
-    this.gitHubIcon = gitHubIcon;
-    this.gitHubLinkText = gitHubLinkText;
-
+const sourceSchema = new Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  gitHubLink: {
+    type: String,
+    required: false
+  },
+  gitHubIcon: {
+    type: String,
+    required: false
+  },
+  gitHubLinkText: {
+    type: String,
+    required: false
+  },
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
   }
+});
 
-  save() {
-    getSourcesFromFile(sources => {
-      if (this.id) {
-        const existingSourceIndex = sources.findIndex(
-          sour => sour.Id === this.id
-        );
-        const updatedSources = [...sources];
-        updatedSources[existingSourceIndex] = this;
-        fs.writeFile(p, JSON.stringify(updatedSources), err => {
-          console.log(err);
-        });
-      } else {
-        this.id = Math.random().toString();
-        sources.push(this);
-        fs.writeFile(p, JSON.stringify(sources), err => {
-          console.log(err);
-        });
-      }
-    });
-  }
-
-  static deleteById(id) {
-    getSourcesFromFile(sources => {
-      const updatedSources = sources.filter(sour => sour.id !== id);
-      fs.writeFile(p, JSON.stringify(updatedSources), err => {
-        console.log(err);
-      });
-    });
-  }
-
-  static fetchAll(cb) {
-    getSourcesFromFile(cb);
-  }
-
-  static findById(id, cb) {
-    getSourcesFromFile(sources => {
-      const source = sources.find(p => p.id === id);
-      cb(source);
-    });
-  }
-};
+module.exports = mongoose.model('Source', sourceSchema);

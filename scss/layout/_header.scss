@@ -131,6 +131,19 @@
     }
   }
 
+  &__notfound {
+    padding: 0;
+
+    @media screen and (min-width: $md) {
+      @include font-size(26px, 0, 3px);
+      padding: 1em 0;
+    }
+
+    h1 {
+      color: $color-magenta;
+    }
+  }
+
   &__intro {
     margin: 0 1em;
 

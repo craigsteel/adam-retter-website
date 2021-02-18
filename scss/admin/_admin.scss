@@ -1,4 +1,19 @@
-.admin {
+.navigation {
+  &__admin {
+    display: none;
+
+    @media screen and (min-width: $md) {
+      display: flex;
+      flex-flow: wrap;
+      justify-content: center;
+      background-color: rgba(28, 58, 105, 1);
+      padding: 1em;
+      box-shadow: 0 0 5em rgba($color-black, 1);
+      text-align: center;
+      border-radius: 5px;
+    }
+  }
+
   &__menu {
     display: flex;
     flex-wrap: wrap;

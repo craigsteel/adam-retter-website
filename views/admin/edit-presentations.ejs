@@ -82,7 +82,7 @@
             </div>
 
             <% if (editing) { %>
-              <input type="hidden" value="<%= presentation.id %>" name="presentationId">
+              <input type="hidden" value="<%= presentation._id %>" name="presentationId">
             <% } %>
 
             <button class="button__btn button__btn--submit" type="submit"><% if (editing) { %>Update Presentation<% } else { %>Add Presentation<% } %></button>

@@ -14,16 +14,24 @@ exports.postAddSource = (req, res, next) => {
   const gitHubLink = req.body.gitHubLink;
   const gitHubIcon = req.body.gitHubIcon;
   const gitHubLinkText = req.body.gitHubLinkText;
-  const source = new Source(
-    null,
-    title,
-    description,
-    gitHubLink,
-    gitHubIcon,
-    gitHubLinkText
-    );
-  source.save();
-  res.redirect('/admin/all-opensource');
+  const source = new Source({
+    title: title,
+    description: description,
+    gitHubLink: gitHubLink,
+    gitHubIcon: gitHubIcon,
+    gitHubLinkText: gitHubLinkText,
+    userId: req.user
+  });
+  source
+    .save()
+    .then(result => {
+      // console.log(result);
+      console.log('Created Repository');
+      res.redirect('/admin/all-opensource');
+    })
+    .catch(err => {
+      console.log(err);
+    });
 };
 
 exports.getEditSource = (req, res, next) => {
@@ -31,8 +39,9 @@ exports.getEditSource = (req, res, next) => {
   if (!editMode) {
     return res.redirect('/');
   }
-  const sourId = req.params.sourceId;
-  Source.findById(sourId, source => {
+  const sourceId = req.params.sourceId;
+  Source.findById(sourceId)
+    .then (source => {
     if(!source) {
       return res.redirect('/');
     }
@@ -42,7 +51,8 @@ exports.getEditSource = (req, res, next) => {
       editing: editMode,
       source: source
     });
-  });
+  })
+  .catch(err => console.log(err));
 };
 
 exports.postEditSource = (req, res, next) => {
@@ -52,30 +62,44 @@ exports.postEditSource = (req, res, next) => {
   const updatedGitHubIcon = req.body.gitHubIcon;
   const updatedGitHubLink = req.body.gitHubLink;
   const updatedGitHubLinkText = req.body.gitHubLinkText;
-  const updatedSource = new Source(
-    sourceId,
-    updatedTitle,
-    updatedDescription,
-    updatedGitHubIcon,
-    updatedGitHubLink,
-    updatedGitHubLinkText
-  );
-  updatedSource.save();
-  res.redirect('/admin/all-opensource');
+
+  Source.findById(sourceId)
+    .then(source => {
+      source.title = updatedTitle;
+      source.description = updatedDescription;
+      source.gitHubIcon = updatedGitHubIcon;
+      source.gitHubLink = updatedGitHubLink;
+      source.gitHubLinkText = updatedGitHubLinkText;
+      return source.save();
+    })
+    .then(result => {
+      console.log('UPDATED Repository!');
+      res.redirect('/admin/all-opensource');
+    })
+    .catch(err => console.log(err));
 };
 
 exports.getAllSources = (req, res, next) => {
-  Source.fetchAll(sources => {
+  Source.find()
+    // .select('title price -_id')
+    // .populate('userId', 'name')
+  .then(sources => {
+    console.log(sources);
     res.render('admin/all-opensource', {
       sours: sources,
       pageTitle: 'Admin All Open Source Repositories',
       path: '/admin/all-opensource',
     });
-  });
+  })
+  .catch(err => console.log(err));
 };
 
 exports.postDeleteSource = (req, res, next) => {
-  const sourId = req.body.sourceId;
-  Source.deleteById(sourId);
-  res.redirect('/admin/all-opensource');
+  const sourceId = req.body.sourceId;
+  Source.findByIdAndRemove(sourceId)
+  .then(() => {
+      console.log('DESTROYED REPOSITORY');
+      res.redirect('/admin/all-opensource');
+    })
+    .catch(err => console.log(err));
 };

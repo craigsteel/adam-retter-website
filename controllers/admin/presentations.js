@@ -97,13 +97,13 @@ exports.postEditPresentation = (req, res, next) => {
     return presentation.save();
   })
   .then(result => {
-    console.log('Updated Presentation');
+    console.log('UPDATED PRESENTATIONS!');
     res.redirect('/admin/all-presentations');
   })
   .catch(err => console.log(err));
 };
 
-exports.getPresentations = (req, res, next) => {
+exports.getAllPresentations = (req, res, next) => {
   Presentation.find()
     // .select('title price -_id')
     // .populate('userId', 'name')
@@ -120,7 +120,7 @@ exports.getPresentations = (req, res, next) => {
 
 exports.postDeletePresentation = (req, res, next) => {
   const presId = req.body.presentationId;
-  Presentation.deleteById(presId)
+  Presentation.findByIdAndRemove(presId)
     .then(() => {
       console.log('DESTROYED PRESENTATION');
       res.redirect('/admin/all-presentations');

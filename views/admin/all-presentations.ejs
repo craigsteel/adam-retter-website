@@ -30,7 +30,7 @@
 
       <section class="presentations presentation__page presentation__admin">
           <div class="admin__title">
-            <!-- All Presentations > -->
+
           </div>
 
               <% if (pres.length> 0) { %>
@@ -72,12 +72,12 @@
                       </div>
 
                       <div class="button button__admin">
-                        <form action="/admin/all-presentations" method="POST">
-                          <input type="hidden" value="<%= presentation.id %>" name="presentationId">
+                        <form action="/admin/delete-presentation" method="POST">
+                          <input type="hidden" value="<%= presentation._id %>" name="presentationId">
                           <button class="button__btn button__btn--magenta" type='submit'> Delete ></button>
                         </form>
 
-                        <a href="/admin/edit-presentations/<%= presentation.id %>?edit=true" class="button__btn button__btn--magenta"> Edit ></a>
+                        <a href="/admin/edit-presentation/<%= presentation._id %>?edit=true" class="button__btn button__btn--magenta"> Edit ></a>
 
                       </div>
                     </div>

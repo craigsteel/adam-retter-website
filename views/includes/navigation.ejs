@@ -10,22 +10,22 @@
         <a href="/" alt="link to Adam Retter Home page">Home</a>
       </div>
       <div class="navbar__Link">
-        <a href="/presentations.html" alt="link to Adam Retter Presentations">Presentations</a>
+        <a href="/presentations" alt="link to Adam Retter Presentations">Presentations</a>
       </div>
       <div class="navbar__Link">
-        <a href="/opensource.html" alt="link to Adam Retter Open Source">Open Source</a>
+        <a href="/opensource" alt="link to Adam Retter Open Source">Open Source</a>
       </div>
       <div class="navbar__Link">
-        <a href="/software.html" alt="link to Adam Retter Open Source">Software</a>
+        <a href="/software" alt="link to Adam Retter Open Source">Software</a>
       </div>
       <div class="navbar__Link">
-        <a href="/publications.html" alt="link to Adam Retter publications">Publications</a>
+        <a href="/publications" alt="link to Adam Retter publications">Publications</a>
       </div>
       <div class="navbar__Link">
         <a href="https://blog.adamretter.org.uk/author/adamretter/" alt="link to Adam Retter Blog">blog</a>
       </div>
       <div class="navbar__Link">
-        <a href="/contact.html">Contact</a>
+        <a href="/contact">Contact</a>
       </div>
     </nav>
   </div> -->
@@ -36,25 +36,25 @@
       <div id="overlay">
         <ul>
           <li><a href="/" alt="link to Adam Retter Home page">Home</a></li>
-          <li><a href="/presentations.html" alt="link to Adam Retter Presentations">Presentations</a></li>
-          <li><a href="/opensource.html" alt="link to Adam Retter Open Source">Open Source</a></li>
-          <li><a href="/software.html" alt="link to Adam Retter Open Source">Software</a></li>
-          <li><a href="/publications.html" alt="link to Adam Retter publications">Publications</a></li>
+          <li><a href="/presentations" alt="link to Adam Retter Presentations">Presentations</a></li>
+          <li><a href="/opensource" alt="link to Adam Retter Open Source">Open Source</a></li>
+          <li><a href="/software" alt="link to Adam Retter Open Source">Software</a></li>
+          <li><a href="/publications" alt="link to Adam Retter publications">Publications</a></li>
           <li><a href="https://blog.adamretter.org.uk/author/adamretter/" alt="link to Adam Retter Blog">blog</a></li>
-          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
   </div>
 
   <nav class="navigation">
     <ul>
-      <li><a class="active" href="/" alt="link to Adam Retter Home page">Home</a></li>
-      <li><a href="/presentations.html" alt="link to Adam Retter Presentations">Presentations</a></li>
-      <li><a href="/opensource.html" alt="link to Adam Retter Open Source">Open source</a></li>
-      <li><a href="/software.html" alt="link to Adam retter Purchased Software">Software</a></li>
-      <li><a href="/publications.html" alt="link to Adam Retter publications">Publications</a></li>
+      <li><a class="<%= path === '/' ? 'active' : '' %>" href="/" alt="link to Adam Retter Home page">Home</a></li>
+      <li><a class="<%= path === '/presentations' ? 'active' : '' %>" href="/presentations" alt="link to Adam Retter Presentations">Presentations</a></li>
+      <li><a class="<%= path === '/opensource' ? 'active' : '' %>" href="/opensource" alt="link to Adam Retter Open Source">Open source</a></li>
+      <li><a class="<%= path === '/software' ? 'active' : '' %>" href="/software" alt="link to Adam retter Purchased Software">Software</a></li>
+      <li><a class="<%= path === '/publications' ? 'active' : '' %>" href="/publications" alt="link to Adam Retter publications">Publications</a></li>
       <li><a href="https://blog.adamretter.org.uk/author/adamretter/" alt="link to Adam Retter Blog">Blog</a></li>
-      <li><a href="/contact.html" alt="link to Adam Retter publications">Contact</a></li>
+      <li><a class="<%= path === '/contact' ? 'active' : '' %>" href="/contact" alt="link to Adam Retter publications">Contact</a></li>
     </ul>
 
     <ul class="navigation__phone">
@@ -67,35 +67,37 @@
         <a href="https://github.com/adamretter" aria-label="Link to github Repositories" target="_blank"
           rel="noopener noreferrer">
           <svg class="navigation__social-icon footer__social-icon">
-            <use href="images/svgs/sprite.svg#github-icon"></use>
+            <use href="../images/svgs/sprite.svg#github-icon"></use>
           </svg>
         </a>
       </li>
+
       <li>
         <a href="https://twitter.com/adamretter" aria-label="Link to Adams Twitter Account" target="_blank"
           rel="noopener noreferrer">
           <svg class="navigation__social-icon footer__social-icon">
-            <use href="images/svgs/sprite.svg#Twitter-icon"></use>
+            <use href="../images/svgs/sprite.svg#Twitter-icon"></use>
           </svg>
         </a>
       </li>
+
       <li>
         <a href="https://www.linkedin.com/in/adamretter/" aria-label="Link to Adams LinkedIn Account" target="_blank"
           rel="noopener noreferrer">
           <svg class="navigation__social-icon footer__social-icon">
-            <use href="images/svgs/sprite.svg#linkedin2"></use>
+            <use href="../images/svgs/sprite.svg#linkedin2"></use>
           </svg>
         </a>
       </li>
     </ul>
 
-    <ul class="mavigation__admin">
-      <li><a href="#">Admin -</a></li>
-      <li><a href="/add-presentation" alt="link to Admin add Presentation">Add Presentation |</a></li>
-      <li><a href="/all-presentations" alt="link to Admin all Presentations">All Presentations |</a></li>
-      <li><a href="/add-repo" alt="link to Admin add repo">Add repo |</a></li>
-      <li><a href="/all-repos" alt="link to Admin all repos">All repos |</a></li>
-      <li><a href="/add-Blog-Post" alt="link to Admin add Blog-Post">Add Blog Post |</a></li>
-      <li><a href="/all-Blog-Posts" alt="link to Admin all Blog-Posts">All Blog Posts</a></li>
+    <ul class="navigation__admin">
+      <li><a href="#">Your Admin ></a></li>
+      <li><a href="/admin/edit-presentations" alt="link to Admin add Presentation">Add Presentation |</a></li>
+      <li><a href="/admin/all-presentations" alt="link to Admin all Presentations">All Presentations |</a></li>
+      <li><a href="/admin/edit-opensource" alt="link to Admin add repo">Add repo |</a></li>
+      <li><a href="/admin/all-opensource" alt="link to Admin all repos">All repos |</a></li>
+      <li><a href="/admin/edit-blog-post" alt="link to Admin add Blog-Post">Add Blog Post |</a></li>
+      <li><a href="/admin/all-blog-posts" alt="link to Admin all Blog-Posts">All Blog Posts</a></li>
     </ul>
   </nav>

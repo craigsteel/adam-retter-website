@@ -48,7 +48,7 @@
             </div>
 
             <% if (editing) { %>
-              <input type="hidden" value="<%= source.id %>" name="sourceId">
+              <input type="hidden" value="<%= source._id %>" name="sourceId">
             <% } %>
 
             <button class="button__btn button__btn--submit" type="submit"><% if (editing) { %>Update Open Source<% } else { %>Add Open Source<% } %></button>
