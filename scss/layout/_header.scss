@@ -1,9 +1,4 @@
 .header {
-  // position: relative;
-  // background-image: url(../images/home-banner@1x.jpg);
-  // background-size: cover;
-  // background-position: top;
-
   @include background((
     'gradient': (to bottom, (rgba(0, 22, 56, 0), rgba(0, 22, 56, 0.7))),
     'image': 'Adam-Home-banner-@x1.jpg',
@@ -119,14 +114,15 @@
     }
 
     h1 {
-      @include font-size(36px, 38px, 1px);
+      @include font-size(36px, 42px, 1px);
       margin: 0.5em 0;
       text-shadow: none;
       color: $color-white;
-      padding-bottom: .5em;
+      padding-bottom: 0;
 
       @media screen and (min-width: $md) {
         @include font-size(26px, 0, 3px);
+        padding-bottom: 0.5em;
       }
     }
   }

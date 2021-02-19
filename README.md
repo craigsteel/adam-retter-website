@@ -1,6 +1,6 @@
 # Adam Retter App
 
-These are the files that generate the https://www.adamretter.com website.
+These are the files that generate the http://www.adamretter.org.uk website.
 
 ## Getting Started
 
