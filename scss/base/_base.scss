@@ -7,6 +7,7 @@
 }
 
 html {
+  @include font-smoothing;
   width: 100%;
   font-family: sfmonolight, sans-serif;
   margin: 0;

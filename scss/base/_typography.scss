@@ -1,4 +1,5 @@
 p {
+  @include font-smoothing;
   @include font-size(16px, 20px, 1px);
   font-family: sfmonolight, sans-serif, Helvetica, sans-serif;
   margin-bottom: 20px;
@@ -20,6 +21,7 @@ a {
 h1 {
   @include text-shadow (-1px, 1px, 3px, rgba($color-black, 1), 0, 0, 30px, rgba($color-magenta, 1), -2px, -2px, 20px, rgba($color-magenta, .7), 2px, 2px, 15px, rgba($color-magenta, .4));
   @include font-size(35px, 40px, 2px);
+  @include font-smoothing;
   color: $color-magenta;
   font-family: lunasolregular, Arial, Helvetica, sans-serif;
   text-align: center;
@@ -31,6 +33,7 @@ h1 {
 h2 {
   @include text-shadow (-1px, 1px, 3px, rgba($color-black, 1), 0, 0, 30px, rgba($color-magenta, 1), -2px, -2px, 20px, rgba($color-magenta, .7), 2px, 2px, 15px, rgba($color-magenta, .4));
   @include font-size(33px, 40px, 2px);
+  @include font-smoothing;
   color: $color-magenta;
   font-family: lunasolregular, Arial, Helvetica, sans-serif;
   text-align: center;
@@ -40,6 +43,7 @@ h2 {
 
 h3 {
   @include font-size(19px, 25px, 1px);
+  @include font-smoothing;
   font-family: sfmonolight, Arial, Helvetica, sans-serif;
   text-align: center;
   color: $color-green;
@@ -53,6 +57,7 @@ h3 {
 
 h4 {
   @include font-size(18px, 22px, 1px);
+  @include font-smoothing;
   text-align: left;
   color: $color-text;
   font-family: sfmonolight, Arial, Helvetica, sans-serif;
@@ -66,6 +71,7 @@ h4 {
 
 h5 {
   @include font-size(18px, 20px, 1px);
+  @include font-smoothing;
   text-transform: uppercase;
   font-family: sfmonolight, Arial, Helvetica, sans-serif;
   padding: 1em 0;
@@ -77,5 +83,6 @@ h5 {
 }
 
 b {
-  font-family: sfmonobold, Arial, Helvetica, sans-serif;;
+  font-family: sfmonobold, Arial, Helvetica, sans-serif;
+  @include font-smoothing;
 }

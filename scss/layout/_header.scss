@@ -180,6 +180,7 @@
       @include font-size(16px, 25px, 1px);
       text-align: center;
       color: $color-green;
+      font-family: sfmonomedium, sans-serif, Helvetica, sans-serif;
 
       @media screen and (min-width: $md) {
         @include font-size(12px, 25px, 1px);
