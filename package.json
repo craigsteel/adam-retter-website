@@ -9,8 +9,16 @@
     "watch-css": "nodemon -e scss -x \"npm run build-css\" ",
     "build-css": "node-sass --include-path scss scss/style.scss public/stylesheets/style.css --output-style compressed --source-map true --source-map-contents true --precision 6"
   },
+    "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craigsteel/adam-retter-website.git"
+  },
   "author": "Craig Steel Design",
   "license": "ISC",
+    "bugs": {
+    "url": "https://github.com/craigsteel/adam-retter-website/issues"
+  },
+  "homepage": "https://github.com/craigsteel/adam-retter-website#readme",
   "devDependencies": {
     "browser-sync": "^2.26.13",
     "gulp": "^4.0.2",
