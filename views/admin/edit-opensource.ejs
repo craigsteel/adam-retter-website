@@ -1,23 +1,30 @@
 <%- include('../includes/head.ejs') %>
-</head>
+  </head>
 
-<body>
-  <%- include('../includes/navigation.ejs') %>
+  <body>
 
-    <div class="header__title">
-      <h1>Add Open Source Repositories</h1>
-    </div>
+    <header class="header header__presentation">
+
+      <%- include('../includes/navigation.ejs') %>
+
+        <div class="header__content">
+          <div class="header__name-desktop-admin ">
+            <img loading="auto" src="../images/Adam-Home-oneline-v1.png" alt="Java logo"></img>
+          </div>
+
+          <div class="header__name-mobile">
+            <img loading="auto" src="../images/Adam-Home-mobile-v1.png" alt="Java logo"></img>
+          </div>
+    </header>
 
     <main>
-
-      <section class="main-area">
+      <section class="main-area main-area__open">
 
         <div class="header__title">
-          <h3>Repositories</h3>
+          <h1>Add Open Source Repositories</h1>
         </div>
 
         <div class="main-area__form">
-
           <form class="content-form" action="/admin/<% if (editing) { %>edit-opensource<% } else { %>add-opensource<% } %>" method="POST">
 
             <div class="form-control">
@@ -56,7 +63,6 @@
         </div>
 
       </section>
-
     </main>
 
     <%- include('../includes/end.ejs') %>

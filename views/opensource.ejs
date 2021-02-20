@@ -18,31 +18,31 @@
                 <img loading="auto" src="images/Adam-Home-mobile-v1-thick.png" alt="Java logo"></img>
               </div>
 
-                <h1 class="source__title">
-                  Open Source
-                </h1>
-
-                  <h3 class="source__intro">
-                    < Popular Repositories>
-                  </h3>
-              </div>
+              <h1 class="source__title">
+                 Open Source
+              </h1>
+              <h3 class="source__intro">
+                 < Popular Repositories >
+              </h3>
+          </div>
         </header>
 
-        <main>
+      <main>
 
-        <section class="source source__home">
+      <section class="source source__home">
 
         <% if (sourc.length > 0) { %>
 
-          <ul class="cards">
+          <ul class="presentations__cards presentations__cards--center cards">
             <% for (let source of sourc) { %>
-              <li class="cards__item">
+                <div class="admin__edit">
+                  <div class="presentations__card card">
 
-                <div class="source__card card">
                   <div class="card__content">
                     <div class="card__title">
                       <%= source.title %>
                     </div>
+
                     <p class="card__text">
                       <%= source.description %>
                     </p>
@@ -58,8 +58,9 @@
                       <%= source.gitHubLinkText %>
                     </a>
                   </div>
+
                 </div>
-              </li>
+              </div>
               <% } %>
           </ul>
 

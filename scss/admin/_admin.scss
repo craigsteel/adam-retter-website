@@ -6,11 +6,40 @@
       display: flex;
       flex-flow: wrap;
       justify-content: center;
-      background-color: rgba(28, 58, 105, 1);
+      background-color: rgba(0, 30, 80, 0.8);
       padding: 1em;
-      box-shadow: 0 0 5em rgba($color-black, 1);
+      box-shadow: 0 0 5em rgba($color-black, 0.5);
       text-align: center;
       border-radius: 5px;
+      margin: 1em;
+
+      ul {
+        padding: 0 2em 0 0;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  &__admin-block {
+    position: absolute;
+    background-color: rgba(0, 30, 80, 0.6);
+    border-radius: 4px;
+    margin-top: 4em;
+    box-shadow: 0 0 5em rgba($color-black, 0.5);
+  }
+
+  &__admin-title {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+    justify-content: center;
+
+    h4 {
+      color: $color-white;
     }
   }
 
@@ -49,6 +78,18 @@
   }
 }
 
+.header {
+  &__name-desktop-admin {
+    display: block;
+    margin: 0 15%;
+    margin-top: -2em;
+  }
+
+  &__title-edit {
+    padding: 1em 0;
+  }
+}
+
 .presentation {
   &__admin {
     @include background((
@@ -60,8 +101,19 @@
     padding: 1em 3em;
 
     @media screen and (min-width: $md) {
-      margin: -12em 4em 2em;
+      margin: -6em 4em 2em;
     }
+  }
+}
+
+.main-area {
+  &__edit {
+    margin: -19em auto 5em;
+    display: block;
+    position: relative;
+    background-color: $color-dark-blue;
+    padding: 2em 4em;
+    box-shadow: 20px 20px 50px rgba($color-black, 0.3);
   }
 }
 
@@ -72,5 +124,6 @@
       'image': '',
       'bg-position': right
     ));
+    margin: 2em auto 4em;
   }
 }

@@ -4,7 +4,11 @@
   margin: 0 1em;
 
   @media screen and (min-width: $md) {
-    margin: -3em 6em;
+    background-color: rgba(0, 30, 80, 0.4);
+    border-radius: 4px;
+    box-shadow: 0 0 5em rgba($color-black, 0.5);
+    padding: 1em;
+    margin: 0 5%;
   }
 
   &__home {
@@ -13,6 +17,10 @@
     @media screen and (min-width: $md) {
       margin: 0;
     }
+  }
+
+  &__title {
+    margin: 1em auto 0;
   }
 
   &__card {

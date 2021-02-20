@@ -86,12 +86,21 @@
     flex-wrap: wrap;
     flex-direction: row;
 
-    &--ev,
-    &--fusion,
+    &--ev {
+      width: 7.5em;
+      margin: -1em 0.5em 0 0;
+    }
+
     &--wc,
     &--ghost {
       width: 7em;
       margin: -1em 0.5em 0 0;
+    }
+
+    &--fusion {
+      width: 7em;
+      margin: -1em 0 0 0.4em;
+      padding: 0.5em;
     }
   }
 

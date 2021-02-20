@@ -8,10 +8,7 @@
   margin: 2em auto;
 
   &__form {
-    background-color: $color-dark-blue;
-    padding: 1em 4em;
     display: block;
-    box-shadow: 20px 20px 50px rgba($color-black, 0.3);
 
     &--heading {
       font-size: 18px;
@@ -137,21 +134,5 @@
     padding: 0 0 5px 0;
     letter-spacing: 1px;
     font-size: 1.3em;
-  }
-}
-
-.button {
-  &__btn {
-    @include font-size(14px, 10px, 1px);
-    transition: all 0.4s;
-    border: 1px solid #b10580;
-    cursor: pointer;
-    // font-family: sfmonomedium, Arial, Helvetica, sans-serif;
-
-    &--submit {
-      color: #ffffff;
-      background-color: #b10580;
-      border: none;
-    }
   }
 }

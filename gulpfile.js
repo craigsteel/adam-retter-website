@@ -16,30 +16,6 @@ const imageminWebp = require('imagemin-webp');
 const extReplace = require('gulp-ext-replace');
 const sync = require("browser-sync").create();
 
-// function generateCSS(cb) {
-//   src('./sass/**/*.scss')
-//     .pipe(sourcemaps.init())
-//     .pipe(sass({
-//       outputStyle: 'compressed'
-//     }))
-//     .pipe(sourcemaps.write())
-//     .pipe(dest('public/stylesheets'))
-//     .pipe(sync.stream());
-//   cb();
-// }
-
-// function generateHTML(cb) {
-//   src("./views/index.ejs")
-//     .pipe(ejs({
-//       title: "Adam Retter",
-//     }))
-//     .pipe(rename({
-//       extname: ".html"
-//     }))
-//     .pipe(dest("public/views"));
-//   cb();
-// }
-
 // SVG SPRITES
 
 const SPRITE_PATH = './images/svgs/*.svg';
@@ -72,7 +48,7 @@ function generateSVG(cb) {
 const IMAGES_PATH = './images/png-jpg/*.{png,jpeg,jpg,gif,webp}';
 const IMAGES_DIST_PATH = 'public/images';
 
-function generateWEBP(cb) {
+function generateIMAGES(cb) {
   return src(IMAGES_PATH)
     .pipe(imagemin(
       [
@@ -129,8 +105,6 @@ function runTests(cb) {
 }
 
 function watchFiles(cb) {
-  // watch('views/**.ejs', generateHTML);
-  // watch('sass/**/**.scss', generateCSS);
   watch([ '**/*.js', '!node_modules/**'], parallel(runLinter, runTests));
 }
 
@@ -141,15 +115,11 @@ function browserSync(cb) {
     }
   });
 
-  // watch('views/**.ejs', generateHTML);
-  // watch('sass/**/**.scss', generateCSS);
   watch("./public/**.html").on('change', sync.reload);
 }
 
-// exports.css = generateCSS;
-// exports.html = generateHTML;
 exports.svg = generateSVG;
-exports.webp = generateWEBP;
+exports.images = generateIMAGES;
 exports.fonts = generateFONTS;
 exports.icons = generateICONS;
 exports.lint = runLinter;
@@ -157,4 +127,4 @@ exports.test = runTests;
 exports.watch = watchFiles;
 exports.sync = browserSync;
 
-exports.default = series(runLinter,parallel(generateSVG,generateWEBP,generateFONTS,generateICONS,browserSync),runTests);
+exports.default = series(runLinter,parallel(generateSVG,generateIMAGES,generateFONTS,generateICONS,browserSync),runTests);

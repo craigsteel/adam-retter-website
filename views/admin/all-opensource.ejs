@@ -4,12 +4,12 @@
   <body>
     <div class="wrapper">
 
-        <header class="header">
+        <header class="header header__open">
 
         <%- include('../includes/navigation.ejs') %>
 
-          <div class="header__content">
-            <div class="header__name-online">
+          <div class="header__content header__admin-content">
+            <div class="header__name-desktop">
               <img loading="auto" src="../images/Adam-Home-oneline-v1.png" alt="Java logo"></img>
             </div>
 
@@ -66,15 +66,15 @@
                 </div>
 
                       <div class="button button__admin">
-                        <form action="/admin/all-opensource" method="POST">
+                        <form action="/admin/delete-opensource" method="POST">
                           <input type="hidden" value="<%= source._id %>" name="sourceId">
                           <button class="button__btn button__btn--magenta" type='submit'> Delete ></button>
                         </form>
 
                         <a href="/admin/edit-opensource/<%= source._id %>?edit=true" class="button__btn button__btn--magenta"> Edit></a>
 
-                      </div>
-                      </div>
+                  </div>
+                </div>
               <% } %>
             </ul>
 
