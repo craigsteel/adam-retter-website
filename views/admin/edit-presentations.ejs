@@ -92,7 +92,7 @@
             <% if (editing) { %>
               <input type="hidden" value="<%= presentation._id %>" name="presentationId">
             <% } %>
-
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <button class="button__btn button__btn--submit" type="submit"><% if (editing) { %>Update Presentation<% } else { %>Add Presentation<% } %></button>
           </form>
         </div>

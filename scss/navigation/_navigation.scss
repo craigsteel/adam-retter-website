@@ -4,6 +4,7 @@
   @media screen and (min-width: $md) {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
     margin: 0 auto;
     padding-top: 2em;
@@ -17,7 +18,7 @@
     list-style-type: none;
     padding-left: 0;
     display: flex;
-    margin-bottom: 1em;
+    // margin-bottom: 1em;
   }
 
   a {
@@ -56,14 +57,14 @@
 
     /* Large Devices, Wide Screens */
     @media screen and (max-width: $lg) {
-      padding: 25px 15px;
-      letter-spacing: 0;
+      // padding: 25px 15px;
+      // letter-spacing: 0;
     }
 
     /* Medium Devices, Desktops */
     @media screen and (min-width: $md) {
-      padding: 40px 10px;
-      letter-spacing: 0;
+      // padding: 40px 10px;
+      // letter-spacing: 0;
     }
   }
 }

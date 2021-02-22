@@ -1,20 +1,34 @@
-.button {
-  &__btn {
-    @include font-size(14px, 10px, 1px);
-    transition: all 0.4s;
-    border: 1px solid $color-magenta;
-    cursor: pointer;
+// .button {
+//   &__submit {
+//     display: none;
 
-    &--submit {
-      color: $color-white;
-      background-color: $color-magenta;
-      border: none;
-    }
+//     @media screen and (min-width: $md) {
+//       display: flex;
+//       transition: all 0.4s;
+//       border: 1px solid #b10580;
+//       cursor: pointer;
+//       padding: 0;
+//       flex-wrap: wrap;
+//       width: fit-content;
+//       flex-direction: column;
+//       margin: 1em auto;
 
-    &--login {
-      color: $color-white;
-      background-color: none;
-      border: 1px solid $color-magenta;
-    }
-  }
-}
+//       &--login,
+//       &--signup {
+//         @include font-size(13px, 0, 2px);
+//         font-family: sfmonomedium, Arial, Helvetica, sans-serif;
+//         color: $color-white;
+//         background-color: transparent;
+//         align-items: center;
+//         padding: 2em;
+
+//         &:hover {
+//           // transform: translateY(-4px);
+//           box-shadow: 0 10px 20px rgba($color-black, 0.2);
+//           background: $color-magenta;
+//           color: $color-white;
+//         }
+//       }
+//     }
+//   }
+// }

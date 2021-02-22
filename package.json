@@ -7,15 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"nodemon app.js\" \"npm run watch-css\" ",
     "watch-css": "nodemon -e scss -x \"npm run build-css\" ",
-    "build-css": "node-sass --include-path scss scss/style.scss public/stylesheets/style.css --output-style compressed --source-map true --source-map-contents true --precision 6"
+    "build-css": "node-sass --include-path scss scss/style.scss public/css/style.css --output-style compressed --source-map true --source-map-contents true --precision 6",
+    "start-server": "node app.js"
   },
-    "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/craigsteel/adam-retter-website.git"
   },
   "author": "Craig Steel Design",
   "license": "ISC",
-    "bugs": {
+  "bugs": {
     "url": "https://github.com/craigsteel/adam-retter-website/issues"
   },
   "homepage": "https://github.com/craigsteel/adam-retter-website#readme",
@@ -37,12 +38,16 @@
   },
   "dependencies": {
     "autoprefixer": "^10.2.4",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^5.3.0",
+    "connect-mongodb-session": "^2.0.3",
     "cookie-parser": "~1.4.4",
+    "csurf": "^1.11.0",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
+    "express-session": "^1.15.6",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-plumber": "^1.2.1",
     "gulp-sourcemaps": "^3.0.0",

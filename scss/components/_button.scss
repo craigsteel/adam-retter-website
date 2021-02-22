@@ -3,6 +3,7 @@
   width: auto;
   margin: 1em 1em;
 
+  &__submit,
   &__btn {
     @include font-size(20px, 10px, 1px);
     text-transform: uppercase;
@@ -11,6 +12,12 @@
     color: $color-magenta;
     padding: 18px;
     background-color: transparent;
+    border: 1px solid $color-magenta;
+    border-radius: 0;
+
+    @media screen and (min-width: $md) {
+      @include font-size(14px, 11px, 1px);
+    }
 
     &:link,
     &:visited {

@@ -6,6 +6,7 @@
       display: flex;
       flex-flow: wrap;
       justify-content: center;
+      align-items: center;
       background-color: rgba(0, 30, 80, 0.8);
       padding: 1em;
       box-shadow: 0 0 5em rgba($color-black, 0.5);
@@ -25,9 +26,9 @@
 
   &__admin-block {
     position: absolute;
-    background-color: rgba(0, 30, 80, 0.6);
+    background-color: rgba(0, 30, 80, 0.9);
     border-radius: 4px;
-    margin-top: 4em;
+    margin-top: 14em;
     box-shadow: 0 0 5em rgba($color-black, 0.5);
   }
 
@@ -76,6 +77,15 @@
       color: $color-white;
     }
   }
+
+  &__logout {
+    @include font-size(14px, 14px, 2px);
+    background-color: transparent;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    font-family: sfmonolight;
+  }
 }
 
 .header {
@@ -101,14 +111,14 @@
     padding: 1em 3em;
 
     @media screen and (min-width: $md) {
-      margin: -6em 4em 2em;
+      margin: -19em 4em 2em;
     }
   }
 }
 
 .main-area {
   &__edit {
-    margin: -19em auto 5em;
+    margin: -20em auto 5em;
     display: block;
     position: relative;
     background-color: $color-dark-blue;

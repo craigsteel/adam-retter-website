@@ -15,6 +15,36 @@
   </div>
 
   <nav class="navigation">
+
+    <ul class="navigation__icons">
+        <li>
+          <a href="https://github.com/adamretter" aria-label="Link to github Repositories" target="_blank"
+            rel="noopener noreferrer">
+            <svg class="navigation__social-icon footer__social-icon">
+              <use href="../images/svgs/sprite.svg#github-icon"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://twitter.com/adamretter" aria-label="Link to Adams Twitter Account" target="_blank"
+            rel="noopener noreferrer">
+            <svg class="navigation__social-icon footer__social-icon">
+              <use href="../images/svgs/sprite.svg#Twitter-icon"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.linkedin.com/in/adamretter/" aria-label="Link to Adams LinkedIn Account" target="_blank"
+            rel="noopener noreferrer">
+            <svg class="navigation__social-icon footer__social-icon">
+              <use href="../images/svgs/sprite.svg#linkedin2"></use>
+            </svg>
+          </a>
+        </li>
+    </ul>
+
     <ul>
       <li><a class="<%= path === '/' ? 'active' : '' %>" href="/" alt="link to Adam Retter Home page">Home</a></li>
       <li><a class="<%= path === '/presentations' ? 'active' : '' %>" href="/presentations" alt="link to Adam Retter Presentations">Presentations</a></li>
@@ -30,58 +60,41 @@
       <li><a> | (UK): +44 (0)2032 397 236</a></li>
     </ul>
 
-    <ul class="navigation__icons">
-      <li>
-        <a href="https://github.com/adamretter" aria-label="Link to github Repositories" target="_blank"
-          rel="noopener noreferrer">
-          <svg class="navigation__social-icon footer__social-icon">
-            <use href="../images/svgs/sprite.svg#github-icon"></use>
-          </svg>
-        </a>
-      </li>
+    <% if (!isAuthenticated) { %>
+      <ul class="navigation__login">
+        <li><a class="<%= path === '/login' ? 'active' : '' %>" href="/login">Login</a></li>
+        <li><a class="<%= path === '/signup' ? 'active' : '' %>" href="/signup">Signup</a></li>
+      <% } else { %>
+        <li class="navigation__logout">
+          <form action="/logout" method="post">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+              <button type="submit">Logout</button>
+          </form>
+        </li>
+      </ul>
+    <% } %>
 
-      <li>
-        <a href="https://twitter.com/adamretter" aria-label="Link to Adams Twitter Account" target="_blank"
-          rel="noopener noreferrer">
-          <svg class="navigation__social-icon footer__social-icon">
-            <use href="../images/svgs/sprite.svg#Twitter-icon"></use>
-          </svg>
-        </a>
-      </li>
+      <% if (isAuthenticated) { %>
+        <div class="navigation__admin-block">
+          <div class="navigation__admin-title">
+            <h4>
+              < Your Admin >
+            </h4>
+          </div>
 
-      <li>
-        <a href="https://www.linkedin.com/in/adamretter/" aria-label="Link to Adams LinkedIn Account" target="_blank"
-          rel="noopener noreferrer">
-          <svg class="navigation__social-icon footer__social-icon">
-            <use href="../images/svgs/sprite.svg#linkedin2"></use>
-          </svg>
-        </a>
-      </li>
-    </ul>
-
-    <!-- <div class="navigation__admin-block">
-      <div class="navigation__admin-title">
-        <h4>
-          < Your Admin >
-        </h4>
-      </div>
-      <div class="navigation__admin">
-        <ul>
-          <li><a class="<%= path === '/admin/add-presentations' ? 'active' : '' %>" href="/admin/edit-presentations"
-              alt="link to Admin add Presentation">Add Presentation |</a></li>
-          <li><a class="<%= path === '/admin/all-presentations' ? 'active' : '' %>" href="/admin/all-presentations"
-              alt="link to Admin all Presentations">All Presentations |</a></li>
-          <li><a class="<%= path === '/admin/add-opensource' ? 'active' : '' %>" href="/admin/edit-opensource"
-              alt="link to Admin add repo">Add repo |</a></li>
-          <li><a class="<%= path === '/admin/all-opensource' ? 'active' : '' %>" href="/admin/all-opensource"
-              alt="link to Admin all repos">All repos |</a></li>
-          <li><a class="<%= path === '/admin/add-blog-post' ? 'active' : '' %>" href="/admin/edit-blog-post"
-              alt="link to Admin add Blog-Post">Add Blog Post |</a></li>
-          <li><a class="<%= path === '/admin/all-blog-posts' ? 'active' : '' %>" href="/admin/all-blog-posts"
-              alt="link to Admin all Blog-Posts">All Blog Posts</a></li>
-        </ul>
-        <button class="button__btn button__btn--login" type="submit">LOG OUT</button>
-      </div>
-    </div> -->
+          <div class="navigation__admin">
+            <ul>
+              <li><a class="<%= path === '/admin/add-presentations' ? 'active' : '' %>" href="/admin/edit-presentations" alt="link to Admin add Presentation">Add Presentation |</a></li>
+              <li><a class="<%= path === '/admin/all-presentations' ? 'active' : '' %>" href="/admin/all-presentations" alt="link to Admin all Presentations">All Presentations |</a></li>
+              <li><a class="<%= path === '/admin/add-opensource' ? 'active' : '' %>" href="/admin/edit-opensource" alt="link to Admin add repo">Add repo |</a></li>
+              <li><a class="<%= path === '/admin/all-opensource' ? 'active' : '' %>" href="/admin/all-opensource" alt="link to Admin all repos">All repos |</a></li>
+              <!-- <li><a class="<%= path === '/admin/add-blog-post' ? 'active' : '' %>" href="/admin/edit-blog-post"
+                    alt="link to Admin add Blog-Post">Add Blog Post |</a></li>
+                <li><a class="<%= path === '/admin/all-blog-posts' ? 'active' : '' %>" href="/admin/all-blog-posts"
+                    alt="link to Admin all Blog-Posts">All Blog Posts</a></li> -->
+            </ul>
+          </div>
+        </div>
+      <% } %>
 
   </nav>

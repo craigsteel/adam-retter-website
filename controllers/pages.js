@@ -2,9 +2,9 @@ const Presentations = require('../models/presentations');
 const Sources = require('../models/source');
 
 exports.getHome = (req, res, next) => {
-  res.render('home', {
+  res.render('index', {
     pageTitle: 'Adam Retter Home',
-    path: '/'
+    path: '/',
   });
 };
 
@@ -26,12 +26,6 @@ exports.getSoftware = (req, res, next) => {
   res.render('software', {
     pageTitle: 'Adam Retter Software',
     path: '/software',
-  });
-};
-
-exports.get404 = (req, res, next) => {
-  res.status(404).render('404', {
-    pageTitle: 'Page Not Found'
   });
 };
 

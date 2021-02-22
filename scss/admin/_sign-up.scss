@@ -1,0 +1,31 @@
+.signup-in {
+  background-color: rgba(0, 33, 68, 0.7);
+  box-shadow: 0 0 40px 20px rgba($color-black, 0.4);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 40%;
+  padding: 2em;
+  margin: 2em;
+
+  &__login {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__form {
+    @include font-size(14px, 30px, 2px);
+    padding: 0.5em 0;
+    text-align: left;
+  }
+
+  label,
+  input {
+    height: 2em;
+    width: 100%;
+    text-align: left;
+    border: 2px;
+  }
+}
+

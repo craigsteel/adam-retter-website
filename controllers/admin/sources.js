@@ -4,7 +4,7 @@ exports.getAddSource = (req, res, next) => {
   res.render('admin/edit-opensource', {
     pageTitle: 'Add Open Source Repository',
     path: '/admin/add-opensource',
-    editing: false
+    editing: false,
   });
 };
 
@@ -49,7 +49,7 @@ exports.getEditSource = (req, res, next) => {
       pageTitle: 'Edit Open Source Repository',
       path: '/admin/edit-opensource',
       editing: editMode,
-      source: source
+      source: source,
     });
   })
   .catch(err => console.log(err));

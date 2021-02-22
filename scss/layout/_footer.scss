@@ -1,5 +1,5 @@
 .footer {
-    @include background((
+  @include background((
     'gradient': (to bottom,  ( #001638, #009de100)),
     'image': 'footer@1x.webp',
     'bg-position': top

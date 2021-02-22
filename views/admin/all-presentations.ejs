@@ -73,10 +73,11 @@
 
                       <div class="button button__admin">
                         <form action="/admin/delete-presentation" method="POST">
+                          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                           <input type="hidden" value="<%= presentation._id %>" name="presentationId">
                           <button class="button__btn button__btn--magenta" type='submit'> Delete ></button>
                         </form>
-
+                          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                         <a href="/admin/edit-presentation/<%= presentation._id %>?edit=true" class="button__btn button__btn--magenta"> Edit ></a>
 
                       </div>

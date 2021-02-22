@@ -4,7 +4,7 @@ exports.getAddPresentation = (req, res, next) => {
   res.render('admin/edit-presentations', {
     pageTitle: 'Add Presentation',
     path: '/admin/add-presentations',
-    editing: false
+    editing: false,
   });
 };
 
@@ -61,7 +61,8 @@ exports.getEditPresentation = (req, res, next) => {
       pageTitle: 'Edit Presentation',
       path: '/admin/edit-presentations',
       editing: editMode,
-      presentation: presentation
+      presentation: presentation,
+      isAuthenticated: req.session.isLoggedIn
     });
   })
   .catch(err => console.log(err));
@@ -113,6 +114,7 @@ exports.getAllPresentations = (req, res, next) => {
       pres: presentations,
       pageTitle: 'Admin All presentations',
       path: '/admin/all-presentations',
+      isAuthenticated: req.session.isLoggedIn
     });
   })
   .catch(err => console.log(err));

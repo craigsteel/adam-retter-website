@@ -3,24 +3,49 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const session = require('express-session');
+const MongoDBStore = require('connect-mongodb-session')(session);
+const csrf = require('csurf');
+
 
 const errorController = require('./controllers/error');
-
 const User = require('./models/user');
 
+const MONGODB_URI =
+  'mongodb+srv://steel-01:w5Z1RumGpuep8AEz@cluster0.zdpub.mongodb.net/steel-01';
+
 const app = express();
+const store = new MongoDBStore({
+  uri: MONGODB_URI,
+  collection: 'sessions'
+});
+const csrfProtection = csrf();
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 const adminRoutes = require('./routes/admin');
 const pagesRoutes = require('./routes/home');
+const authRoutes = require('./routes/auth');
+const csurf = require('csurf');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(
+  session({
+    secret: 'my secret',
+    resave: false,
+    saveUninitialized: false,
+    store: store
+  })
+);
+app.use(csrfProtection);
 
 app.use((req, res, next) => {
-  User.findById('602b09a5f183fa8248eeaf1a')
+  if (!req.session.user) {
+    return next();
+  }
+  User.findById(req.session.user._id)
     .then(user => {
       req.user = user;
       next();
@@ -28,26 +53,24 @@ app.use((req, res, next) => {
     .catch(err => console.log(err));
 });
 
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = req.session.isLoggedIn;
+  res.locals.csrfToken = req.csrfToken();
+  next();
+});
+
 app.use('/admin', adminRoutes);
 app.use(pagesRoutes);
+app.use(authRoutes);
 
 app.use(errorController.get404);
 
 mongoose
   .connect(
-  'mongodb+srv://steel-01:w5Z1RumGpuep8AEz@cluster0.zdpub.mongodb.net/steel-01?retryWrites=true&w=majority'
-  )
+    MONGODB_URI
+   )
   .then(result => {
-    User.findOne().then(user => {
-      if (!user) {
-        const user = new User({
-          name: 'Craig Steel',
-          email: 'craig@craigsteel-design.com',
-      });
-      user.save();
-    }
-  });
-  app.listen(3000);
+    app.listen(3000);
   })
   .catch(err => {
     console.log(err);

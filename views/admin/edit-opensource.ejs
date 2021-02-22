@@ -58,6 +58,7 @@
               <input type="hidden" value="<%= source._id %>" name="sourceId">
             <% } %>
 
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <button class="button__btn button__btn--submit" type="submit"><% if (editing) { %>Update Open Source<% } else { %>Add Open Source<% } %></button>
           </form>
         </div>
