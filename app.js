@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const csrf = require('csurf');
+const flash = require('connect-flash');
 
 
 const errorController = require('./controllers/error');
@@ -17,8 +18,9 @@ const MONGODB_URI =
 const app = express();
 const store = new MongoDBStore({
   uri: MONGODB_URI,
-  collection: 'sessions'
+  collection: 'sessions',
 });
+
 const csrfProtection = csrf();
 
 app.set('view engine', 'ejs');
@@ -27,7 +29,6 @@ app.set('views', 'views');
 const adminRoutes = require('./routes/admin');
 const pagesRoutes = require('./routes/home');
 const authRoutes = require('./routes/auth');
-const csurf = require('csurf');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -40,6 +41,7 @@ app.use(
   })
 );
 app.use(csrfProtection);
+app.use(flash());
 
 app.use((req, res, next) => {
   if (!req.session.user) {
@@ -66,9 +68,10 @@ app.use(authRoutes);
 app.use(errorController.get404);
 
 mongoose
-  .connect(
-    MONGODB_URI
-   )
+.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
   .then(result => {
     app.listen(3000);
   })

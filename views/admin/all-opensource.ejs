@@ -34,23 +34,22 @@
           <!-- All Open Source Repositories > -->
         </div>
 
-          <% if (sours.length> 0) { %>
+          <% if (sours.length > 0) { %>
 
             <ul class="presentations__cards presentations__cards--center cards">
               <% for (let source of sours) { %>
                 <div class="admin__edit">
-                  <div class="presentations__card card">
 
+                  <div class="presentations__card card">
                     <div class="card__content">
+
                       <div class="card__title">
                         <%= source.title %>
                       </div>
 
-                      <div class="card__text">
-                        <p>
+                      <p class="card__text">
                           <%= source.description %>
-                        </p>
-                      </div>
+                      </p>
 
                       <div class="card__link">
                         <a href="<%= source.gitHubLink %>" alt="link to exist-db Repository" target="_blank"
@@ -62,19 +61,18 @@
                         </a>
                       </div>
 
+                    </div>
                   </div>
-                </div>
 
-                      <div class="button button__admin">
-                        <form action="/admin/delete-opensource" method="POST">
-                          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                          <input type="hidden" value="<%= source._id %>" name="sourceId">
-                          <button class="button__btn button__btn--magenta" type='submit'> Delete ></button>
-                        </form>
-
+                    <div class="button button__admin">
+                      <form action="/admin/delete-opensource" method="POST">
+                        <input type="hidden" value="<%= source._id %>" name="sourceId">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <button class="button__btn button__btn--magenta" type='submit'> Delete ></button>
+                      </form>
                         <a href="/admin/edit-opensource/<%= source._id %>?edit=true" class="button__btn button__btn--magenta"> Edit></a>
+                    </div>
 
-                  </div>
                 </div>
               <% } %>
             </ul>

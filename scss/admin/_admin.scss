@@ -7,12 +7,12 @@
       flex-flow: wrap;
       justify-content: center;
       align-items: center;
-      background-color: rgba(0, 30, 80, 0.8);
+      background-color: rgba(0, 26, 75, 0.8);
       padding: 1em;
-      box-shadow: 0 0 5em rgba($color-black, 0.5);
+      box-shadow: 0 0 2em rgba($color-black, 1);
       text-align: center;
       border-radius: 5px;
-      margin: 1em;
+      margin: 0.5em 1em 1em;
 
       ul {
         padding: 0 2em 0 0;
@@ -28,8 +28,8 @@
     position: absolute;
     background-color: rgba(0, 30, 80, 0.9);
     border-radius: 4px;
-    margin-top: 14em;
-    box-shadow: 0 0 5em rgba($color-black, 0.5);
+    margin-top: 13em;
+    box-shadow: 0 1em 5em rgba($color-black, 1);
   }
 
   &__admin-title {
@@ -79,12 +79,18 @@
   }
 
   &__logout {
-    @include font-size(14px, 14px, 2px);
+    @include font-size(12px, 14px, 2px);
+    display: block;
     background-color: transparent;
     color: white;
     border: none;
     text-transform: uppercase;
     font-family: sfmonolight;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-green;
+    }
   }
 }
 
@@ -95,8 +101,13 @@
     margin-top: -2em;
   }
 
-  &__title-edit {
-    padding: 1em 0;
+  &__edit {
+    padding: 1em 0 2em;
+
+    h1 {
+      @include font-size(25px, 25px, 2px);
+      color: $color-white;
+    }
   }
 }
 

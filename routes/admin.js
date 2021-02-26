@@ -4,6 +4,7 @@ const express = require('express');
 
 const presentationController = require('../controllers/admin/presentations');
 const sourceController = require('../controllers/admin/sources');
+const softwareController = require('../controllers/admin/software');
 const isAuth = require('../middleware/is-auth');
 
 const router = express.Router();
@@ -23,5 +24,14 @@ router.get('/all-opensource', isAuth, sourceController.getAllSources);
 router.get('/edit-opensource/:sourceId', isAuth, sourceController.getEditSource);
 router.post('/edit-opensource', isAuth, sourceController.postEditSource);
 router.post('/delete-opensource', isAuth, sourceController.postDeleteSource);
+
+// All Software
+router.get('/edit-software', isAuth, softwareController.getAddSoftware);
+router.post('/add-software', isAuth, softwareController.postAddSoftware);
+router.get('/all-software', isAuth, softwareController.getAllSoftwares);
+router.get('/edit-software/:softwareId', isAuth, softwareController.getEditSoftware);
+router.post('/edit-software', isAuth, softwareController.postEditSoftware);
+router.post('/delete-software', isAuth, softwareController.postDeleteSoftware);
+
 
 module.exports = router;

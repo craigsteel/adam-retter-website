@@ -1,0 +1,15 @@
+.user-message {
+  margin: 0 auto 1em;
+  border: 1px solid $color-blue;
+  background-color: rgba(0, 33, 68, 0.7);
+  box-shadow: 0 0 40px 20px rgba($color-black, 0.4);
+  padding: 1em;
+  border-radius: 4px;
+  width: 80%;
+  text-align: center;
+
+  &--error {
+    border-color: $color-light-red;
+    background-color: rgba(171, 2, 80, 0.7);
+  }
+}

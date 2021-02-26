@@ -35,129 +35,58 @@
         </header>
 
           <main>
-            <section class="software">
+  <section class="software">
 
-              <h1 class="software__title">
-                    Purchased Applications
-              </h1>
+    <h1 class="software__title">
+      Purchased Applications
+    </h1>
 
-              <h3 class="software__intro">
-                    < Software that I need to download and Install>
-              </h3>
+    <h3 class="software__intro">
+      < Software that I need to download and Install>
+    </h3>
 
-              <ul class="software__cards cards">
+    <% if (soft.length> 0) { %>
 
-                    <div class="software__card card">
-                      <div class="card__content">
+      <ul class="software__cards cards">
+        <% for (let software of soft) { %>
+          <div class="software__block">
+            <div class="software__card card">
+              <div class="card__content">
 
-                        <a class="card__link-software" href="https://www.apple.com/uk/macos/big-sur/"
-                          alt="link to Mac Operating System" target="_blank" rel="noopener noreferrer">
-                          <img loading="auto" src="images/svgs/sprite.svg#Apple_logo_white" alt="link to Mac Operating System"></img>
-                        </a>
+                <a class="card__link-software" href="<%= software.softwareLink %>" alt="link to Mac Operating System"
+                  target="_blank" rel="noopener noreferrer">
+                  <img loading="auto" src="../images/svgs/sprite.svg#<%= software.softwareLogo %>"
+                    alt="<%= software.title %>"></img>
+                </a>
 
-                        <div class="card__title">
-                          Mac OS
-                        </div>
+                <div class="card__title">
+                  <%= software.title %>
+                </div>
 
-                        <div class="card__text">
-                          <p>
-                            I have a MacBook...
-                            I want to run OS X on it!
-                            <br><br>
-                            Why? Wanted/Needed.
-                          </p>
-                        </div>
+                <div class="card__text">
+                  <p>
+                    <%= software.description %>
+                  </p>
+                </div>
 
-                        <div class="card__link">
-                          <a href="https://www.apple.com/uk/macos/big-sur/" alt="link to Mac Operating System" target="_blank" rel="noopener noreferrer">Mac Operating System >
-                          </a>
-                        </div>
+                <div class="card__link">
+                  <a href="<%= software.softwareLink %>" alt="link to Mac Operating System" target="_blank"
+                    rel="noopener noreferrer">
+                    <%= software.softwareLinkText %>
+                  </a>
+                </div>
 
-                      </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+          <% } %>
+      </ul>
 
-                    <div class="software__card card">
-                      <div class="card__content">
+      <% } else { %>
+        <h2>No Presentations Found!</h2>
+        <% } %>
 
-                        <a class="card__link-software" href="https://macitbetter.com/" alt="link to BetterZip free download" target="_blank" rel="noopener noreferrer">
-                          <img loading="auto" src="images/svgs/sprite.svg#zip-icon" alt="link to BetterZip free download"></img>
-                        </a>
-
-                        <div class="card__title">
-                          BetterZip
-                        </div>
-
-                        <div class="card__text">
-                          <p>
-                            ZIP GUI application for Mac OS X, supports many formats.
-                            <br><br>
-                            Why? Wanted!
-                          </p>
-                        </div>
-                        <div class="card__link">
-                          <a href="https://macitbetter.com/" alt="link to BetterZip free download" target="_blank" rel="noopener noreferrer"> BetterZip free download >
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="software__card card">
-                      <div class="card__content">
-
-                        <a class="card__link-software" href="https://www.sublimetext.com/" alt="link to Sublime Text" target="_blank" rel="noopener noreferrer">
-                          <img loading="auto" src="images/svgs/sprite.svg#sublime-text" alt="link to Sublime Text"></img>
-                        </a>
-
-                        <div class="card__title">
-                          Sublime Text
-                        </div>
-
-                        <div class="card__text">
-                          <p>
-                            A truly excellent Text/Code editor that lets you focus on writing. Runs on all platforms!
-                            <br><br>
-                            Why? Wanted!
-                          </p>
-                        </div>
-                        <div class="card__link">
-                          <a href="https://www.sublimetext.com/" alt="link to Sublime Text" target="_blank" rel="noopener noreferrer">More about Sublime Text>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="software__card card">
-                      <div class="card__content">
-
-                        <a class="card__link-software"
-                          href="https://support.microsoft.com/en-gb/help/2647609/installing-windows-7-on-your-mac-using-boot-camp"
-                          alt="link to Windows 7 for Mac" target="_blank" rel="noopener noreferrer">
-                          <img loading="auto" src="images/svgs/sprite.svg#microsoft-icon" alt="link to Windows 7 for Mac"></img>
-                        </a>
-
-                        <div class="card__title">
-                          Windows 7 and XP
-                        </div>
-
-                        <div class="card__text">
-                          <p>
-                            I have clients who are using them, I run these inside VirtualBoxes
-                            on my Mac.
-                            <br><br>
-                            Why? regrettably needed.
-                          </p>
-                        </div>
-                        <div class="card__link">
-                          <a href="https://support.microsoft.com/en-gb/help/2647609/installing-windows-7-on-your-mac-using-boot-camp"
-                            alt="link to Windows 7 for Mac" target="_blank" rel="noopener noreferrer">Windows 7 for Mac >
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-
-              </ul>
-
-            </section>
+  </section>
 
             <section class="software">
 

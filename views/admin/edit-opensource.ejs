@@ -18,9 +18,9 @@
     </header>
 
     <main>
-      <section class="main-area main-area__open">
+      <section class="main-area main-area__edit">
 
-        <div class="header__title">
+        <div class="header__edit">
           <h1>Add Open Source Repositories</h1>
         </div>
 
@@ -59,7 +59,8 @@
             <% } %>
 
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-            <button class="button__btn button__btn--submit" type="submit"><% if (editing) { %>Update Open Source<% } else { %>Add Open Source<% } %></button>
+            <button class="button__btn button__btn--submit" type="submit">
+              <% if (editing) { %>Update Open Source<% } else { %>Add Open Source<% } %></button>
           </form>
         </div>
 

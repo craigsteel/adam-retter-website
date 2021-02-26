@@ -1,0 +1,240 @@
+<%- include('../includes/head.ejs') %>
+  </head>
+
+  <body>
+    <div class="wrapper">
+
+      <header class="header">
+        <%- include('../includes/navigation.ejs') %>
+
+          <div class="header__content">
+            <div class="header__name-desktop">
+              <img loading="auto" src="images/Adam-Home-oneline-v1-thick.png" alt="Adam Retter logo"></img>
+            </div>
+
+            <div class="header__name-mobile header__home-name-mobile">
+              <img loading="auto" src="images/Adam-Home-mobile-v1-thick.png" alt="Adam Retter logo"></img>
+            </div>
+
+            <h1 class="header__title">
+              Software
+            </h1>
+
+            <div class="header__introsoftware">
+              <p>
+                I predominantly use Open software software in my life, both at home and at work.
+                It is very rare that I purchase a commercial piece of software, however sometimes there is either no
+                Open software
+                alternative or the commercial option is outstanding and therefore desirable.
+                <br>
+                This list of software that I have purchased is as much for my own recollection
+                as for use by others who may be looking for software options.
+              </p>
+            </div>
+          </div>
+
+      </header>
+
+      <main>
+
+
+  <section class="software">
+
+    <h1 class="software__title">
+      Purchased Applications
+    </h1>
+
+    <h3 class="software__intro">
+      < Software that I need to download and Install>
+    </h3>
+
+    <% if (soft.length> 0) { %>
+
+      <ul class="software__cards cards">
+        <% for (let software of soft) { %>
+          <div class="software__block">
+            <div class="software__card card">
+              <div class="card__content">
+
+                <a class="card__link-software" href="<%= software.softwareLink %>" alt="link to Mac Operating System" target="_blank" rel="noopener noreferrer">
+                  <img loading="auto" src="../images/svgs/sprite.svg#<%= software.softwareLogo %>" alt="<%= software.title %>"></img>
+                </a>
+
+                <div class="card__title">
+                  <%= software.title %>
+                </div>
+
+                <div class="card__text">
+                  <p>
+                  <%= software.description %>
+                  </p>
+                </div>
+
+                <div class="card__link">
+                  <a href="<%= software.softwareLink %>" alt="link to Mac Operating System" target="_blank" rel="noopener noreferrer">
+                    <%= software.softwareLinkText %>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="button button__admin">
+              <form action="/admin/delete-software" method="POST">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <input type="hidden" value="<%= software._id %>" name="softwareId">
+                <button class="button__btn button__btn--magenta" type='submit'> Delete ></button>
+              </form>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <a href="/admin/edit-software/<%= software._id %>?edit=true" class="button__btn button__btn--magenta"> Edit></a>
+            </div>
+          </div>
+        <% } %>
+      </ul>
+
+    <% } else { %>
+      <h2>No Presentations Found!</h2>
+    <% } %>
+
+  </section>
+
+    <section class="software">
+
+      <h1 class="software__title">
+        SOFTWARE AS A SERVICE
+      </h1>
+
+      <h3 class="software__intro">
+        < Online Applications that I pay monthly or annually for access to >
+      </h3>
+
+      <% if (soft.length> 0) { %>
+
+        <ul class="software__cards cards">
+          <% for (let software of soft) { %>
+            <div class="software__block">
+              <div class="software__card card">
+                <div class="card__content">
+
+                  <a class="card__link-software" href="<%= software.softwareLinkService %>" alt="link to Mac Operating System"
+                    target="_blank" rel="noopener noreferrer">
+                    <img loading="auto" src="../images/svgs/sprite.svg#<%= software.softwareServiceLogo %>"
+                      alt="<%= software.titleService %>"></img>
+                  </a>
+
+                  <div class="card__title">
+                    <%= software.titleService %>
+                  </div>
+
+                  <div class="card__text">
+                    <p>
+                      <%= software.descriptionService %>
+                    </p>
+                  </div>
+
+                  <div class="card__link">
+                    <a href="<%= software.softwareLinkService %>" alt="link to Mac Operating System" target="_blank"
+                      rel="noopener noreferrer">
+                      <%= software.softwareLinkTextService %>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="button button__admin">
+                <form action="/admin/delete-software" method="POST">
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                  <input type="hidden" value="<%= software._id %>" name="softwareId">
+                  <button class="button__btn button__btn--magenta" type='submit'> Delete ></button>
+                </form>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <a href="/admin/edit-software/<%= software._id %>?edit=true" class="button__btn button__btn--magenta">
+                  Edit></a>
+              </div>
+            </div>
+            <% } %>
+        </ul>
+
+        <% } else { %>
+          <h2>No Presentations Found!</h2>
+          <% } %>
+
+    </section>
+
+  <section class="software">
+
+    <h1 class="software__title">
+      DONATED SOFTWARE
+    </h1>
+
+    <h3 class="software__intro">
+      < Software that I have been given free licenses for due to my role as an Open Source developer. Free stuff deserves a
+        thank-you >
+    </h3>
+
+    <% if (soft.length> 0) { %>
+
+      <ul class="software__cards cards">
+        <% for (let software of soft) { %>
+          <div class="software__block">
+            <div class="software__card card">
+              <div class="card__content">
+
+                <a class="card__link-software" href="<%= software.softwareLink %>" alt="link to Mac Operating System"
+                  target="_blank" rel="noopener noreferrer">
+                  <img loading="auto" src="../images/svgs/sprite.svg#<%= software.softwareLogo %>"
+                    alt="<%= software.title %>"></img>
+                </a>
+
+                <div class="card__title">
+                  <%= software.title %>
+                </div>
+
+                <div class="card__text">
+                  <p>
+                    <%= software.description %>
+                  </p>
+                </div>
+
+                <div class="card__link">
+                  <a href="<%= software.softwareLink %>" alt="link to Mac Operating System" target="_blank"
+                    rel="noopener noreferrer">
+                    <%= software.softwareLinkText %>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="button button__admin">
+              <form action="/admin/delete-software" method="POST">
+                <input type="hidden" value="<%= software._id %>" name="softwareId">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button class="button__btn button__btn--magenta" type='submit'> Delete ></button>
+              </form>
+              <a href="/admin/edit-software/<%= software._id %>?edit=true" class="button__btn button__btn--magenta">
+                Edit></a>
+            </div>
+          </div>
+          <% } %>
+      </ul>
+
+      <% } else { %>
+        <h2>No Presentations Found!</h2>
+        <% } %>
+
+  </section>
+
+        <div class="button center">
+          <a class="button__btn button__btn--magenta" href="#" alt="link to contact"> GET IN CONTACT ></a>
+        </div>
+
+        <%- include('../includes/book.ejs') %>
+          <%- include('../includes/blog.ejs') %>
+
+      </main>
+
+    </div>
+
+    <%- include('../includes/end.ejs') %>

@@ -1,0 +1,123 @@
+<%- include('../includes/head.ejs') %>
+  </head>
+
+  <body>
+
+    <header class="header header__presentation">
+
+      <%- include('../includes/navigation.ejs') %>
+
+        <div class="header__content">
+          <div class="header__name-desktop-admin ">
+            <img loading="auto" src="../images/Adam-Home-oneline-v1.png" alt="Java logo"></img>
+          </div>
+
+          <div class="header__name-mobile">
+            <img loading="auto" src="../images/Adam-Home-mobile-v1.png" alt="Java logo"></img>
+          </div>
+    </header>
+
+    <main>
+
+      <section class="main-area main-area__edit">
+
+        <div class="header__edit">
+          <h1>PURCHASED APPLICATIONS</h1>
+        </div>
+
+        <div class="main-area__form">
+          <form class="content-form" action="/admin/<% if (editing) { %>edit-software<% } else { %>add-software<% } %>" method="POST">
+
+            <div class="form-control">
+              <label for="softwareLogo">Logo</label>
+              <label class="form-control__example">(apple-logo)</label>
+              <input type="text" name="softwareLogo" id="softwareLogo" value="<% if (editing) { %><%= software.softwareLogo %><% } %>">
+            </div>
+
+            <div class="form-control">
+              <label for="title">Title</label>
+              <input type="text" name="title" id="title" value="<% if (editing) { %><%= software.title %><% } %>">
+            </div>
+
+            <div class="form-control">
+              <label for="description">Description</label>
+              <textarea name="description" id="description" rows="5"><% if (editing) { %><%= software.description %><% } %></textarea>
+            </div>
+
+            <div class="form-control">
+              <label for="softwareLink">Add full link</label>
+              <input type="text" name="softwareLink" id="softwareLink" value="<% if (editing) { %><%= software.softwareLink %><% } %>">
+            </div>
+
+            <div class="form-control">
+              <label for="softwareLinkText">Add a description for link</label>
+              <input type="text" name="softwareLinkText" id="softwareLinkText" value="<% if (editing) { %><%= software.softwareLinkText %><% } %>">
+            </div>
+
+              <% if (editing) { %>
+                <input type="hidden" value="<%= softwareService._id %>" name="softwareServiceId">
+              <% } %>
+
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button class="button__btn button__btn--submit" type="submit">
+                  <% if (editing) { %>Update software<% } else { %>Add software<% } %>
+                </button>
+          </form>
+        </div>
+      </section>
+
+            <section class="main-area main-area__edit">
+
+              <div class="header__edit">
+                <h1>SOFTWARE AS A SERVICE</h1>
+              </div>
+
+              <div class="main-area__form">
+                <form class="content-form" action="/admin/<% if (editing) { %>edit-software<% } else { %>add-software<% } %>"
+                  method="POST">
+
+                  <div class="form-control">
+                    <label for="softwareServiceLogo">Logo</label>
+                    <label class="form-control__example">(apple-logo)</label>
+                    <input type="text" name="softwareServiceLogo" id="softwareServiceLogo"
+                      value="<% if (editing) { %><%= software.softwareServiceLogo %><% } %>">
+                  </div>
+
+                  <div class="form-control">
+                    <label for="titleService">Title</label>
+                    <input type="text" name="titleService" id="titleService" value="<% if (editing) { %><%= software.titleService %><% } %>">
+                  </div>
+
+                  <div class="form-control">
+                    <label for="descriptionService">Description</label>
+                    <textarea name="descriptionService" id="descriptionService"
+                      rows="5"><% if (editing) { %><%= software.descriptionService %><% } %></textarea>
+                  </div>
+
+                  <div class="form-control">
+                    <label for="softwareLinkSoftware">Add full link</label>
+                    <input type="text" name="softwareLinkSoftware" id="softwareLinkSoftware"
+                      value="<% if (editing) { %><%= software.softwareLinkSoftware %><% } %>">
+                  </div>
+
+                  <div class="form-control">
+                    <label for="softwareLinkTextService">Add a description for link</label>
+                    <input type="text" name="softwareLinkTextService" id="softwareLinkTextService"
+                      value="<% if (editing) { %><%= software.softwareLinkTextService %><% } %>">
+                  </div>
+
+                  <% if (editing) { %>
+                    <input type="hidden" value="<%= software._id %>" name="softwareId">
+                    <% } %>
+
+                      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                      <button class="button__btn button__btn--submit" type="submit">
+                        <% if (editing) { %>Update software<% } else { %>Add software<% } %>
+                      </button>
+                </form>
+              </div>
+            </section>
+
+    </main>
+
+    <%- include('../includes/end.ejs') %>

@@ -62,7 +62,6 @@ exports.getEditPresentation = (req, res, next) => {
       path: '/admin/edit-presentations',
       editing: editMode,
       presentation: presentation,
-      isAuthenticated: req.session.isLoggedIn
     });
   })
   .catch(err => console.log(err));
@@ -114,7 +113,6 @@ exports.getAllPresentations = (req, res, next) => {
       pres: presentations,
       pageTitle: 'Admin All presentations',
       path: '/admin/all-presentations',
-      isAuthenticated: req.session.isLoggedIn
     });
   })
   .catch(err => console.log(err));

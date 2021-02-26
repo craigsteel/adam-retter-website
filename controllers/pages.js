@@ -1,5 +1,6 @@
 const Presentations = require('../models/presentations');
 const Sources = require('../models/source');
+const Software = require('../models/software');
 
 exports.getHome = (req, res, next) => {
   res.render('index', {
@@ -23,10 +24,18 @@ exports.getPublications = (req, res, next) => {
 };
 
 exports.getSoftware = (req, res, next) => {
-  res.render('software', {
-    pageTitle: 'Adam Retter Software',
-    path: '/software',
-  });
+  Software.find()
+    .then(softwares => {
+      console.log(softwares);
+      res.render('software', {
+        soft: softwares,
+        pageTitle: 'Adam Retter Software',
+        path: '/software',
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
 };
 
 exports.getPresentations = (req, res, next) => {

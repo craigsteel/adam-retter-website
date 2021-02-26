@@ -11,7 +11,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     padding: 2em 0;
-    margin: 2em;
+    margin: 2em 4em;
     border-radius: 5px;
   }
 
@@ -66,9 +66,12 @@
         justify-content: flex-start;
         flex-direction: row;
         position: absolute;
-        bottom: 1em;
-        left: 0;
         margin: 0;
+
+        &--home {
+          bottom: 1em;
+          left: 0;
+        }
       }
     }
 

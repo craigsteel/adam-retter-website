@@ -39,7 +39,7 @@ npm start
 gulp
 ```
 
-* Compress images and move to public folder/images/webp.
+* Compress images and move to public folder/images.
 * Move fonts to public folder
 * Create svg sprite in public folder/images/svgs.
 

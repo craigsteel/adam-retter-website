@@ -62,15 +62,13 @@
 
     <% if (!isAuthenticated) { %>
       <ul class="navigation__login">
-        <li><a class="<%= path === '/login' ? 'active' : '' %>" href="/login">Login</a></li>
-        <li><a class="<%= path === '/signup' ? 'active' : '' %>" href="/signup">Signup</a></li>
+        <li><a class="<%= path === '/login' ? 'active' : '' %>" href="/login">| Login</a></li>
+        <li><a class="<%= path === '/signup' ? 'active' : '' %>" href="/signup">| Signup |</a></li>
       <% } else { %>
-        <li class="navigation__logout">
           <form action="/logout" method="post">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-              <button type="submit">Logout</button>
+              <button class="navigation__logout" type="submit">  | Logout |</button>
           </form>
-        </li>
       </ul>
     <% } %>
 
@@ -88,10 +86,8 @@
               <li><a class="<%= path === '/admin/all-presentations' ? 'active' : '' %>" href="/admin/all-presentations" alt="link to Admin all Presentations">All Presentations |</a></li>
               <li><a class="<%= path === '/admin/add-opensource' ? 'active' : '' %>" href="/admin/edit-opensource" alt="link to Admin add repo">Add repo |</a></li>
               <li><a class="<%= path === '/admin/all-opensource' ? 'active' : '' %>" href="/admin/all-opensource" alt="link to Admin all repos">All repos |</a></li>
-              <!-- <li><a class="<%= path === '/admin/add-blog-post' ? 'active' : '' %>" href="/admin/edit-blog-post"
-                    alt="link to Admin add Blog-Post">Add Blog Post |</a></li>
-                <li><a class="<%= path === '/admin/all-blog-posts' ? 'active' : '' %>" href="/admin/all-blog-posts"
-                    alt="link to Admin all Blog-Posts">All Blog Posts</a></li> -->
+              <li><a class="<%= path === '/admin/add-software' ? 'active' : '' %>" href="/admin/edit-software"alt="link to Admin add software">Add Software |</a></li>
+              <li><a class="<%= path === '/admin/all-software' ? 'active' : '' %>" href="/admin/all-software"alt="link to Admin all software">All Software</a></li>
             </ul>
           </div>
         </div>
