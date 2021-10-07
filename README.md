@@ -1,6 +1,6 @@
 # Adam Retter App
 
-These are the files that generate the http://www.adamretter.org.uk website.
+Website Built using Express.js, ejs, MongoDB, sass
 
 ## Getting Started
 
